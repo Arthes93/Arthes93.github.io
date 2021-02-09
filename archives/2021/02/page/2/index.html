@@ -448,15 +448,13 @@
 
         <p class="article-excerpt">
             
-사용자 페이지
+사용자 페이지사용자의 경우 레스토랑을 관리하지 않으므로 레스토랑 정보를 추가하거나 수정할필요는 없고 조회하는 기능만 있으면 된다.
+
 모든 Restaurant정보 가져오기
 특정 Restaurant정보 가져오기
 
-if (typeof lightGallery !== 'undefined') {
-        var options = {
-            selector: '.gallery-item'
-        };
-        lightGallery(document.ge
+
+Request Parameter를 통한 레스토랑 조회 control요청시 RequestParameter를 통해 원하는 지역, 카테고리를 통해 해당
         </p>
     </div>
 </article>
@@ -507,7 +505,9 @@ if (typeof lightGallery !== 'undefined') {
 
         <p class="article-excerpt">
             
-4. 레스토랑 정보 업데이트레스토랑 업데이트 하기 위한 control 추가업데이트 요청을 처리하기 위해 Http 메소드들 중에서 patch메소드를 이용할 것이다.레스토랑 정보를 업데이트 하기 위해서는 업데이트 하고자 하는 레스토랑을 가지고 와야 한다. /restaurants경로뒤에 레스토랑 id를 붙여 요청이 들어오면 id를 이용해 레스토랑을 찾고 req
+4. 레스토랑 정보 업데이트레스토랑 업데이트 하기 위한 control 추가레스토랑 정보를 업데이트 하기 위해서는 업데이트 하고자 하는 레스토랑을 가지고 와야 한다. /restaurants경로뒤에 레스토랑 id를 붙여 요청이 들어오면 id를 이용해 레스토랑을 찾고 request body에 들어있는 정보로 레스토랑을 업데이트 한다.
+
+업데이트 요청을 처리하기
         </p>
     </div>
 </article>

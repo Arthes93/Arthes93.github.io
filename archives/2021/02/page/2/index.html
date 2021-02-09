@@ -507,7 +507,7 @@ if (typeof lightGallery !== 'undefined') {
 
         <p class="article-excerpt">
             
-12345678910111213141516171819202122232425262728293031323334353637383940@CrossOrigin@RestController@RequiredArgsConstructorpublic class RestaurantController &#123;    private final RestaurantService r
+4. 레스토랑 정보 업데이트레스토랑 업데이트 하기 위한 control 추가업데이트 요청을 처리하기 위해 Http 메소드들 중에서 patch메소드를 이용할 것이다.레스토랑 정보를 업데이트 하기 위해서는 업데이트 하고자 하는 레스토랑을 가지고 와야 한다. /restaurants경로뒤에 레스토랑 id를 붙여 요청이 들어오면 id를 이용해 레스토랑을 찾고 req
         </p>
     </div>
 </article>
@@ -554,7 +554,8 @@ if (typeof lightGallery !== 'undefined') {
 
         <p class="article-excerpt">
             
-123456789101112131415161718192021222324252627282930313233@CrossOrigin@RestController@RequiredArgsConstructorpublic class RestaurantController &#123;    private final RestaurantService restaurantServi
+3. 레스토랑 추가하기레스토랑 생성 요청을 처리하기 위한 control 추가Http 메소드들 중에서 post메소드를 사용해 새로운 레스토랑을 추가하는 요청을 처리할 것이고, /restaurnt경로로 요청이 들어올 경우 request body에 들어가 있는 데이터를 가져와 새로운 레스토랑을 생성한다.
+1234567891011121314@PostMapping
         </p>
     </div>
 </article>

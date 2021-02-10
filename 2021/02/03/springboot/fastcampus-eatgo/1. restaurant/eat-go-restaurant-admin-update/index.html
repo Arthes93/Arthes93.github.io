@@ -7,7 +7,7 @@
 
     
  
-    <title>레스토랑 예약 사이트 1 - 레스토랑 관리(사용자) 레스토랑 정보 가져오기 | My Diary</title>
+    <title>레스토랑 예약 사이트 1 - 레스토랑 관리(관리자) 레스토랑 정보 업데이트 | Victor</title>
     
     <meta
       name="viewport"
@@ -16,20 +16,22 @@
     
     <meta name="keywords" content="Springboot,Spring Rest,강의,HTTP Status Code" />
      <meta property="og:type" content="article">
-<meta property="og:title" content="레스토랑 예약 사이트 1 - 레스토랑 관리(사용자) 레스토랑 정보 가져오기">
-<meta property="og:url" content="http://example.com/2021/02/03/springboot/fastcampus-eatgo/restaurant/eat-go-restaurant-customer/index.html">
-<meta property="og:site_name" content="My Diary">
+<meta property="og:title" content="레스토랑 예약 사이트 1 - 레스토랑 관리(관리자) 레스토랑 정보 업데이트">
+<meta property="og:url" content="http://example.com/2021/02/03/springboot/fastcampus-eatgo/1.%20restaurant/eat-go-restaurant-admin-update/index.html">
+<meta property="og:site_name" content="Victor">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/springboot/spring-boot-logo.png">
-<meta property="article:published_time" content="2021-02-03T01:20:02.000Z">
-<meta property="article:modified_time" content="2021-02-09T16:29:58.001Z">
+<meta property="article:published_time" content="2021-02-03T00:22:02.000Z">
+<meta property="article:modified_time" content="2021-02-09T16:30:59.291Z">
 <meta property="article:author" content="Arthes93">
 <meta property="article:tag" content="Springboot">
 <meta property="article:tag" content="Spring Rest">
 <meta property="article:tag" content="강의">
 <meta property="article:tag" content="HTTP Status Code">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/springboot/spring-boot-logo.png">    
+<meta name="twitter:image" content="http://example.com/images/springboot/spring-boot-logo.png">   
+    <link rel="icon" href="/css/images/favicon/favicon.ico" />
+     
 <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
  
 <link rel="stylesheet" href="/libs/titillium-web/styles.css">
@@ -84,6 +86,10 @@
                     <h1 class="logo-wrap">
                         <a href="/" class="logo"></a>
                     </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">느리더라도 꾸준히 끈기있게 그리고 확실히</p>
+                        </h2>
                     
                 </div>
                 <div id="header-inner" class="nav-container">
@@ -162,14 +168,14 @@
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-springboot/fastcampus-eatgo/restaurant/eat-go-restaurant-customer" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-springboot/fastcampus-eatgo/1. restaurant/eat-go-restaurant-admin-update" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        레스토랑 예약 사이트 1 - 레스토랑 관리(사용자) 레스토랑 정보 가져오기
+        레스토랑 예약 사이트 1 - 레스토랑 관리(관리자) 레스토랑 정보 업데이트
         </h1>
     
 
@@ -180,16 +186,16 @@
                 
   <div class="article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/2021/02/03/springboot/fastcampus-eatgo/restaurant/eat-go-restaurant-customer/" class="article-date">
-       <time datetime="2021-02-03T01:20:02.000Z" itemprop="datePublished">2021-02-03</time>
+    <a href="/2021/02/03/springboot/fastcampus-eatgo/1.%20restaurant/eat-go-restaurant-admin-update/" class="article-date">
+       <time datetime="2021-02-03T00:22:02.000Z" itemprop="datePublished">2021-02-03</time>
     </a>
   </div>
 
 
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
-  <a href="/2021/02/03/springboot/fastcampus-eatgo/restaurant/eat-go-restaurant-customer/" class="article-date">
-     <time datetime="2021-02-09T16:29:58.001Z" itemprop="dateModified">2021-02-10</time>
+  <a href="/2021/02/03/springboot/fastcampus-eatgo/1.%20restaurant/eat-go-restaurant-admin-update/" class="article-date">
+     <time datetime="2021-02-09T16:30:59.291Z" itemprop="dateModified">2021-02-10</time>
   </a>
 </div>
 
@@ -217,19 +223,15 @@
             
 
             <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"<p><a href="/images/springboot/spring-boot-logo.png" class="gallery-item"><img src="/images/springboot/spring-boot-logo.png"></a></p>
-<h2 id="사용자-페이지"><a href="#사용자-페이지" class="headerlink" title="사용자 페이지"></a>사용자 페이지</h2><p>사용자의 경우 레스토랑을 관리하지 않으므로 레스토랑 정보를 추가하거나 수정할필요는 없고 조회하는 기능만 있으면 된다.</p>
-<ol>
-<li>모든 Restaurant정보 가져오기</li>
-<li>특정 Restaurant정보 가져오기</li>
-</ol>
-<hr>
-<h2 id="Request-Parameter를-통한-레스토랑-조회-control"><a href="#Request-Parameter를-통한-레스토랑-조회-control" class="headerlink" title="Request Parameter를 통한 레스토랑 조회 control"></a>Request Parameter를 통한 레스토랑 조회 control</h2><p>요청시 <code>RequestParameter</code>를 통해 원하는 지역, 카테고리를 통해 해당 조건을 만족하는 레스토랑 정보를 모두 가져올 수 있도록 한다. 특정 Restaurant 정보를 가져오는 함수들은 관리자에서 만들었던 내용과 같으므로 생각한다.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@CrossOrigin</span></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequiredArgsConstructor</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RestaurantController</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> RestaurantService restaurantService;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/restaurants&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Restaurant&gt; <span class="title">list</span><span class="params">(<span class="meta">@RequestParam(&quot;region&quot;)</span> String region, <span class="meta">@RequestParam(&quot;category&quot;)</span> Long category)</span> </span>&#123;</span><br><span class="line">        List&lt;Restaurant&gt; restaurants = restaurantService.getRestaurants(region, category);</span><br><span class="line">        <span class="keyword">return</span> restaurants;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/restaurants/&#123;id&#125;&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Restaurant <span class="title">detail</span><span class="params">(<span class="meta">@PathVariable</span> Long id)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        Restaurant restaurant = restaurantService.getRestaurant(id);</span><br><span class="line">        <span class="keyword">return</span> restaurant;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Request-Parameter를-통한-레스토랑-조회-테스트-코드-작성"><a href="#Request-Parameter를-통한-레스토랑-조회-테스트-코드-작성" class="headerlink" title="Request Parameter를 통한 레스토랑 조회 테스트 코드 작성"></a>Request Parameter를 통한 레스토랑 조회 테스트 코드 작성</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> RequestParameter를_이용한_list를_확인한다() <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">    List&lt;Restaurant&gt; restaurants = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    restaurants.add(Restaurant.builder()</span><br><span class="line">            .id(<span class="number">1004L</span>)</span><br><span class="line">            .categoryId(<span class="number">1L</span>)</span><br><span class="line">            .name(<span class="string">&quot;JOKER House&quot;</span>)</span><br><span class="line">            .address(<span class="string">&quot;Seoul&quot;</span>)</span><br><span class="line">            .build());</span><br><span class="line"></span><br><span class="line">    given(restaurantService.getRestaurants(<span class="string">&quot;Seoul&quot;</span>, <span class="number">1L</span>)).willReturn(restaurants);</span><br><span class="line"></span><br><span class="line">    ResultActions resultActions = mockMvc.perform(get(<span class="string">&quot;/restaurants?region=Seoul&amp;category=1&quot;</span>));</span><br><span class="line"></span><br><span class="line">    resultActions</span><br><span class="line">            .andExpect(status().isOk())</span><br><span class="line">            .andExpect(content().string(containsString(<span class="string">&quot;\&quot;id\&quot;:1004&quot;</span>)))</span><br><span class="line">            .andExpect(content().string(containsString(<span class="string">&quot;\&quot;name\&quot;:\&quot;JOKER House\&quot;&quot;</span>)))</span><br><span class="line">            .andDo(print());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Service에서-Region과-CategoryId를-이용한-조회-메소드-구현"><a href="#Service에서-Region과-CategoryId를-이용한-조회-메소드-구현" class="headerlink" title="Service에서 Region과 CategoryId를 이용한 조회 메소드 구현"></a>Service에서 Region과 CategoryId를 이용한 조회 메소드 구현</h2><p>control로부터 받은 region과 categoryId를 갖고 해당 조건을 만족하는 레스토랑 정보를 가져와 반환한다. 만약 레스토랑 정보가 없다고 하면 <code>RestaurantNotFoundException</code>예외를 일으킨다.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="meta">@RequiredArgsConstructor</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RestaurantService</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> RestaurantRepository restaurantRepository;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Restaurant&gt; <span class="title">getRestaurants</span><span class="params">(String region, <span class="keyword">long</span> categoryId)</span> </span>&#123;</span><br><span class="line">        List&lt;Restaurant&gt; restaurants =</span><br><span class="line">                restaurantRepository.findAllByAddressContainingAndCategoryId(region, categoryId);</span><br><span class="line">        <span class="keyword">return</span> restaurants;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Restaurant <span class="title">getRestaurant</span><span class="params">(Long id)</span> </span>&#123;</span><br><span class="line">        Optional&lt;Restaurant&gt; optional = restaurantRepository.findById(id);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (optional.isPresent()) &#123;</span><br><span class="line">            Restaurant restaurant = optional.get();</span><br><span class="line">            <span class="keyword">return</span> restaurant;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RestaurantNotFoundException(id);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Restaurant&gt; <span class="title">getRestaurants</span><span class="params">(String region, <span class="keyword">long</span> categoryId)</span> </span>&#123;</span><br><span class="line">    List&lt;Restaurant&gt; restaurants =</span><br><span class="line">            restaurantRepository.findAllByAddressContainingAndCategoryId(region, categoryId);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> restaurants;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Repository에-method추가"><a href="#Repository에-method추가" class="headerlink" title="Repository에 method추가"></a>Repository에 method추가</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Repository</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">RestaurantRepository</span> <span class="keyword">extends</span> <span class="title">JpaRepository</span>&lt;<span class="title">Restaurant</span>, <span class="title">Long</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function">List&lt;Restaurant&gt; <span class="title">findAllByAddressContainingAndCategoryId</span><span class="params">(String region, <span class="keyword">long</span> categoryId)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+<h1 id="4-레스토랑-정보-업데이트"><a href="#4-레스토랑-정보-업데이트" class="headerlink" title="4. 레스토랑 정보 업데이트"></a>4. 레스토랑 정보 업데이트</h1><h2 id="레스토랑-업데이트-하기-위한-control-추가"><a href="#레스토랑-업데이트-하기-위한-control-추가" class="headerlink" title="레스토랑 업데이트 하기 위한 control 추가"></a>레스토랑 업데이트 하기 위한 control 추가</h2><p>레스토랑 정보를 업데이트 하기 위해서는 업데이트 하고자 하는 레스토랑을 가지고 와야 한다. <code>/restaurants</code>경로뒤에 <strong>레스토랑 id</strong>를 붙여 요청이 들어오면 id를 이용해 레스토랑을 찾고 <strong>request body</strong>에 들어있는 정보로 레스토랑을 업데이트 한다.</p>
+<blockquote>
+<p>업데이트 요청을 처리하기 위해 <strong>Http 메소드</strong> 중에서 <code>patch</code>메소드를 이용할 것이다.</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@PatchMapping(&quot;/restaurants/&#123;id&#125;&quot;)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">update</span><span class="params">(<span class="meta">@PathVariable(&quot;id&quot;)</span> Long id, <span class="meta">@RequestBody</span> Restaurant restaurant)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    restaurantService.updateRestaurant(id, restaurant.getName(), restaurant.getAddress());</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&#123;&#125;&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="업데이트-요청에-대한-테스트-코드-작성"><a href="#업데이트-요청에-대한-테스트-코드-작성" class="headerlink" title="업데이트 요청에 대한 테스트 코드 작성"></a>업데이트 요청에 대한 테스트 코드 작성</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> 레스토랑정보_업데이트() <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">    String JOKER = <span class="string">&quot;JOKER Bar&quot;</span>;</span><br><span class="line">    String Busan = <span class="string">&quot;Busan&quot;</span>;</span><br><span class="line"></span><br><span class="line">    Restaurant restaurant = Restaurant.builder()</span><br><span class="line">            .categoryId(<span class="number">1L</span>)</span><br><span class="line">            .name(JOKER)</span><br><span class="line">            .address(Busan)</span><br><span class="line">            .build();</span><br><span class="line"></span><br><span class="line">    String content = objectMapper.writeValueAsString(restaurant);</span><br><span class="line"></span><br><span class="line">    ResultActions resultActions = mockMvc.perform(patch(<span class="string">&quot;/restaurants/1004&quot;</span>)</span><br><span class="line">            .contentType(MediaType.APPLICATION_JSON)</span><br><span class="line">            .content(content));</span><br><span class="line"></span><br><span class="line">    resultActions</span><br><span class="line">            .andExpect(status().isOk())</span><br><span class="line">            .andDo(print());</span><br><span class="line"></span><br><span class="line">    verify(restaurantService).updateRestaurant(<span class="number">1004L</span>, JOKER, Busan);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="레스토랑-업데이트를-하기-위한-Service-메소드"><a href="#레스토랑-업데이트를-하기-위한-Service-메소드" class="headerlink" title="레스토랑 업데이트를 하기 위한 Service 메소드"></a>레스토랑 업데이트를 하기 위한 Service 메소드</h2><p>먼저 id를 갖고 저장돼 있는 해당 레스토랑을 가져온 후 전달 받은 name값과 address값으로 업데이트 한다. 만약 해당 레스토랑이 없을 경우 <code>RestaurantNotFoundException</code>예외를 일으키도록 한다.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Transactional</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Restaurant <span class="title">updateRestaurant</span><span class="params">(Long id, String name, String address)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    Optional&lt;Restaurant&gt; optional = restaurantRepository.findById(id);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (optional.isPresent()) &#123;</span><br><span class="line">        Restaurant restaurant = optional.get();</span><br><span class="line">        restaurant.setName(name);</span><br><span class="line">        restaurant.setAddress(address);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> restaurant;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> RestaurantNotFoundException(id);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="업데이트에-대한-테스트-코드"><a href="#업데이트에-대한-테스트-코드" class="headerlink" title="업데이트에 대한 테스트 코드"></a>업데이트에 대한 테스트 코드</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> 레스토랑정보_업데이트() <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">    Restaurant restaurant = Restaurant.builder()</span><br><span class="line">            .id(<span class="number">1004L</span>)</span><br><span class="line">            .name(<span class="string">&quot;Bob zip&quot;</span>)</span><br><span class="line">            .address(<span class="string">&quot;Seoul&quot;</span>)</span><br><span class="line">            .build();</span><br><span class="line"></span><br><span class="line">    given(restaurantRepository.findById(<span class="number">1004L</span>))</span><br><span class="line">            .willReturn(Optional.of(restaurant));</span><br><span class="line"></span><br><span class="line">    Restaurant updated = restaurantService.updateRestaurant(<span class="number">1004L</span>, <span class="string">&quot;Sool zip&quot;</span>, <span class="string">&quot;Busan&quot;</span>);</span><br><span class="line"></span><br><span class="line">    assertThat(updated.getName()).isEqualTo(<span class="string">&quot;Sool zip&quot;</span>);</span><br><span class="line">    assertThat(updated.getAddress()).isEqualTo(<span class="string">&quot;Busan&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
         var options = {
             selector: '.gallery-item'
         };
@@ -241,7 +243,7 @@
 
 
 
-    <a data-url="http://example.com/2021/02/03/springboot/fastcampus-eatgo/restaurant/eat-go-restaurant-customer/" data-id="ckky8iu7b0022tl8deq21ebzn" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://example.com/2021/02/03/springboot/fastcampus-eatgo/1.%20restaurant/eat-go-restaurant-admin-update/" data-id="ckkzkhe47001kkj8degr8ehhg" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -311,23 +313,19 @@
             "@type": "Person",
             "name": "Arthes93"
         },
-        "headline": "레스토랑 예약 사이트 1 - 레스토랑 관리(사용자) 레스토랑 정보 가져오기",
+        "headline": "레스토랑 예약 사이트 1 - 레스토랑 관리(관리자) 레스토랑 정보 업데이트",
         "image": "http://example.com/images/springboot/spring-boot-logo.png",
         "keywords": "Springboot Spring Rest 강의 HTTP Status Code",
         "genre": "Springboot 강의 레스토랑 예약 사이트",
         "datePublished": "2021-02-03",
         "dateCreated": "2021-02-03",
         "dateModified": "2021-02-10",
-        "url": "http://example.com/2021/02/03/springboot/fastcampus-eatgo/restaurant/eat-go-restaurant-customer/",
+        "url": "http://example.com/2021/02/03/springboot/fastcampus-eatgo/1. restaurant/eat-go-restaurant-admin-update/",
         "description": "
-사용자 페이지사용자의 경우 레스토랑을 관리하지 않으므로 레스토랑 정보를 추가하거나 수정할필요는 없고 조회하는 기능만 있으면 된다.
+4. 레스토랑 정보 업데이트레스토랑 업데이트 하기 위한 control 추가레스토랑 정보를 업데이트 하기 위해서는 업데이트 하고자 하는 레스토랑을 가지고 와야 한다. /restaurants경로뒤에 레스토랑 id를 붙여 요청이 들어오면 id를 이용해 레스토랑을 찾고 request body에 들어있는 정보로 레스토랑을 업데이트 한다.
 
-모든 Restaurant정보 가져오기
-특정 Restaurant정보 가져오기
-
-
-Request Parameter를 통한 레스토랑 조회 control요청시 RequestParameter를 통해 원하는 지역, 카테고리를 통해 해당",
-        "wordCount": 858
+업데이트 요청을 처리하기",
+        "wordCount": 705
     }
 </script>
 
@@ -368,20 +366,20 @@ Request Parameter를 통한 레스토랑 조회 control요청시 RequestParamete
         
 <nav id="article-nav">
     
-        <a href="/2021/02/03/springboot/fastcampus-eatgo/eat-go2-restaurant/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2021/02/03/springboot/fastcampus-eatgo/1.%20restaurant/eat-go-restaurant-customer/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
-            레스토랑 예약 사이트 만들기 2
+            레스토랑 예약 사이트 1 - 레스토랑 관리(사용자) 레스토랑 정보 가져오기
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/2021/02/03/springboot/fastcampus-eatgo/restaurant/eat-go-restaurant-admin-update/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2021/02/03/springboot/fastcampus-eatgo/1.%20restaurant/eat-go-restaurant-admin-create/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">레스토랑 예약 사이트 1 - 레스토랑 관리(관리자) 레스토랑 정보 업데이트</p>
+        <p class="article-nav-title">레스토랑 예약 사이트 1 - 레스토랑 관리(관리자) 레스토랑 생성</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -443,26 +441,6 @@ Request Parameter를 통한 레스토랑 조회 control요청시 RequestParamete
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2021/02/09/springboot/fastcampus-eatgo/eat-go-restaurant/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2021/02/09/springboot/fastcampus-eatgo/eat-go-restaurant/" class="title">eat-go-restaurant</a></p>
-                            <p class="item-date"><time datetime="2021-02-08T15:19:55.000Z" itemprop="datePublished">2021-02-09</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
                             <a href="/2021/02/07/springboot/fastcampus-eatgo/eat-go14-table-reservation/" class="thumbnail">
     
     
@@ -500,6 +478,26 @@ Request Parameter를 통한 레스토랑 조회 control요청시 RequestParamete
                         </div>
                     </li>
                 
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/02/07/springboot/fastcampus-eatgo/eat-go12-jwt/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/springboot/spring-boot-logo.png)" alt="레스토랑 예약 사이트 만들기 12 - JWT" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Springboot/">Springboot</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Springboot/%EA%B0%95%EC%9D%98/">강의</a></p>
+                            <p class="item-title"><a href="/2021/02/07/springboot/fastcampus-eatgo/eat-go12-jwt/" class="title">레스토랑 예약 사이트 만들기 12 - JWT</a></p>
+                            <p class="item-date"><time datetime="2021-02-06T16:03:35.000Z" itemprop="datePublished">2021-02-07</time></p>
+                        </div>
+                    </li>
+                
             </ul>
         </div>
     </div>
@@ -519,7 +517,7 @@ Request Parameter를 통한 레스토랑 조회 control요청시 RequestParamete
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a><span class="archive-list-count">27</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a><span class="archive-list-count">5</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a><span class="archive-list-count">5</span></li></ul>
         </div>
     </div>
 
@@ -598,7 +596,7 @@ Request Parameter를 통한 레스토랑 조회 control요청시 RequestParamete
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://example.com/2021/02/03/springboot/fastcampus-eatgo/restaurant/eat-go-restaurant-customer/';
+    var disqus_url = 'http://example.com/2021/02/03/springboot/fastcampus-eatgo/1.%20restaurant/eat-go-restaurant-admin-update/';
     
     (function() {
     var dsq = document.createElement('script');

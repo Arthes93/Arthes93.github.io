@@ -58,9 +58,6 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
 
     
-<link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosanskr.css">
-
-    
 <link rel="stylesheet" href="/css/style.css">
 
   <meta name="generator" content="Hexo 5.3.0"></head>
@@ -232,7 +229,7 @@ Security 설정하기12345678910111213141516171819202122232425262728293031323334
         <a href="/2021/02/13/springboot/sample-board/board-11-paging/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/springboot/sample-board/board-list-thymeleaf.png)" alt="스프링부트를 이용한 게시판 만들기 11 - 페이징 처리하기" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/springboot/sample-board/board-paging.png)" alt="스프링부트를 이용한 게시판 만들기 11 - 페이징 처리하기" class="thumbnail-image"></span>
     
     
         
@@ -263,11 +260,8 @@ Security 설정하기12345678910111213141516171819202122232425262728293031323334
 
         <p class="article-excerpt">
             
-11. Thymeleaf에 페이징 처리하기if (typeof lightGallery !== 'undefined') {
-        var options = {
-            selector: '.gallery-item'
-        };
-        lightGallery(document.getElementsByClassName('.artic
+11. 페이징 처리하기메인 게시판을 접근하게 되면 한번에 너무 많은 게시글들이 쏟아져 나오게 돼 보기가 좋지 않고 서버도 많은 양의 데이터를 한번에 보내야 하기 때문에 성능에서도 좋지 않다.사용자에게 전체 데이터에서 적당한 양의 데이터만 보여줘 사용자 입장에서도 서버 입장에서도 부담이 없게 한다.
+Control 로직 수정하기Spring에서 제공하는 Pag
         </p>
     </div>
 </article>
@@ -287,7 +281,7 @@ Security 설정하기12345678910111213141516171819202122232425262728293031323334
         <a href="/2021/02/13/springboot/sample-board/board-10-delete/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/springboot/sample-board/board-delete.png)" alt="스프링부트를 이용한 게시판 만들기 10 - 포스트 삭제하기" class="thumbnail-image"></span>
     
     
         
@@ -317,8 +311,9 @@ Security 설정하기12345678910111213141516171819202122232425262728293031323334
     
 
         <p class="article-excerpt">
-            10. 포스트 삭제하기PostController.java
-123456@PostMapping(&quot;/post/&#123;postId&#125;/delete&quot;)public String deletePost(@PathVariable(&quot;postId&quot;) Long id)&#123;    postService.deletePostById(i
+            
+10. 포스트 삭제하기PostController.java
+123456@PostMapping(&quot;/post/&#123;postId&#125;/delete&quot;)public String deletePost(@PathVariable(&quot;postId&quot;) Long id)&#123;    postService.deletePostById(
         </p>
     </div>
 </article>
@@ -767,7 +762,7 @@ application.yml
                             <a href="/2021/02/13/springboot/sample-board/board-11-paging/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/springboot/sample-board/board-list-thymeleaf.png)" alt="스프링부트를 이용한 게시판 만들기 11 - 페이징 처리하기" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/springboot/sample-board/board-paging.png)" alt="스프링부트를 이용한 게시판 만들기 11 - 페이징 처리하기" class="thumbnail-image"></span>
     
     
 </a>
@@ -787,7 +782,7 @@ application.yml
                             <a href="/2021/02/13/springboot/sample-board/board-10-delete/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/springboot/sample-board/board-delete.png)" alt="스프링부트를 이용한 게시판 만들기 10 - 포스트 삭제하기" class="thumbnail-image"></span>
     
     
 </a>
@@ -850,7 +845,7 @@ application.yml
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BFS/" rel="tag">BFS</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Beakjoon/" rel="tag">Beakjoon</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CRUD/" rel="tag">CRUD</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DFS/" rel="tag">DFS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Exception-Handling/" rel="tag">Exception Handling</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Form/" rel="tag">Form</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP-Status-Code/" rel="tag">HTTP Status Code</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JWT/" rel="tag">JWT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oauth2/" rel="tag">Oauth2</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Rest/" rel="tag">Spring Rest</a><span class="tag-list-count">22</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Security/" rel="tag">Spring Security</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Springboot/" rel="tag">Springboot</a><span class="tag-list-count">42</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/beakjoon/" rel="tag">beakjoon</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EA%B0%95%EC%9D%98/" rel="tag">강의</a><span class="tag-list-count">23</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-1/" rel="tag">틀렸습니다 1</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-2/" rel="tag">틀렸습니다 2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-4/" rel="tag">틀렸습니다 4</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-5/" rel="tag">틀렸습니다 5</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BFS/" rel="tag">BFS</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Beakjoon/" rel="tag">Beakjoon</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CRUD/" rel="tag">CRUD</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DFS/" rel="tag">DFS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Exception-Handling/" rel="tag">Exception Handling</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Form/" rel="tag">Form</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP-Status-Code/" rel="tag">HTTP Status Code</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JWT/" rel="tag">JWT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oauth2/" rel="tag">Oauth2</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Rest/" rel="tag">Spring Rest</a><span class="tag-list-count">22</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Security/" rel="tag">Spring Security</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Springboot/" rel="tag">Springboot</a><span class="tag-list-count">42</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/beakjoon/" rel="tag">beakjoon</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/paging/" rel="tag">paging</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EA%B0%95%EC%9D%98/" rel="tag">강의</a><span class="tag-list-count">23</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-1/" rel="tag">틀렸습니다 1</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-2/" rel="tag">틀렸습니다 2</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-4/" rel="tag">틀렸습니다 4</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-5/" rel="tag">틀렸습니다 5</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -860,7 +855,7 @@ application.yml
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/BFS/" style="font-size: 14px;">BFS</a> <a href="/tags/Beakjoon/" style="font-size: 12px;">Beakjoon</a> <a href="/tags/C/" style="font-size: 11px;">C++</a> <a href="/tags/CRUD/" style="font-size: 16px;">CRUD</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/Exception-Handling/" style="font-size: 11px;">Exception Handling</a> <a href="/tags/Form/" style="font-size: 13px;">Form</a> <a href="/tags/HTTP-Status-Code/" style="font-size: 17px;">HTTP Status Code</a> <a href="/tags/JWT/" style="font-size: 10px;">JWT</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Oauth2/" style="font-size: 12px;">Oauth2</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Spring-Rest/" style="font-size: 18px;">Spring Rest</a> <a href="/tags/Spring-Security/" style="font-size: 15px;">Spring Security</a> <a href="/tags/Springboot/" style="font-size: 20px;">Springboot</a> <a href="/tags/beakjoon/" style="font-size: 11px;">beakjoon</a> <a href="/tags/%EA%B0%95%EC%9D%98/" style="font-size: 19px;">강의</a> <a href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-1/" style="font-size: 10px;">틀렸습니다 1</a> <a href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-2/" style="font-size: 10px;">틀렸습니다 2</a> <a href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-4/" style="font-size: 10px;">틀렸습니다 4</a> <a href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-5/" style="font-size: 10px;">틀렸습니다 5</a>
+            <a href="/tags/BFS/" style="font-size: 14px;">BFS</a> <a href="/tags/Beakjoon/" style="font-size: 12px;">Beakjoon</a> <a href="/tags/C/" style="font-size: 11px;">C++</a> <a href="/tags/CRUD/" style="font-size: 16px;">CRUD</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/Exception-Handling/" style="font-size: 11px;">Exception Handling</a> <a href="/tags/Form/" style="font-size: 13px;">Form</a> <a href="/tags/HTTP-Status-Code/" style="font-size: 17px;">HTTP Status Code</a> <a href="/tags/JWT/" style="font-size: 10px;">JWT</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Oauth2/" style="font-size: 12px;">Oauth2</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Spring-Rest/" style="font-size: 18px;">Spring Rest</a> <a href="/tags/Spring-Security/" style="font-size: 15px;">Spring Security</a> <a href="/tags/Springboot/" style="font-size: 20px;">Springboot</a> <a href="/tags/beakjoon/" style="font-size: 11px;">beakjoon</a> <a href="/tags/paging/" style="font-size: 10px;">paging</a> <a href="/tags/%EA%B0%95%EC%9D%98/" style="font-size: 19px;">강의</a> <a href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-1/" style="font-size: 10px;">틀렸습니다 1</a> <a href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-2/" style="font-size: 10px;">틀렸습니다 2</a> <a href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-4/" style="font-size: 10px;">틀렸습니다 4</a> <a href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-5/" style="font-size: 10px;">틀렸습니다 5</a>
         </div>
     </div>
 

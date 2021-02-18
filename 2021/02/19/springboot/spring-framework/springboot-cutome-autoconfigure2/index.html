@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="google" content="notranslate">
+
+
+    
+ 
+    <title>Spring Boot - 자동 설정 만들기 1부 | Victor</title>
+    
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    
+    <meta name="keywords" content="AutoConfiguration,Spring Framework" />
+     <meta property="og:type" content="article">
+<meta property="og:title" content="Spring Boot - 자동 설정 만들기 1부">
+<meta property="og:url" content="http://example.com/2021/02/19/springboot/spring-framework/springboot-cutome-autoconfigure2/index.html">
+<meta property="og:site_name" content="Victor">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/springboot/spring-boot-logo.png">
+<meta property="article:published_time" content="2021-02-18T15:52:54.000Z">
+<meta property="article:modified_time" content="2021-02-18T15:55:41.014Z">
+<meta property="article:author" content="Arthes93">
+<meta property="article:tag" content="AutoConfiguration">
+<meta property="article:tag" content="Spring Framework">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/springboot/spring-boot-logo.png">   
+    <link rel="icon" href="/css/images/favicon/favicon.ico" />
+     
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+ 
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+ 
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+ 
+<link rel="stylesheet" href="/css/style.css">
+ 
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+ 
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+
+    
+
+    <link rel="stylesheet" type="text/css" href="">
+    
+<link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">
+	
+    
+<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  <meta name="generator" content="Hexo 5.3.0"></head>
+</html>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">느리더라도 꾸준히 끈기있게 그리고 확실히</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Beakjoon/">Beakjoon</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Beakjoon/BFS/">BFS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Beakjoon/DFS/">DFS</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Beakjoon/%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC/">다익스트라</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Beakjoon/%EC%8B%9C%EB%AE%AC%EB%A0%88%EC%9D%B4%EC%85%98/">시뮬레이션</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/JAVA/">JAVA</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/JAVA/JPA/">JPA</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Spring/">Spring</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Spring/Spring5-MVC/">Spring5 MVC</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Springboot/">Springboot</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Springboot/Spring-Core/">Spring Core</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Springboot/Spring-Framework/">Spring Framework</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Springboot/Spring-Rest/">Spring Rest</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Springboot/Spring-Security/">Spring Security</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Springboot/%EA%B0%95%EC%9D%98/">강의</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Springboot/%EA%B2%8C%EC%8B%9C%ED%8C%90-%EB%A7%8C%EB%93%A4%EA%B8%B0/">게시판 만들기</a></li></ul></li></ul>
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Springboot/">Springboot</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Springboot/Spring-Framework/">Spring Framework</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-springboot/spring-framework/springboot-cutome-autoconfigure2" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Spring Boot - 자동 설정 만들기 1부
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2021/02/19/springboot/spring-framework/springboot-cutome-autoconfigure2/" class="article-date">
+       <time datetime="2021-02-18T15:52:54.000Z" itemprop="datePublished">2021-02-19</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2021/02/19/springboot/spring-framework/springboot-cutome-autoconfigure2/" class="article-date">
+     <time datetime="2021-02-18T15:55:41.014Z" itemprop="dateModified">2021-02-19</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/AutoConfiguration/" rel="tag">AutoConfiguration</a>, <a class="tag-link-link" href="/tags/Spring-Framework/" rel="tag">Spring Framework</a>
+    </div>
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"<p><a href="/images/springboot/spring-boot-logo.png" class="gallery-item"><img src="/images/springboot/spring-boot-logo.png"></a></p>
+<h1 id="자동-설정-만들기-2부"><a href="#자동-설정-만들기-2부" class="headerlink" title="자동 설정 만들기 2부"></a>자동 설정 만들기 2부</h1><h2 id="EnableAutoConfiguration이-불러오는-같은-Bean-무시하기"><a href="#EnableAutoConfiguration이-불러오는-같은-Bean-무시하기" class="headerlink" title="EnableAutoConfiguration이 불러오는 같은 Bean 무시하기"></a>EnableAutoConfiguration이 불러오는 같은 Bean 무시하기</h2><blockquote>
+<p>maplespringbootstarter 프로젝트</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HolomanConfiguration</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="meta">@ConditionalOnMissingBean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Holoman <span class="title">holoman</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Holoman holoman = <span class="keyword">new</span> Holoman();</span><br><span class="line">        holoman.setHowLong(<span class="number">5</span>);</span><br><span class="line">        holoman.setName(<span class="string">&quot;maple&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> holoman;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>@ConditionalOnMissingBean</code>을 사용하면 해당 <code>Bean</code>이 없는 경우에만 <code>EnableAutoConfiguration</code>을 통해 <code>Bean</code>이 추가 된다.</p>
+<h3 id="결과"><a href="#결과" class="headerlink" title="결과"></a>결과</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">2020-03-15 21:31:49.936  INFO 67228 --- [           main] com.example.Application                  : Starting Application on yangdong-uui-MacBookPro.local with PID 67228 (/Users/dongwoo-yang/dev/study/spring/everyday_spring/chapter3/ch3_5/springbootgettingstarted/target/classes started by dongwoo-yang in /Users/dongwoo-yang/dev/study/spring/everyday_spring/chapter3/ch3_5/springbootgettingstarted)</span><br><span class="line">2020-03-15 21:31:49.938  INFO 67228 --- [           main] com.example.Application                  : No active profile set, falling back to default profiles: default</span><br><span class="line">2020-03-15 21:31:50.581  INFO 67228 --- [           main] com.example.Application                  : Started Application in 0.937 seconds (JVM running for 1.598)</span><br><span class="line">Holoman&#123;name=&#x27;동장군&#x27;, howLong=60&#125;</span><br><span class="line"></span><br><span class="line">Process finished with exit code 0</span><br></pre></td></tr></table></figure>
+<p><code>springbootgetttingstarted</code>프로젝트의 <code>Bean</code>이 출력됨을 확인할 수 있다.</p>
+<h2 id="application-properties를-이용한-방법"><a href="#application-properties를-이용한-방법" class="headerlink" title="application.properties를 이용한 방법"></a>application.properties를 이용한 방법</h2><blockquote>
+<p>springbootgetttingstarted 프로젝트 src/resource에 <code>application.properties</code>파일을 생성</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">holoman.name &#x3D; 아 집에 가고 싶다.</span><br><span class="line">holoman.how-long &#x3D; 10000</span><br></pre></td></tr></table></figure>
+<p><code>application.propertie</code>에 해당 내용을 추가</p>
+<h3 id="의존성-추가"><a href="#의존성-추가" class="headerlink" title="의존성 추가"></a>의존성 추가</h3><blockquote>
+<p>maplespringbootstarter 프로젝트</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-configuration-processor<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">optional</span>&gt;</span>true<span class="tag">&lt;/<span class="name">optional</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>@ConfigurationProperties</code>를 사용하기 위해서는 해당 의존성을 추가해주어야 한다.</p>
+<h3 id="HolomanProperties"><a href="#HolomanProperties" class="headerlink" title="HolomanProperties"></a>HolomanProperties</h3><blockquote>
+<p>maplespringbootstarter 프로젝트</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ConfigurationProperties(&quot;holoman&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HolomanProperties</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> howLong;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getHowLong</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> howLong;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setHowLong</span><span class="params">(<span class="keyword">int</span> howLong)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.howLong = howLong;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="HolomanConfiguration-수정"><a href="#HolomanConfiguration-수정" class="headerlink" title="HolomanConfiguration 수정"></a>HolomanConfiguration 수정</h3><blockquote>
+<p>maplespringbootstarter 프로젝트</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableConfigurationProperties(HolomanProperties.class)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HolomanConfiguration</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="meta">@ConditionalOnMissingBean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Holoman <span class="title">holoman</span><span class="params">(HolomanProperties properties)</span></span>&#123;</span><br><span class="line">        Holoman holoman = <span class="keyword">new</span> Holoman();</span><br><span class="line">        holoman.setHowLong(properties.getHowLong());</span><br><span class="line">        holoman.setName(properties.getName());</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> holoman;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>@EnableConfigurationProperties를 추가<br>Bean을 만들 때 HolomanProperties를 참조해서 Bean을 생성한다.<br>springbootgetttingstarted의 application.properties를 가져다가 Bean을 생성한다.</p>
+<blockquote>
+<p>springbootgetttingstarted내의 holoman Bean을 없애주어야 한다…. 오류 잡느라 시간 오래 걸렸다.</p>
+</blockquote>
+<h3 id="결과-1"><a href="#결과-1" class="headerlink" title="결과"></a>결과</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2020</span>-<span class="number">03</span>-<span class="number">15</span> <span class="number">22</span>:<span class="number">07</span>:<span class="number">53.804</span>  INFO <span class="number">70087</span> --- [           main] com.example.Application                  : Starting Application on yangdong-uui-MacBookPro.local with PID <span class="number">70087</span> (/Users/dongwoo-yang/dev/study/spring/everyday_spring/chapter3/ch3_5/springbootgettingstarted/target/classes started by dongwoo-yang in /Users/dongwoo-yang/dev/study/spring/everyday_spring/chapter3/ch3_5/springbootgettingstarted)</span><br><span class="line"><span class="number">2020</span>-<span class="number">03</span>-<span class="number">15</span> <span class="number">22</span>:<span class="number">07</span>:<span class="number">53.808</span>  INFO <span class="number">70087</span> --- [           main] com.example.Application                  : No active profile set, falling back to <span class="keyword">default</span> profiles: <span class="keyword">default</span></span><br><span class="line"><span class="number">2020</span>-<span class="number">03</span>-<span class="number">15</span> <span class="number">22</span>:<span class="number">07</span>:<span class="number">54.628</span>  INFO <span class="number">70087</span> --- [           main] com.example.Application                  : Started Application in <span class="number">1.148</span> seconds (JVM running <span class="keyword">for</span> <span class="number">1.631</span>)</span><br><span class="line">Holoman&#123;name=<span class="string">&#x27;A... I want to go home&#x27;</span>, howLong=<span class="number">10000</span>&#125;</span><br><span class="line"></span><br><span class="line">Process finished with exit code <span class="number">0</span></span><br></pre></td></tr></table></figure></div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script>
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://example.com/2021/02/19/springboot/spring-framework/springboot-cutome-autoconfigure2/" data-id="cklb24pv3003bmp8d3voa1vb2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Arthes93"
+        },
+        "headline": "Spring Boot - 자동 설정 만들기 1부",
+        "image": "http://example.com/images/springboot/spring-boot-logo.png",
+        "keywords": "AutoConfiguration Spring Framework",
+        "genre": "Springboot Spring Framework",
+        "datePublished": "2021-02-19",
+        "dateCreated": "2021-02-19",
+        "dateModified": "2021-02-19",
+        "url": "http://example.com/2021/02/19/springboot/spring-framework/springboot-cutome-autoconfigure2/",
+        "description": "
+자동 설정 만들기 2부EnableAutoConfiguration이 불러오는 같은 Bean 무시하기
+maplespringbootstarter 프로젝트
+
+12345678910111213@Configurationpublic class HolomanConfiguration &#123;    @Bean    @ConditionalOnMissingBean    pu",
+        "wordCount": 968
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/Arthes93" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    <div class="github-card" data-github="Arthes93" data-width="" data-height="" data-theme="default"></div>
+    <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2021/02/19/springboot/spring-framework/springboot-webserver/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            Spring Boot - 내장 웹 서버 이해
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2021/02/19/springboot/spring-framework/springboot-cutome-autoconfigure/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Spring Boot - 자동 설정 만들기 1부</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/03/04/spring/Spring5MVC/Spring5MVC-1-xml-setting/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/spirng/Spirng5MVC/spring.png)" alt="스프링 MVC 시작하기 - XML로 세팅하기" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Spring/">Spring</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Spring/Spring5-MVC/">Spring5 MVC</a></p>
+                            <p class="item-title"><a href="/2021/03/04/spring/Spring5MVC/Spring5MVC-1-xml-setting/" class="title">스프링 MVC 시작하기 - XML로 세팅하기</a></p>
+                            <p class="item-date"><time datetime="2021-03-04T06:42:21.000Z" itemprop="datePublished">2021-03-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/02/19/springboot/spring-framework/springboot-jar/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/springboot/spring-boot-logo.png)" alt="Spring Boot - 독립적으로 실행 가능한 JAR" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Springboot/">Springboot</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Springboot/Spring-Framework/">Spring Framework</a></p>
+                            <p class="item-title"><a href="/2021/02/19/springboot/spring-framework/springboot-jar/" class="title">Spring Boot - 독립적으로 실행 가능한 JAR</a></p>
+                            <p class="item-date"><time datetime="2021-02-18T16:05:00.000Z" itemprop="datePublished">2021-02-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/02/19/springboot/spring-framework/springboot-http2/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/springboot/spring-boot-logo.png)" alt="Spring Boot - 내장 웹 서버 응용 2부(HTTPS와 HTTP2)" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Springboot/">Springboot</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Springboot/Spring-Framework/">Spring Framework</a></p>
+                            <p class="item-title"><a href="/2021/02/19/springboot/spring-framework/springboot-http2/" class="title">Spring Boot - 내장 웹 서버 응용 2부(HTTPS와 HTTP2)</a></p>
+                            <p class="item-date"><time datetime="2021-02-18T16:01:22.000Z" itemprop="datePublished">2021-02-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/02/19/springboot/spring-framework/springboot-webserver2/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/springboot/spring-boot-logo.png)" alt="Spring Boot - 내장 웹 서버 응용 1부(컨테이너와 포트)" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Springboot/">Springboot</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Springboot/Spring-Framework/">Spring Framework</a></p>
+                            <p class="item-title"><a href="/2021/02/19/springboot/spring-framework/springboot-webserver2/" class="title">Spring Boot - 내장 웹 서버 응용 1부(컨테이너와 포트)</a></p>
+                            <p class="item-date"><time datetime="2021-02-18T15:58:27.000Z" itemprop="datePublished">2021-02-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/02/19/springboot/spring-framework/springboot-webserver/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/springboot/spring-boot-logo.png)" alt="Spring Boot - 내장 웹 서버 이해" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Springboot/">Springboot</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Springboot/Spring-Framework/">Spring Framework</a></p>
+                            <p class="item-title"><a href="/2021/02/19/springboot/spring-framework/springboot-webserver/" class="title">Spring Boot - 내장 웹 서버 이해</a></p>
+                            <p class="item-date"><time datetime="2021-02-18T15:56:18.000Z" itemprop="datePublished">2021-02-19</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Beakjoon/">Beakjoon</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Beakjoon/BFS/">BFS</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Beakjoon/DFS/">DFS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Beakjoon/%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC/">다익스트라</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Beakjoon/%EC%8B%9C%EB%AE%AC%EB%A0%88%EC%9D%B4%EC%85%98/">시뮬레이션</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/">JAVA</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/JPA/">JPA</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spring/">Spring</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Spring/Spring5-MVC/">Spring5 MVC</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/">Springboot</a><span class="category-list-count">56</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Core/">Spring Core</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Framework/">Spring Framework</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Rest/">Spring Rest</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Rest/RESTful-Web-Services-%EA%B0%95%EC%9D%98/">RESTful Web Services 강의</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Security/">Spring Security</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Security/Form-login/">Form login</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Security/JWT/">JWT</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Security/Oauth2/">Oauth2</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Security/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%8B%9C%ED%81%90%EB%A6%AC%ED%8B%B0-%EA%B0%95%EC%9D%98/">스프링 시큐리티 강의</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/%EA%B0%95%EC%9D%98/">강의</a><span class="category-list-count">19</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/%EA%B0%95%EC%9D%98/%EB%A0%88%EC%8A%A4%ED%86%A0%EB%9E%91-%EC%98%88%EC%95%BD-%EC%82%AC%EC%9D%B4%ED%8A%B8/">레스토랑 예약 사이트</a><span class="category-list-count">19</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/%EA%B2%8C%EC%8B%9C%ED%8C%90-%EB%A7%8C%EB%93%A4%EA%B8%B0/">게시판 만들기</a><span class="category-list-count">14</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a><span class="archive-list-count">57</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a><span class="archive-list-count">5</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AutoConfiguration/" rel="tag">AutoConfiguration</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BFS/" rel="tag">BFS</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Beakjoon/" rel="tag">Beakjoon</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CRUD/" rel="tag">CRUD</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DFS/" rel="tag">DFS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Exception-Handling/" rel="tag">Exception Handling</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Form/" rel="tag">Form</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/" rel="tag">Github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP-Status-Code/" rel="tag">HTTP Status Code</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IoC-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/" rel="tag">IoC 컨테이너</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JPA/" rel="tag">JPA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JWT/" rel="tag">JWT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVC/" rel="tag">MVC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oauth2/" rel="tag">Oauth2</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Core/" rel="tag">Spring Core</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Framework/" rel="tag">Spring Framework</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Rest/" rel="tag">Spring Rest</a><span class="tag-list-count">22</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Security/" rel="tag">Spring Security</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Springboot/" rel="tag">Springboot</a><span class="tag-list-count">45</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/beakjoon/" rel="tag">beakjoon</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/error/" rel="tag">error</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jenkins/" rel="tag">jenkins</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/paging/" rel="tag">paging</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EA%B0%95%EC%9D%98/" rel="tag">강의</a><span class="tag-list-count">23</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC/" rel="tag">다익스트라</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%82%BC%EC%84%B1-%EA%B8%B0%EC%B6%9C/" rel="tag">삼성 기출</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%8B%9C%EB%AE%AC%EB%A0%88%EC%9D%B4%EC%85%98/" rel="tag">시뮬레이션</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-1/" rel="tag">틀렸습니다 1</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-2/" rel="tag">틀렸습니다 2</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-4/" rel="tag">틀렸습니다 4</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-5/" rel="tag">틀렸습니다 5</a><span class="tag-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/AutoConfiguration/" style="font-size: 14.17px;">AutoConfiguration</a> <a href="/tags/BFS/" style="font-size: 13.33px;">BFS</a> <a href="/tags/Beakjoon/" style="font-size: 13.33px;">Beakjoon</a> <a href="/tags/C/" style="font-size: 10.83px;">C++</a> <a href="/tags/CRUD/" style="font-size: 16.67px;">CRUD</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/Exception-Handling/" style="font-size: 10.83px;">Exception Handling</a> <a href="/tags/Form/" style="font-size: 12.5px;">Form</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/HTTP-Status-Code/" style="font-size: 17.5px;">HTTP Status Code</a> <a href="/tags/IoC-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/" style="font-size: 10.83px;">IoC 컨테이너</a> <a href="/tags/JPA/" style="font-size: 10.83px;">JPA</a> <a href="/tags/JWT/" style="font-size: 10px;">JWT</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/Oauth2/" style="font-size: 11.67px;">Oauth2</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Spring-Core/" style="font-size: 10.83px;">Spring Core</a> <a href="/tags/Spring-Framework/" style="font-size: 15.83px;">Spring Framework</a> <a href="/tags/Spring-Rest/" style="font-size: 18.33px;">Spring Rest</a> <a href="/tags/Spring-Security/" style="font-size: 15px;">Spring Security</a> <a href="/tags/Springboot/" style="font-size: 20px;">Springboot</a> <a href="/tags/beakjoon/" style="font-size: 10.83px;">beakjoon</a> <a href="/tags/error/" style="font-size: 10px;">error</a> <a href="/tags/jenkins/" style="font-size: 10px;">jenkins</a> <a href="/tags/paging/" style="font-size: 10px;">paging</a> <a href="/tags/%EA%B0%95%EC%9D%98/" style="font-size: 19.17px;">강의</a> <a href="/tags/%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC/" style="font-size: 10px;">다익스트라</a> <a href="/tags/%EC%82%BC%EC%84%B1-%EA%B8%B0%EC%B6%9C/" style="font-size: 10.83px;">삼성 기출</a> <a href="/tags/%EC%8B%9C%EB%AE%AC%EB%A0%88%EC%9D%B4%EC%85%98/" style="font-size: 10.83px;">시뮬레이션</a> <a href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-1/" style="font-size: 10px;">틀렸습니다 1</a> <a href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-2/" style="font-size: 10.83px;">틀렸습니다 2</a> <a href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-4/" style="font-size: 10px;">틀렸습니다 4</a> <a href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-5/" style="font-size: 10.83px;">틀렸습니다 5</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2021 Arthes93</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://example.com/2021/02/19/springboot/spring-framework/springboot-cutome-autoconfigure2/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>

@@ -7,22 +7,23 @@
 
     
  
-    <title>객체지향 5대원칙 SOLID | Victor</title>
+    <title>스프링 핵심 원리 이해1 - 객체 지향 5원칙 | Victor</title>
     
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1"
     />
     
-    <meta name="keywords" content="" />
+    <meta name="keywords" content="Spring Core" />
      <meta property="og:type" content="article">
-<meta property="og:title" content="객체지향 5대원칙 SOLID">
-<meta property="og:url" content="http://example.com/2021/02/20/solid/index.html">
+<meta property="og:title" content="스프링 핵심 원리 이해1 - 객체 지향 5원칙">
+<meta property="og:url" content="http://example.com/2021/02/20/springboot/Spring-Core/basic/solid/index.html">
 <meta property="og:site_name" content="Victor">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-02-20T05:16:17.000Z">
-<meta property="article:modified_time" content="2021-02-20T09:34:52.100Z">
+<meta property="article:modified_time" content="2021-02-20T09:37:52.954Z">
 <meta property="article:author" content="Arthes93">
+<meta property="article:tag" content="Spring Core">
 <meta name="twitter:card" content="summary">   
     <link rel="icon" href="/css/images/favicon/favicon.ico" />
      
@@ -154,19 +155,19 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    uncategorized
+    <a class="page-title-link" href="/categories/Springboot/">Springboot</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Springboot/Spring-Core/">Spring Core</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Springboot/Spring-Core/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B8%B0%EB%B3%B8%ED%8E%B8/">스프링 핵심 원리 - 기본편</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-solid" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-springboot/Spring-Core/basic/solid" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        객체지향 5대원칙 SOLID
+        스프링 핵심 원리 이해1 - 객체 지향 5원칙
         </h1>
     
 
@@ -177,7 +178,7 @@
                 
   <div class="article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/2021/02/20/solid/" class="article-date">
+    <a href="/2021/02/20/springboot/Spring-Core/basic/solid/" class="article-date">
        <time datetime="2021-02-20T05:16:17.000Z" itemprop="datePublished">2021-02-20</time>
     </a>
   </div>
@@ -185,8 +186,8 @@
 
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
-  <a href="/2021/02/20/solid/" class="article-date">
-     <time datetime="2021-02-20T09:34:52.100Z" itemprop="dateModified">2021-02-20</time>
+  <a href="/2021/02/20/springboot/Spring-Core/basic/solid/" class="article-date">
+     <time datetime="2021-02-20T09:37:52.954Z" itemprop="dateModified">2021-02-20</time>
   </a>
 </div>
 
@@ -194,6 +195,11 @@
                 
 
                 
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Spring-Core/" rel="tag">Spring Core</a>
+    </div>
+
                 
 
                 
@@ -208,32 +214,17 @@
 
             
 
-            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"<ol>
-<li>SRP(Single Responsibility Principle) - 단일 책임 원칙</li>
-</ol>
-<p>한 클래스는 하나의 책임(역할)만 가져야 한다.</p>
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"<h2 id="1-SRP-Single-Responsibility-Principle-단일-책임-원칙"><a href="#1-SRP-Single-Responsibility-Principle-단일-책임-원칙" class="headerlink" title="1. SRP(Single Responsibility Principle) - 단일 책임 원칙"></a>1. SRP(Single Responsibility Principle) - 단일 책임 원칙</h2><p>한 클래스는 하나의 책임(역할)만 가져야 한다.</p>
 <blockquote>
-<p>역할의 분리라고 생각하면 편하다!<br>변경이 있을 때 파급 효과가 적으면 단일 책임 원칙을 잘 따르느 것 </p>
+<p>역할의 분리라고 생각하면 편하다!<br>변경이 있을 때 파급 효과가 적으면 단일 책임 원칙을 잘 따르는 것 </p>
 </blockquote>
-<ol start="2">
-<li>OCP(Open Close Principle) - 개방 폐쇄 원칙</li>
-</ol>
-<p>확장에는 열려 있으나 변경에는 닫혀 있어야 한다.</p>
-<ol start="3">
-<li>LSP(The Liskov Substitution Principle) - 라스코프 치환 원칙</li>
-</ol>
-<p>프로그램의 객체는 프로그램의 정확성을 깨뜨리지 않으면서 하위 타입의 인스턴스로 바꿀 수 있어야 한다.</p>
+<h2 id="2-OCP-Open-Close-Principle-개방-폐쇄-원칙"><a href="#2-OCP-Open-Close-Principle-개방-폐쇄-원칙" class="headerlink" title="2. OCP(Open Close Principle) - 개방 폐쇄 원칙"></a>2. OCP(Open Close Principle) - 개방 폐쇄 원칙</h2><p>확장에는 열려 있으나 변경에는 닫혀 있어야 한다.</p>
+<h2 id="3-LSP-The-Liskov-Substitution-Principle-라스코프-치환-원칙"><a href="#3-LSP-The-Liskov-Substitution-Principle-라스코프-치환-원칙" class="headerlink" title="3. LSP(The Liskov Substitution Principle) - 라스코프 치환 원칙"></a>3. LSP(The Liskov Substitution Principle) - 라스코프 치환 원칙</h2><p>프로그램의 객체는 프로그램의 정확성을 깨뜨리지 않으면서 하위 타입의 인스턴스로 바꿀 수 있어야 한다.</p>
 <blockquote>
 <p>인터페이스 규약을 잘 지켜야 한다.</p>
 </blockquote>
-<ol start="4">
-<li>ISP(Interface Segregation Principle) - 인터페이스 분리 원칙</li>
-</ol>
-<p>하나의 범용 인터페이스보다 특정 클라이언트를 위한 여러 인터페이스가 좋다.</p>
-<ol start="5">
-<li>DIP(Dependency Inversion Principle) - 의존 관계 역전 원칙</li>
-</ol>
-<p>프로그래머는 추상화에 의존해야지, 구체화에 의존하면 안된다.<br>구현 클래스에 의존하지 않고, 인터페이스에 의존하라는 뜻이다.</p>
+<h2 id="4-ISP-Interface-Segregation-Principle-인터페이스-분리-원칙"><a href="#4-ISP-Interface-Segregation-Principle-인터페이스-분리-원칙" class="headerlink" title="4. ISP(Interface Segregation Principle) - 인터페이스 분리 원칙"></a>4. ISP(Interface Segregation Principle) - 인터페이스 분리 원칙</h2><p>하나의 범용 인터페이스보다 특정 클라이언트를 위한 여러 인터페이스가 좋다.</p>
+<h2 id="5-DIP-Dependency-Inversion-Principle-의존-관계-역전-원칙"><a href="#5-DIP-Dependency-Inversion-Principle-의존-관계-역전-원칙" class="headerlink" title="5. DIP(Dependency Inversion Principle) - 의존 관계 역전 원칙"></a>5. DIP(Dependency Inversion Principle) - 의존 관계 역전 원칙</h2><p>프로그래머는 추상화에 의존해야지, 구체화에 의존하면 안된다.<br>구현 클래스에 의존하지 않고, 인터페이스에 의존하라는 뜻이다.</p>
 <h2 id="스프링과-객체-지향-원칙"><a href="#스프링과-객체-지향-원칙" class="headerlink" title="스프링과 객체 지향 원칙"></a>스프링과 객체 지향 원칙</h2><p>스프링은 DI(Dependency Injection)과 DI 컨테이너를 통해 OCP와 DIP를 가능하게 지원한다.</p>
 <blockquote>
 <p>client의 코드 변경 없이 개발이 가능하다.</p>
@@ -250,7 +241,7 @@
 
 
 
-    <a data-url="http://example.com/2021/02/20/solid/" data-id="ckldj0lw00001ge8dhrdy5qan" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://example.com/2021/02/20/springboot/Spring-Core/basic/solid/" data-id="ckldj4ehk0041ph8db350bvkb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -320,26 +311,20 @@
             "@type": "Person",
             "name": "Arthes93"
         },
-        "headline": "객체지향 5대원칙 SOLID",
+        "headline": "스프링 핵심 원리 이해1 - 객체 지향 5원칙",
         "image": "http://example.com",
-        "keywords": "",
-        "genre": "",
+        "keywords": "Spring Core",
+        "genre": "Springboot Spring Core 스프링 핵심 원리 - 기본편",
         "datePublished": "2021-02-20",
         "dateCreated": "2021-02-20",
         "dateModified": "2021-02-20",
-        "url": "http://example.com/2021/02/20/solid/",
-        "description": "
-SRP(Single Responsibility Principle) - 단일 책임 원칙
+        "url": "http://example.com/2021/02/20/springboot/Spring-Core/basic/solid/",
+        "description": "1. SRP(Single Responsibility Principle) - 단일 책임 원칙한 클래스는 하나의 책임(역할)만 가져야 한다.
 
-한 클래스는 하나의 책임(역할)만 가져야 한다.
+역할의 분리라고 생각하면 편하다!변경이 있을 때 파급 효과가 적으면 단일 책임 원칙을 잘 따르는 것 
 
-역할의 분리라고 생각하면 편하다!변경이 있을 때 파급 효과가 적으면 단일 책임 원칙을 잘 따르느 것 
-
-
-OCP(Open Close Principle) - 개방 폐쇄 원칙
-
-확장에는 열려 있으나 변경에는 닫혀 있어야 한",
-        "wordCount": 182
+2. OCP(Open Close Principle) - 개방 폐쇄 원칙확장에는 열려 있으나 변경에는 닫혀 있어야 한",
+        "wordCount": 240
     }
 </script>
 
@@ -437,7 +422,7 @@ OCP(Open Close Principle) - 개방 폐쇄 원칙
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2021/02/20/solid/" class="thumbnail">
+                            <a href="/2021/02/20/springboot/Spring-Core/basic/solid/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -448,8 +433,8 @@ OCP(Open Close Principle) - 개방 폐쇄 원칙
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2021/02/20/solid/" class="title">객체지향 5대원칙 SOLID</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Springboot/">Springboot</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Springboot/Spring-Core/">Spring Core</a></p>
+                            <p class="item-title"><a href="/2021/02/20/springboot/Spring-Core/basic/solid/" class="title">스프링 핵심 원리 이해1 - 객체 지향 5원칙</a></p>
                             <p class="item-date"><time datetime="2021-02-20T05:16:17.000Z" itemprop="datePublished">2021-02-20</time></p>
                         </div>
                     </li>
@@ -523,7 +508,7 @@ OCP(Open Close Principle) - 개방 폐쇄 원칙
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Beakjoon/">Beakjoon</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Beakjoon/BFS/">BFS</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Beakjoon/DFS/">DFS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Beakjoon/%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC/">다익스트라</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Beakjoon/%EC%8B%9C%EB%AE%AC%EB%A0%88%EC%9D%B4%EC%85%98/">시뮬레이션</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/">JAVA</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/JPA/">JPA</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spring/">Spring</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Spring/Spring5-MVC/">Spring5 MVC</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/">Springboot</a><span class="category-list-count">57</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Core/">Spring Core</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Core/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B8%B0%EB%B3%B8%ED%8E%B8/">스프링 핵심 원리 - 기본편</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Framework/">Spring Framework</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Rest/">Spring Rest</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Rest/RESTful-Web-Services-%EA%B0%95%EC%9D%98/">RESTful Web Services 강의</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Security/">Spring Security</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Security/Form-login/">Form login</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Security/JWT/">JWT</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Security/Oauth2/">Oauth2</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Security/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%8B%9C%ED%81%90%EB%A6%AC%ED%8B%B0-%EA%B0%95%EC%9D%98/">스프링 시큐리티 강의</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/%EA%B0%95%EC%9D%98/">강의</a><span class="category-list-count">19</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/%EA%B0%95%EC%9D%98/%EB%A0%88%EC%8A%A4%ED%86%A0%EB%9E%91-%EC%98%88%EC%95%BD-%EC%82%AC%EC%9D%B4%ED%8A%B8/">레스토랑 예약 사이트</a><span class="category-list-count">19</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/%EA%B2%8C%EC%8B%9C%ED%8C%90-%EB%A7%8C%EB%93%A4%EA%B8%B0/">게시판 만들기</a><span class="category-list-count">14</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Beakjoon/">Beakjoon</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Beakjoon/BFS/">BFS</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Beakjoon/DFS/">DFS</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Beakjoon/%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC/">다익스트라</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Beakjoon/%EC%8B%9C%EB%AE%AC%EB%A0%88%EC%9D%B4%EC%85%98/">시뮬레이션</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/">JAVA</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/JPA/">JPA</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spring/">Spring</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Spring/Spring5-MVC/">Spring5 MVC</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/">Springboot</a><span class="category-list-count">58</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Core/">Spring Core</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Core/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B8%B0%EB%B3%B8%ED%8E%B8/">스프링 핵심 원리 - 기본편</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Framework/">Spring Framework</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Rest/">Spring Rest</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Rest/RESTful-Web-Services-%EA%B0%95%EC%9D%98/">RESTful Web Services 강의</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Security/">Spring Security</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Security/Form-login/">Form login</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Security/JWT/">JWT</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Security/Oauth2/">Oauth2</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Security/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%8B%9C%ED%81%90%EB%A6%AC%ED%8B%B0-%EA%B0%95%EC%9D%98/">스프링 시큐리티 강의</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/%EA%B0%95%EC%9D%98/">강의</a><span class="category-list-count">19</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/%EA%B0%95%EC%9D%98/%EB%A0%88%EC%8A%A4%ED%86%A0%EB%9E%91-%EC%98%88%EC%95%BD-%EC%82%AC%EC%9D%B4%ED%8A%B8/">레스토랑 예약 사이트</a><span class="category-list-count">19</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/%EA%B2%8C%EC%8B%9C%ED%8C%90-%EB%A7%8C%EB%93%A4%EA%B8%B0/">게시판 만들기</a><span class="category-list-count">14</span></li></ul></li></ul>
         </div>
     </div>
 
@@ -543,7 +528,7 @@ OCP(Open Close Principle) - 개방 폐쇄 원칙
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AutoConfiguration/" rel="tag">AutoConfiguration</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BFS/" rel="tag">BFS</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Beakjoon/" rel="tag">Beakjoon</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CRUD/" rel="tag">CRUD</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DFS/" rel="tag">DFS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Exception-Handling/" rel="tag">Exception Handling</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Form/" rel="tag">Form</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/" rel="tag">Github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP-Status-Code/" rel="tag">HTTP Status Code</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IoC-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/" rel="tag">IoC 컨테이너</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JPA/" rel="tag">JPA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JWT/" rel="tag">JWT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVC/" rel="tag">MVC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oauth2/" rel="tag">Oauth2</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Core/" rel="tag">Spring Core</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Framework/" rel="tag">Spring Framework</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Rest/" rel="tag">Spring Rest</a><span class="tag-list-count">22</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Security/" rel="tag">Spring Security</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Springboot/" rel="tag">Springboot</a><span class="tag-list-count">45</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/beakjoon/" rel="tag">beakjoon</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/error/" rel="tag">error</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jenkins/" rel="tag">jenkins</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/paging/" rel="tag">paging</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EA%B0%95%EC%9D%98/" rel="tag">강의</a><span class="tag-list-count">23</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC/" rel="tag">다익스트라</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%82%BC%EC%84%B1-%EA%B8%B0%EC%B6%9C/" rel="tag">삼성 기출</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%8B%9C%EB%AE%AC%EB%A0%88%EC%9D%B4%EC%85%98/" rel="tag">시뮬레이션</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-1/" rel="tag">틀렸습니다 1</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-2/" rel="tag">틀렸습니다 2</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-4/" rel="tag">틀렸습니다 4</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-5/" rel="tag">틀렸습니다 5</a><span class="tag-list-count">2</span></li></ul>
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AutoConfiguration/" rel="tag">AutoConfiguration</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BFS/" rel="tag">BFS</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Beakjoon/" rel="tag">Beakjoon</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CRUD/" rel="tag">CRUD</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DFS/" rel="tag">DFS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Exception-Handling/" rel="tag">Exception Handling</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Form/" rel="tag">Form</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/" rel="tag">Github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP-Status-Code/" rel="tag">HTTP Status Code</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IoC-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/" rel="tag">IoC 컨테이너</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JPA/" rel="tag">JPA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JWT/" rel="tag">JWT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVC/" rel="tag">MVC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oauth2/" rel="tag">Oauth2</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Core/" rel="tag">Spring Core</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Framework/" rel="tag">Spring Framework</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Rest/" rel="tag">Spring Rest</a><span class="tag-list-count">22</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Security/" rel="tag">Spring Security</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Springboot/" rel="tag">Springboot</a><span class="tag-list-count">45</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/beakjoon/" rel="tag">beakjoon</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/error/" rel="tag">error</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jenkins/" rel="tag">jenkins</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/paging/" rel="tag">paging</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EA%B0%95%EC%9D%98/" rel="tag">강의</a><span class="tag-list-count">23</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC/" rel="tag">다익스트라</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%82%BC%EC%84%B1-%EA%B8%B0%EC%B6%9C/" rel="tag">삼성 기출</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%8B%9C%EB%AE%AC%EB%A0%88%EC%9D%B4%EC%85%98/" rel="tag">시뮬레이션</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-1/" rel="tag">틀렸습니다 1</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-2/" rel="tag">틀렸습니다 2</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-4/" rel="tag">틀렸습니다 4</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-5/" rel="tag">틀렸습니다 5</a><span class="tag-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -553,7 +538,7 @@ OCP(Open Close Principle) - 개방 폐쇄 원칙
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/AutoConfiguration/" style="font-size: 14.17px;">AutoConfiguration</a> <a href="/tags/BFS/" style="font-size: 13.33px;">BFS</a> <a href="/tags/Beakjoon/" style="font-size: 13.33px;">Beakjoon</a> <a href="/tags/C/" style="font-size: 10.83px;">C++</a> <a href="/tags/CRUD/" style="font-size: 16.67px;">CRUD</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/Exception-Handling/" style="font-size: 10.83px;">Exception Handling</a> <a href="/tags/Form/" style="font-size: 12.5px;">Form</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/HTTP-Status-Code/" style="font-size: 17.5px;">HTTP Status Code</a> <a href="/tags/IoC-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/" style="font-size: 10.83px;">IoC 컨테이너</a> <a href="/tags/JPA/" style="font-size: 10.83px;">JPA</a> <a href="/tags/JWT/" style="font-size: 10px;">JWT</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/Oauth2/" style="font-size: 11.67px;">Oauth2</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Spring-Core/" style="font-size: 11.67px;">Spring Core</a> <a href="/tags/Spring-Framework/" style="font-size: 15.83px;">Spring Framework</a> <a href="/tags/Spring-Rest/" style="font-size: 18.33px;">Spring Rest</a> <a href="/tags/Spring-Security/" style="font-size: 15px;">Spring Security</a> <a href="/tags/Springboot/" style="font-size: 20px;">Springboot</a> <a href="/tags/beakjoon/" style="font-size: 10.83px;">beakjoon</a> <a href="/tags/error/" style="font-size: 10px;">error</a> <a href="/tags/jenkins/" style="font-size: 10px;">jenkins</a> <a href="/tags/paging/" style="font-size: 10px;">paging</a> <a href="/tags/%EA%B0%95%EC%9D%98/" style="font-size: 19.17px;">강의</a> <a href="/tags/%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC/" style="font-size: 10px;">다익스트라</a> <a href="/tags/%EC%82%BC%EC%84%B1-%EA%B8%B0%EC%B6%9C/" style="font-size: 10.83px;">삼성 기출</a> <a href="/tags/%EC%8B%9C%EB%AE%AC%EB%A0%88%EC%9D%B4%EC%85%98/" style="font-size: 10.83px;">시뮬레이션</a> <a href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-1/" style="font-size: 10px;">틀렸습니다 1</a> <a href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-2/" style="font-size: 10.83px;">틀렸습니다 2</a> <a href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-4/" style="font-size: 10px;">틀렸습니다 4</a> <a href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-5/" style="font-size: 10.83px;">틀렸습니다 5</a>
+            <a href="/tags/AutoConfiguration/" style="font-size: 14.17px;">AutoConfiguration</a> <a href="/tags/BFS/" style="font-size: 13.33px;">BFS</a> <a href="/tags/Beakjoon/" style="font-size: 13.33px;">Beakjoon</a> <a href="/tags/C/" style="font-size: 10.83px;">C++</a> <a href="/tags/CRUD/" style="font-size: 16.67px;">CRUD</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/Exception-Handling/" style="font-size: 10.83px;">Exception Handling</a> <a href="/tags/Form/" style="font-size: 12.5px;">Form</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/HTTP-Status-Code/" style="font-size: 17.5px;">HTTP Status Code</a> <a href="/tags/IoC-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/" style="font-size: 10.83px;">IoC 컨테이너</a> <a href="/tags/JPA/" style="font-size: 10.83px;">JPA</a> <a href="/tags/JWT/" style="font-size: 10px;">JWT</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/Oauth2/" style="font-size: 11.67px;">Oauth2</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Spring-Core/" style="font-size: 12.5px;">Spring Core</a> <a href="/tags/Spring-Framework/" style="font-size: 15.83px;">Spring Framework</a> <a href="/tags/Spring-Rest/" style="font-size: 18.33px;">Spring Rest</a> <a href="/tags/Spring-Security/" style="font-size: 15px;">Spring Security</a> <a href="/tags/Springboot/" style="font-size: 20px;">Springboot</a> <a href="/tags/beakjoon/" style="font-size: 10.83px;">beakjoon</a> <a href="/tags/error/" style="font-size: 10px;">error</a> <a href="/tags/jenkins/" style="font-size: 10px;">jenkins</a> <a href="/tags/paging/" style="font-size: 10px;">paging</a> <a href="/tags/%EA%B0%95%EC%9D%98/" style="font-size: 19.17px;">강의</a> <a href="/tags/%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC/" style="font-size: 10px;">다익스트라</a> <a href="/tags/%EC%82%BC%EC%84%B1-%EA%B8%B0%EC%B6%9C/" style="font-size: 10.83px;">삼성 기출</a> <a href="/tags/%EC%8B%9C%EB%AE%AC%EB%A0%88%EC%9D%B4%EC%85%98/" style="font-size: 10.83px;">시뮬레이션</a> <a href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-1/" style="font-size: 10px;">틀렸습니다 1</a> <a href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-2/" style="font-size: 10.83px;">틀렸습니다 2</a> <a href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-4/" style="font-size: 10px;">틀렸습니다 4</a> <a href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-5/" style="font-size: 10.83px;">틀렸습니다 5</a>
         </div>
     </div>
 
@@ -612,7 +597,7 @@ OCP(Open Close Principle) - 개방 폐쇄 원칙
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://example.com/2021/02/20/solid/';
+    var disqus_url = 'http://example.com/2021/02/20/springboot/Spring-Core/basic/solid/';
     
     (function() {
     var dsq = document.createElement('script');

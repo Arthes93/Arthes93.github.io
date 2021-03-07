@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="google" content="notranslate">
+
+
+    
+ 
+    <title>SQL - DDL DML DCL | Victor</title>
+    
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    
+    <meta name="keywords" content="" />
+     <meta property="og:type" content="article">
+<meta property="og:title" content="SQL - DDL DML DCL">
+<meta property="og:url" content="http://example.com/2021/03/06/computer-science/database/SQL/ddl-dml-dcl/index.html">
+<meta property="og:site_name" content="Victor">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/sql/ddl-dml-dcl.png">
+<meta property="article:published_time" content="2021-03-05T16:21:23.000Z">
+<meta property="article:modified_time" content="2021-03-07T15:37:51.945Z">
+<meta property="article:author" content="Arthes93">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/sql/ddl-dml-dcl.png">   
+    <link rel="icon" href="/css/images/favicon/favicon.ico" />
+     
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+ 
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+ 
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+ 
+<link rel="stylesheet" href="/css/style.css">
+ 
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+ 
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+
+    
+
+    <link rel="stylesheet" type="text/css" href="">
+    
+<link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">
+	
+    
+<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  <meta name="generator" content="Hexo 5.3.0"></head>
+</html>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">느리더라도 꾸준히 끈기있게 그리고 확실히</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/">Algorithm</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/Beakjoon/">Beakjoon</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Computer-Science/">Computer Science</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Computer-Science/DataBase/">DataBase</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Computer-Science/Network/">Network</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Computer-Science/OS/">OS</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/JAVA/">JAVA</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/JAVA/JPA/">JPA</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Spring/">Spring</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Spring/Spring5-MVC/">Spring5 MVC</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Springboot/">Springboot</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Springboot/Spring-Core/">Spring Core</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Springboot/Spring-Framework/">Spring Framework</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Springboot/Spring-Rest/">Spring Rest</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Springboot/Spring-Security/">Spring Security</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Springboot/%EA%B0%95%EC%9D%98/">강의</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Springboot/%EA%B2%8C%EC%8B%9C%ED%8C%90-%EB%A7%8C%EB%93%A4%EA%B8%B0/">게시판 만들기</a></li></ul></li></ul>
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Computer-Science/">Computer Science</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Computer-Science/DataBase/">DataBase</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Computer-Science/DataBase/SQL/">SQL</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-computer-science/database/SQL/ddl-dml-dcl" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        SQL - DDL DML DCL
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2021/03/06/computer-science/database/SQL/ddl-dml-dcl/" class="article-date">
+       <time datetime="2021-03-05T16:21:23.000Z" itemprop="datePublished">2021-03-06</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2021/03/06/computer-science/database/SQL/ddl-dml-dcl/" class="article-date">
+     <time datetime="2021-03-07T15:37:51.945Z" itemprop="dateModified">2021-03-08</time>
+  </a>
+</div>
+
+
+                
+
+                
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+
+            
+
+            
+
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"<p><a href="/images/sql/ddl-dml-dcl.png" class="gallery-item"><img src="/images/sql/ddl-dml-dcl.png"></a></p>
+<h1 id="DDL-DML-DCL"><a href="#DDL-DML-DCL" class="headerlink" title="DDL DML DCL"></a>DDL DML DCL</h1><h2 id="DDL"><a href="#DDL" class="headerlink" title="DDL"></a>DDL</h2><blockquote>
+<p>데이터 베이스 스키마를 정의하기 하거나 조작하기 위한 명령어</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>명령어</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CREATE</td>
+<td>데이터 베이스, 테이블을 생성하기 위한 명령어</td>
+</tr>
+<tr>
+<td>ALTER</td>
+<td>테이블을 수정하기 위한 명령어</td>
+</tr>
+<tr>
+<td>DROP</td>
+<td>데이터베이스, 테이블을 삭제하기 위한 명령어</td>
+</tr>
+<tr>
+<td>RENAME</td>
+<td></td>
+</tr>
+<tr>
+<td>TRUNCATE</td>
+<td>데이터베이스를 초기화 시키기 위한 명령어</td>
+</tr>
+</tbody></table>
+<h2 id="DML"><a href="#DML" class="headerlink" title="DML"></a>DML</h2><blockquote>
+<p>데이터 베이스에 저장된 데이터를 조회, 수정, 삽입, 삭제하기 위한 언어</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>명령어</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SELECT</td>
+<td>데이터를 조회 하기 위한 명령어</td>
+</tr>
+<tr>
+<td>INSERT</td>
+<td>데이터를 삽입하기 위한 명령어</td>
+</tr>
+<tr>
+<td>UPDATE</td>
+<td>데이터를 수정하기 위한 명령어</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>데이터를 삭제하기 위한 명령어</td>
+</tr>
+</tbody></table>
+<h2 id="DCL"><a href="#DCL" class="headerlink" title="DCL"></a>DCL</h2><blockquote>
+<p>데이터 베이스에 접근하거나 객체에 권한을 주는 역할을 하는 언어</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>명령어</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>GRANT</td>
+<td>데이터 베이스 사용자에게 특정 작업에 대한 권한을 주기 위한 명령어</td>
+</tr>
+<tr>
+<td>REVOKE</td>
+<td>데이터 베이스 사용자에게 특정 작업에 대한 권한을 회수, 박탈 하기 위한 명령어</td>
+</tr>
+<tr>
+<td>COMMIT</td>
+<td>트랜잭션 작업 결과를 반영하기 위한 명령어</td>
+</tr>
+<tr>
+<td>ROLLBACK</td>
+<td>트랜잭션 작업을 취소 및 원래대로 복구하기 위한 명령어</td>
+</tr>
+</tbody></table>
+</div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script>
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://example.com/2021/03/06/computer-science/database/SQL/ddl-dml-dcl/" data-id="cklzftc4o004npy8d0wknhql4" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Arthes93"
+        },
+        "headline": "SQL - DDL DML DCL",
+        "image": "http://example.com/images/sql/ddl-dml-dcl.png",
+        "keywords": "",
+        "genre": "Computer Science DataBase SQL",
+        "datePublished": "2021-03-06",
+        "dateCreated": "2021-03-06",
+        "dateModified": "2021-03-08",
+        "url": "http://example.com/2021/03/06/computer-science/database/SQL/ddl-dml-dcl/",
+        "description": "
+DDL DML DCLDDL
+데이터 베이스 스키마를 정의하기 하거나 조작하기 위한 명령어
+
+
+
+
+명령어
+설명
+
+
+
+CREATE
+데이터 베이스, 테이블을 생성하기 위한 명령어
+
+
+ALTER
+테이블을 수정하기 위한 명령어
+
+
+DROP
+데이터베이스, 테이블을 삭제하기 위한 명령어
+
+
+RENAME
+
+
+
+TRUNCATE
+데이터베이스를 초기화 시키기 위한 명령어
+
+
+",
+        "wordCount": 169
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/Arthes93" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    <div class="github-card" data-github="Arthes93" data-width="" data-height="" data-theme="default"></div>
+    <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2021/03/06/computer-science/database/SQL/search/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            테이블에서 데이터 검색
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2021/03/06/computer-science/database/SQL/ACID/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">트랜잭션과 ACID</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/03/08/computer-science/os/memory-management/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Computer-Science/">Computer Science</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Computer-Science/OS/">OS</a></p>
+                            <p class="item-title"><a href="/2021/03/08/computer-science/os/memory-management/" class="title">메모리 관리</a></p>
+                            <p class="item-date"><time datetime="2021-03-07T15:16:13.000Z" itemprop="datePublished">2021-03-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/03/07/computer-science/network/TCP/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/computer-science/network/tcp_layer.png)" alt="TCP" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Computer-Science/">Computer Science</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Computer-Science/Network/">Network</a></p>
+                            <p class="item-title"><a href="/2021/03/07/computer-science/network/TCP/" class="title">TCP</a></p>
+                            <p class="item-date"><time datetime="2021-03-07T14:21:17.000Z" itemprop="datePublished">2021-03-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/03/07/computer-science/network/cloud/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/computer-science/network/cloud-service-type.jpeg)" alt="클라우드 서비스" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Computer-Science/">Computer Science</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Computer-Science/Network/">Network</a></p>
+                            <p class="item-title"><a href="/2021/03/07/computer-science/network/cloud/" class="title">클라우드 서비스</a></p>
+                            <p class="item-date"><time datetime="2021-03-07T14:16:32.000Z" itemprop="datePublished">2021-03-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/03/07/springboot/web-socket/springboot-chat-1/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/03/07/springboot/web-socket/springboot-chat-1/" class="title">Spring Boot WebSocket - 채팅 만들기 1</a></p>
+                            <p class="item-date"><time datetime="2021-03-07T12:32:48.000Z" itemprop="datePublished">2021-03-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/03/06/springboot/sample-board/board-22-logging/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/springboot/sample-board/logback/logback.jpg)" alt="스프링부트를 이용한 게시판 만들기 22 - Log4jdbc를 이용해 Query 로그 기록하기" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Springboot/">Springboot</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Springboot/%EA%B2%8C%EC%8B%9C%ED%8C%90-%EB%A7%8C%EB%93%A4%EA%B8%B0/">게시판 만들기</a></p>
+                            <p class="item-title"><a href="/2021/03/06/springboot/sample-board/board-22-logging/" class="title">스프링부트를 이용한 게시판 만들기 22 - Log4jdbc를 이용해 Query 로그 기록하기</a></p>
+                            <p class="item-date"><time datetime="2021-03-06T12:59:57.000Z" itemprop="datePublished">2021-03-06</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Beakjoon/">Beakjoon</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Beakjoon/DFS/">DFS</a><span class="category-list-count">8</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Computer-Science/">Computer Science</a><span class="category-list-count">12</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Computer-Science/DataBase/">DataBase</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Computer-Science/DataBase/SQL/">SQL</a><span class="category-list-count">9</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Computer-Science/Network/">Network</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Computer-Science/OS/">OS</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/">JAVA</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/JPA/">JPA</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spring/">Spring</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Spring/Spring5-MVC/">Spring5 MVC</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/">Springboot</a><span class="category-list-count">68</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Core/">Spring Core</a><span class="category-list-count">6</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Core/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B8%B0%EB%B3%B8%ED%8E%B8/">스프링 핵심 원리 - 기본편</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Framework/">Spring Framework</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Rest/">Spring Rest</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Rest/RESTful-Web-Services-%EA%B0%95%EC%9D%98/">RESTful Web Services 강의</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Security/">Spring Security</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Security/Form-login/">Form login</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Security/JWT/">JWT</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Security/Oauth2/">Oauth2</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Security/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%8B%9C%ED%81%90%EB%A6%AC%ED%8B%B0-%EA%B0%95%EC%9D%98/">스프링 시큐리티 강의</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/%EA%B0%95%EC%9D%98/">강의</a><span class="category-list-count">19</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/%EA%B0%95%EC%9D%98/%EB%A0%88%EC%8A%A4%ED%86%A0%EB%9E%91-%EC%98%88%EC%95%BD-%EC%82%AC%EC%9D%B4%ED%8A%B8/">레스토랑 예약 사이트</a><span class="category-list-count">19</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/%EA%B2%8C%EC%8B%9C%ED%8C%90-%EB%A7%8C%EB%93%A4%EA%B8%B0/">게시판 만들기</a><span class="category-list-count">22</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a><span class="archive-list-count">65</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a><span class="archive-list-count">5</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AutoConfiguration/" rel="tag">AutoConfiguration</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BFS/" rel="tag">BFS</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Beakjoon/" rel="tag">Beakjoon</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CRUD/" rel="tag">CRUD</a><span class="tag-list-count">22</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DFS/" rel="tag">DFS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Exception-Handling/" rel="tag">Exception Handling</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Form/" rel="tag">Form</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/" rel="tag">Github</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github-Action/" rel="tag">Github Action</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP-Status-Code/" rel="tag">HTTP Status Code</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IoC-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/" rel="tag">IoC 컨테이너</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JPA/" rel="tag">JPA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JWT/" rel="tag">JWT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jenkins/" rel="tag">Jenkins</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Logging/" rel="tag">Logging</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVC/" rel="tag">MVC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oauth2/" rel="tag">Oauth2</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Core/" rel="tag">Spring Core</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Framework/" rel="tag">Spring Framework</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Rest/" rel="tag">Spring Rest</a><span class="tag-list-count">22</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Security/" rel="tag">Spring Security</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Springboot/" rel="tag">Springboot</a><span class="tag-list-count">53</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/beakjoon/" rel="tag">beakjoon</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/error/" rel="tag">error</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/" rel="tag">nginx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/paging/" rel="tag">paging</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/properties/" rel="tag">properties</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EA%B0%95%EC%9D%98/" rel="tag">강의</a><span class="tag-list-count">23</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC/" rel="tag">다익스트라</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%82%BC%EC%84%B1-%EA%B8%B0%EC%B6%9C/" rel="tag">삼성 기출</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%8B%9C%EB%AE%AC%EB%A0%88%EC%9D%B4%EC%85%98/" rel="tag">시뮬레이션</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-1/" rel="tag">틀렸습니다 1</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-2/" rel="tag">틀렸습니다 2</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-4/" rel="tag">틀렸습니다 4</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-5/" rel="tag">틀렸습니다 5</a><span class="tag-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/AutoConfiguration/" style="font-size: 14.55px;">AutoConfiguration</a> <a href="/tags/BFS/" style="font-size: 13.64px;">BFS</a> <a href="/tags/Beakjoon/" style="font-size: 13.64px;">Beakjoon</a> <a href="/tags/C/" style="font-size: 10.91px;">C++</a> <a href="/tags/CRUD/" style="font-size: 18.18px;">CRUD</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/Exception-Handling/" style="font-size: 10.91px;">Exception Handling</a> <a href="/tags/Form/" style="font-size: 12.73px;">Form</a> <a href="/tags/Github/" style="font-size: 10.91px;">Github</a> <a href="/tags/Github-Action/" style="font-size: 10px;">Github Action</a> <a href="/tags/HTTP-Status-Code/" style="font-size: 17.27px;">HTTP Status Code</a> <a href="/tags/IoC-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/" style="font-size: 10.91px;">IoC 컨테이너</a> <a href="/tags/JPA/" style="font-size: 10.91px;">JPA</a> <a href="/tags/JWT/" style="font-size: 10px;">JWT</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Jenkins/" style="font-size: 11.82px;">Jenkins</a> <a href="/tags/Logging/" style="font-size: 10px;">Logging</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/Oauth2/" style="font-size: 11.82px;">Oauth2</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Spring-Core/" style="font-size: 13.64px;">Spring Core</a> <a href="/tags/Spring-Framework/" style="font-size: 16.36px;">Spring Framework</a> <a href="/tags/Spring-Rest/" style="font-size: 18.18px;">Spring Rest</a> <a href="/tags/Spring-Security/" style="font-size: 15.45px;">Spring Security</a> <a href="/tags/Springboot/" style="font-size: 20px;">Springboot</a> <a href="/tags/beakjoon/" style="font-size: 10.91px;">beakjoon</a> <a href="/tags/error/" style="font-size: 10px;">error</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/paging/" style="font-size: 10px;">paging</a> <a href="/tags/properties/" style="font-size: 10.91px;">properties</a> <a href="/tags/%EA%B0%95%EC%9D%98/" style="font-size: 19.09px;">강의</a> <a href="/tags/%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC/" style="font-size: 10px;">다익스트라</a> <a href="/tags/%EC%82%BC%EC%84%B1-%EA%B8%B0%EC%B6%9C/" style="font-size: 10.91px;">삼성 기출</a> <a href="/tags/%EC%8B%9C%EB%AE%AC%EB%A0%88%EC%9D%B4%EC%85%98/" style="font-size: 10.91px;">시뮬레이션</a> <a href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-1/" style="font-size: 10px;">틀렸습니다 1</a> <a href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-2/" style="font-size: 10.91px;">틀렸습니다 2</a> <a href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-4/" style="font-size: 10px;">틀렸습니다 4</a> <a href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-5/" style="font-size: 10.91px;">틀렸습니다 5</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2021 Arthes93</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://example.com/2021/03/06/computer-science/database/SQL/ddl-dml-dcl/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+</body>
+</html>

@@ -7,7 +7,7 @@
 
     
  
-    <title>OAuth2를 이용한 로그인 구현 이해하기 | Victor</title>
+    <title>OAuth2를 이용한 로그인 구현 이해하기 | Hexo</title>
     
     <meta
       name="viewport"
@@ -15,22 +15,22 @@
     />
     
     <meta name="keywords" content="Springboot,Spring Security,Oauth2" />
-     <meta property="og:type" content="article">
+     <meta name="description" content="OAuth2를 이용한 로그인 구현 이해하기OAuth란?OAuth란 Open Authorization의 약자이며 사용자 인증을 대신해서 해주고 Client에게 Access Token을 발급해 사용자 Resource에 대한 접근 권한(Authorization)을 제공하는 방법이다. OAuth가 등장하기 이전에는 각 사이트 별로 사용자 Id와 Password를">
+<meta property="og:type" content="article">
 <meta property="og:title" content="OAuth2를 이용한 로그인 구현 이해하기">
 <meta property="og:url" content="http://example.com/2021/01/29/springboot/security/OAuth2/oauth2/index.html">
-<meta property="og:site_name" content="Victor">
-<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="OAuth2를 이용한 로그인 구현 이해하기OAuth란?OAuth란 Open Authorization의 약자이며 사용자 인증을 대신해서 해주고 Client에게 Access Token을 발급해 사용자 Resource에 대한 접근 권한(Authorization)을 제공하는 방법이다. OAuth가 등장하기 이전에는 각 사이트 별로 사용자 Id와 Password를">
+<meta property="og:locale" content="ko_KR">
 <meta property="og:image" content="http://example.com/images/springboot/security/OAuth2/oauth2-scenario.png">
 <meta property="article:published_time" content="2021-01-29T11:47:30.000Z">
-<meta property="article:modified_time" content="2021-03-03T15:11:10.901Z">
-<meta property="article:author" content="Arthes93">
+<meta property="article:modified_time" content="2021-03-08T13:05:29.309Z">
+<meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Springboot">
 <meta property="article:tag" content="Spring Security">
 <meta property="article:tag" content="Oauth2">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/springboot/security/OAuth2/oauth2-scenario.png">   
-    <link rel="icon" href="/css/images/favicon/favicon.ico" />
-     
+<meta name="twitter:image" content="http://example.com/images/springboot/security/OAuth2/oauth2-scenario.png">    
 <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
  
 <link rel="stylesheet" href="/libs/titillium-web/styles.css">
@@ -56,19 +56,6 @@
     
 
 
-
-    
-
-    <link rel="stylesheet" type="text/css" href="">
-    
-<link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">
-	
-    
-<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
-
-    
-<link rel="stylesheet" href="/css/style.css">
-
   <meta name="generator" content="Hexo 5.3.0"></head>
 </html>
 
@@ -83,10 +70,6 @@
                         <a href="/" class="logo"></a>
                     </h1>
                     
-                        <h2 class="subtitle-wrap">
-                            <p class="subtitle">느리더라도 꾸준히 끈기있게 그리고 확실히</p>
-                        </h2>
-                    
                 </div>
                 <div id="header-inner" class="nav-container">
                     <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
@@ -94,13 +77,13 @@
                         <ul id="main-nav">
                             
                                 <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="/">Home</a>
+                                    <a class="main-nav-list-link" href="/">홈</a>
                                 </li>
                             
                                     <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/">Algorithm</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/Beakjoon/">Beakjoon</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Computer-Science/">Computer Science</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Computer-Science/DataBase/">DataBase</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Computer-Science/Network/">Network</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Computer-Science/OS/">OS</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/JAVA/">JAVA</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/JAVA/JPA/">JPA</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Spring/">Spring</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Spring/Spring5-MVC/">Spring5 MVC</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Springboot/">Springboot</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Springboot/Spring-Core/">Spring Core</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Springboot/Spring-Framework/">Spring Framework</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Springboot/Spring-Rest/">Spring Rest</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Springboot/Spring-Security/">Spring Security</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Springboot/%EA%B0%95%EC%9D%98/">강의</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Springboot/%EA%B2%8C%EC%8B%9C%ED%8C%90-%EB%A7%8C%EB%93%A4%EA%B8%B0/">게시판 만들기</a></li></ul></li></ul>
                                 
                                 <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                    <a class="main-nav-list-link" href="/about/index.html">내 정보</a>
                                 </li>
                             
                         </ul>
@@ -108,14 +91,14 @@
                             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="검색" />
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <input type="text" class="ins-search-input" placeholder="찾고자 하는 포스트를 검색하세요." />
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -127,10 +110,10 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: 'Posts',
-            PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
+            POSTS: '포스트',
+            PAGES: '페이지',
+            CATEGORIES: '카테고리',
+            TAGS: '태그',
             UNTITLED: '(Untitled)',
         },
         ROOT_URL: '/',
@@ -191,7 +174,7 @@
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
   <a href="/2021/01/29/springboot/security/OAuth2/oauth2/" class="article-date">
-     <time datetime="2021-03-03T15:11:10.901Z" itemprop="dateModified">2021-03-04</time>
+     <time datetime="2021-03-08T13:05:29.309Z" itemprop="dateModified">2021-03-08</time>
   </a>
 </div>
 
@@ -218,7 +201,7 @@
 
             
 
-            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"<p><a href="/images/springboot/security/OAuth2/oauth2-scenario.png" class="gallery-item"><img src="/images/springboot/security/OAuth2/oauth2-scenario.png"></a></p>
+            <p><img src="/images/springboot/security/OAuth2/oauth2-scenario.png"></p>
 <h1 id="OAuth2를-이용한-로그인-구현-이해하기"><a href="#OAuth2를-이용한-로그인-구현-이해하기" class="headerlink" title="OAuth2를 이용한 로그인 구현 이해하기"></a>OAuth2를 이용한 로그인 구현 이해하기</h1><h2 id="OAuth란"><a href="#OAuth란" class="headerlink" title="OAuth란?"></a>OAuth란?</h2><p>OAuth란 Open Authorization의 약자이며 <strong>사용자 인증</strong>을 대신해서 해주고 Client에게 <strong>Access Token</strong>을 발급해 <strong>사용자 Resource</strong>에 대한 접근 권한(Authorization)을 제공하는 방법이다.</p>
 <p>OAuth가 등장하기 이전에는 각 사이트 별로 사용자 Id와 Password를 입력해 인증을 하고 정보를 저장하는 방식이였다. 때문에 사용자 입장에서는 본인의 Id와 Password를 각 사이트에 등록해야 한다는 신뢰성 적인 문제와 각 사이트에서는 사용자 정보를 관리하고 책임져야 하는 문제점이 있었다. 해당 문제를 해결하기 위해 등장한 방법이 OAuth 인증 방식이다.</p>
 <h2 id="OAuth2-사용하기"><a href="#OAuth2-사용하기" class="headerlink" title="OAuth2 사용하기"></a>OAuth2 사용하기</h2><p>Web Application을 기준으로 OAuth2를 사용하기 위한 방법은 크게 3가지가 있다.</p>
@@ -228,29 +211,43 @@
 <li>Client가 획득한 Autorization Code를 이용해 Access Token을 발급 받기</li>
 </ol>
 <h2 id="1-Resource-Server에-Application-등록하기"><a href="#1-Resource-Server에-Application-등록하기" class="headerlink" title="1. Resource Server에 Application 등록하기"></a>1. Resource Server에 Application 등록하기</h2><p>Resource Server에 Application을 등록하게 되면 <strong><em>Clinet Id</em></strong> 와 <strong><em>Client Secret</em></strong> 그리고 <strong><em>Authorized redirect URIs</em></strong> 를 받을 수 있다.</p>
-<p><a href="/images/springboot/security/OAuth2/oauth2-regist.png" class="gallery-item"><img src="/images/springboot/security/OAuth2/oauth2-regist.png"></a></p>
+<p><img src="/images/springboot/security/OAuth2/oauth2-regist.png"></p>
 <h2 id="2-Resource-Owner-인증-URI-Authorization-Code-가져오기"><a href="#2-Resource-Owner-인증-URI-Authorization-Code-가져오기" class="headerlink" title="2. Resource Owner 인증 URI(Authorization Code 가져오기)"></a>2. Resource Owner 인증 URI(Authorization Code 가져오기)</h2><p>Reousrce Owner가 OAuth 방식으로 Client에 사용자 인증을 시도하면 특정 URL로 리다이렉트를 진행한다. Client에서 Resource Server로 Redirect한 주소는 아래와 같다. </p>
 <p>사용자가 Resource Server ID와 Password를 이용해 인증을 마치게 되면 Client로 <strong>Authorization code</strong>가 전송된다.</p>
 <p><em>Redirect</em></p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?</span><br><span class="line"> response_type=code</span><br><span class="line"> &amp;client_id=406416755620-r1h48em5g68qqh34pq277o80sc9qpb05.apps.googleusercontent.com</span><br><span class="line"> &amp;scope=profile%20email</span><br><span class="line"> &amp;state=qc0AqQVml_2waASthQKINHS6vGvC2HbjdWKmfWBFSkk%3D</span><br><span class="line"> &amp;redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Flogin%2Foauth2%2Fcode%2Fgoogle</span><br><span class="line"> &amp;flowName=GeneralOAuthFlow</span><br></pre></td></tr></table></figure>
 <h3 id="Request-Parameter"><a href="#Request-Parameter" class="headerlink" title="Request Parameter"></a>Request Parameter</h3><ul>
-<li><code>response_type</code> : <strong>Google OAuth 2.0 End-Point</strong> 가 인증 코드를 반환하는지 여부를 결정한다.<ul>
+<li><code>response_type</code><ul>
+<li><strong>Google OAuth 2.0 End-Point</strong> 가 인증 코드를 반환하는지 여부를 결정한다.</li>
 <li>웹 서버 애플리케이션의 경우 매개 변수 값을 <strong>code</strong>로 설정(resource server가 <strong>authorization code</strong> 를 발행)</li>
 </ul>
 </li>
-<li><code>client_id</code> : Resource Server에서 Client에 발행해준 <strong>Id</strong></li>
-<li><code>scope</code> : client가 resource server에 <strong>필요한 리소스에 대한 access범위</strong> 를 지정한다.</li>
-<li><code>state</code> : 애플리케이션이 권한 요청과 권한 서버의 응답 사이의 상태를 유지하기 위해 사용하는 문자열 값을 지정합니다.</li>
-<li><code>redirect_uri</code> :  Oauth2를 이용해 Resource Server로부터 인증을 마친 사용가자 이동할 URI<ul>
+<li><code>client_id</code><ul>
+<li>Resource Server에서 Client에 발행해준 <strong>Id</strong></li>
+</ul>
+</li>
+<li><code>scope</code><ul>
+<li>client가 resource server에 <strong>필요한 리소스에 대한 access범위</strong> 를 지정한다.</li>
+</ul>
+</li>
+<li><code>state</code><ul>
+<li>애플리케이션이 권한 요청과 권한 서버의 응답 사이의 상태를 유지하기 위해 사용하는 문자열 값을 지정합니다.</li>
+</ul>
+</li>
+<li><code>redirect_uri</code><ul>
+<li>Oauth2를 이용해 Resource Server로부터 인증을 마친 사용가자 이동할 URI</li>
 <li>authorization code를 받기 위한 URI</li>
 </ul>
 </li>
-<li><code>flowName</code> : 무엇을 위한 접근인지 나타내기 위한 parameter</li>
+<li><code>flowName</code><ul>
+<li>무엇을 위한 접근인지 나타내기 위한 parameter</li>
+</ul>
+</li>
 </ul>
 <blockquote>
 <p>일반적인 redirect_uri는 <strong>{baseUrl}/login/oauth2/code/{registrationId}</strong> 의 형식을 띈다.<br>google의 경우 redirect_uri의 경우 <strong>localhost:8080/login/oauth2/code/google</strong> 이다.</p>
 </blockquote>
-<p><a href="/images/springboot/security/OAuth2/authorization-code2.png" class="gallery-item"><img src="/images/springboot/security/OAuth2/authorization-code2.png"></a></p>
+<p><img src="/images/springboot/security/OAuth2/authorization-code2.png"></p>
 <h2 id="3-Access-Token-획득하기"><a href="#3-Access-Token-획득하기" class="headerlink" title="3. Access Token 획득하기"></a>3. Access Token 획득하기</h2><p>Resource Server로부터  <strong>Access Token</strong>을 발급 받기 위한 요청으로 Resource Server로부터 받은 <strong>Authorization Code</strong>와 <strong>Client Id</strong>, <strong>Client Secret</strong>, <strong>Redirect URI</strong>를 parameter로 보낸다.</p>
 <p><em>서버측으로 Acces Token을 획득하기 위한 요청</em></p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">https://www.googleapis.com/oauth2/v4/token?</span><br><span class="line"> code=4/P7q7W91a-oMsCeLvIaQm6bTrgtp7</span><br><span class="line"> &amp;client_id=your_client_id</span><br><span class="line"> &amp;client_secret=your_client_secret</span><br><span class="line"> &amp;redirect_uri=https%3A//oauth2.example.com/code</span><br><span class="line"> &amp;grant_type=authorization_code</span><br></pre></td></tr></table></figure>
@@ -259,7 +256,7 @@
 <p>Resource Server로부터 <strong>Access Token</strong>을 받은 것을 확인할 수 있다.</p>
 <p><em>Resource Server로부터 Access Token획득</em></p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;access_token&quot;</span>: <span class="string">&quot;1/fFAGRNJru1FTz70BzhT3Zg&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;expires_in&quot;</span>: <span class="number">3920</span>,</span><br><span class="line">  <span class="attr">&quot;token_type&quot;</span>: <span class="string">&quot;Bearer&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;scope&quot;</span>: <span class="string">&quot;https://www.googleapis.com/auth/drive.metadata.readonly&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;refresh_token&quot;</span>: <span class="string">&quot;1//xEoDL4iW3cxlI7yDbSRFYNG01kVKM2C-259HOF2aQbI&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><a href="/images/springboot/security/OAuth2/Access_token.png" class="gallery-item"><img src="/images/springboot/security/OAuth2/Access_token.png"></a></p>
+<p><img src="/images/springboot/security/OAuth2/Access_token.png"></p>
 <hr>
 <h2 id="Google-Oauth2-인증-시나리오-살펴보기"><a href="#Google-Oauth2-인증-시나리오-살펴보기" class="headerlink" title="Google Oauth2 인증 시나리오 살펴보기"></a>Google Oauth2 인증 시나리오 살펴보기</h2><ol>
 <li>Web Server가 Google에 Access Token을 요청한다.</li>
@@ -269,16 +266,34 @@
 <li>구글에서 Access Token값을 반환한다.</li>
 <li>Access Token을 이용해 사용자의 profile과 같은 정보들을 가져온다.</li>
 </ol>
-<p><a href="/images/springboot/security/OAuth2/authorization-code.png" class="gallery-item"><img src="/images/springboot/security/OAuth2/authorization-code.png"></a></p>
+<p><img src="/images/springboot/security/OAuth2/authorization-code.png"></p>
 <h2 id="스프링에서-기본적으로-제공하는-OAuth2Provider"><a href="#스프링에서-기본적으로-제공하는-OAuth2Provider" class="headerlink" title="스프링에서 기본적으로 제공하는 OAuth2Provider"></a>스프링에서 기본적으로 제공하는 OAuth2Provider</h2><p><strong><em>Google</em></strong>, <strong><em>Facebook</em></strong>, <strong><em>Github</em></strong> 등을 통해 OAuth2인증하기 위한 기본적인 설정값들이 들어가 있다.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">enum</span> <span class="title">CommonOAuth2Provider</span> </span>&#123;</span><br><span class="line">	GOOGLE &#123;</span><br><span class="line">		<span class="meta">@Override</span></span><br><span class="line">		<span class="function"><span class="keyword">public</span> Builder <span class="title">getBuilder</span><span class="params">(String registrationId)</span> </span>&#123;</span><br><span class="line">			ClientRegistration.Builder builder = getBuilder(registrationId, ClientAuthenticationMethod.BASIC,</span><br><span class="line">					DEFAULT_REDIRECT_URL);</span><br><span class="line">			builder.scope(<span class="string">&quot;openid&quot;</span>, <span class="string">&quot;profile&quot;</span>, <span class="string">&quot;email&quot;</span>); </span><br><span class="line">			builder.authorizationUri(<span class="string">&quot;https://accounts.google.com/o/oauth2/v2/auth&quot;</span>);</span><br><span class="line">			builder.tokenUri(<span class="string">&quot;https://www.googleapis.com/oauth2/v4/token&quot;</span>);</span><br><span class="line">			builder.jwkSetUri(<span class="string">&quot;https://www.googleapis.com/oauth2/v3/certs&quot;</span>);</span><br><span class="line">			builder.issuerUri(<span class="string">&quot;https://accounts.google.com&quot;</span>);</span><br><span class="line">			builder.userInfoUri(<span class="string">&quot;https://www.googleapis.com/oauth2/v3/userinfo&quot;</span>);</span><br><span class="line">			builder.userNameAttributeName(IdTokenClaimNames.SUB);</span><br><span class="line">			builder.clientName(<span class="string">&quot;Google&quot;</span>);</span><br><span class="line">			<span class="keyword">return</span> builder;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String DEFAULT_REDIRECT_URL = <span class="string">&quot;&#123;baseUrl&#125;/&#123;action&#125;/oauth2/code/&#123;registrationId&#125;&quot;</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">protected</span> <span class="keyword">final</span> ClientRegistration.<span class="function">Builder <span class="title">getBuilder</span><span class="params">(String registrationId, ClientAuthenticationMethod method,</span></span></span><br><span class="line"><span class="function"><span class="params">			String redirectUri)</span> </span>&#123;</span><br><span class="line">		ClientRegistration.Builder builder = ClientRegistration.withRegistrationId(registrationId);</span><br><span class="line">		builder.clientAuthenticationMethod(method);</span><br><span class="line">		builder.authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE);</span><br><span class="line">		builder.redirectUri(redirectUri);</span><br><span class="line">		<span class="keyword">return</span> builder;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li><code>authorizationUri</code> : 인증을 진행하기 위해 사용하는 URI</li>
-<li><code>tokenUri</code> : Resource server로부터 access token을 받기 위해 사용하는 URI</li>
-<li><code>jwkSetUri</code> : token의 유효성(서명)을 확인할 수 있는 public key(JSON Web Key)를 받을 수 있는 URI</li>
-<li><code>userInfoUri</code> : Resource Server(ex. Google)로부터 사용자 정보를 가져오기 위한 URI</li>
-<li><code>userNameAttributeName</code> : Resource server가 제공하는 id값</li>
-<li><code>clientName</code> : Resource Server 이름(client Name을 사용할 때도 있다.)</li>
+<li><code>authorizationUri</code><ul>
+<li>인증을 진행하기 위해 사용하는 URI</li>
+</ul>
+</li>
+<li><code>tokenUri</code><ul>
+<li>Resource server로부터 access token을 받기 위해 사용하는 URI</li>
+</ul>
+</li>
+<li><code>jwkSetUri</code><ul>
+<li>token의 유효성(서명)을 확인할 수 있는 public key(JSON Web Key)를 받을 수 있는 URI</li>
+</ul>
+</li>
+<li><code>userInfoUri</code><ul>
+<li>Resource Server(ex. Google)로부터 사용자 정보를 가져오기 위한 URI</li>
+</ul>
+</li>
+<li><code>userNameAttributeName</code><ul>
+<li>Resource server가 제공하는 id값</li>
+</ul>
+</li>
+<li><code>clientName</code><ul>
+<li>Resource Server 이름(client Name을 사용할 때도 있다.)</li>
+</ul>
+</li>
 </ul>
 <h3 id="jwkSetUri의-URI로-접속"><a href="#jwkSetUri의-URI로-접속" class="headerlink" title="jwkSetUri의 URI로 접속"></a>jwkSetUri의 URI로 접속</h3><p><em><a target="_blank" rel="noopener" href="https://www.googleapis.com/oauth2/v3/certs">https://www.googleapis.com/oauth2/v3/certs</a></em></p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 20210131104458</span></span><br><span class="line"><span class="comment">// https://www.googleapis.com/oauth2/v3/certs</span></span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;keys&quot;</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">&quot;use&quot;</span>: <span class="string">&quot;sig&quot;</span>,</span><br><span class="line">      <span class="attr">&quot;kid&quot;</span>: <span class="string">&quot;eea1b1f42807a8cc136a03a3c16d29db8296daf0&quot;</span>,</span><br><span class="line">      <span class="attr">&quot;n&quot;</span>: <span class="string">&quot;0zNdxOgV5VIpoeAfj8TMEGRBFg-gaZWz94ePR1yxTKzScHakH4F4wcMEyL0vNE-yW_u4pOl9E-hAalPa2tFv4fCVNMMkmKwcf0gm9wNFWXGakVQ8wER4iUg33MyUGOWj2RGX1zlZxCdFoZRtshLx8xcpL3F5Hlh6m8MqIAowWtusTf5TtYMXFlPaWLQgRXvoOlLZ-muzEuutsZRu-agdOptnUiAZ74e8BgaKN8KNEZ2SqP6vE4w16mgGHQjEPUKz9exxcsnbLru6hZdTDvXbX9IduabyvHy8vQRZsqlE9lTiOOOC9jwh27TXsD05HAXmNYiR6voekzEvfS88vnot2Q&quot;</span>,</span><br><span class="line">      <span class="attr">&quot;e&quot;</span>: <span class="string">&quot;AQAB&quot;</span>,</span><br><span class="line">      <span class="attr">&quot;kty&quot;</span>: <span class="string">&quot;RSA&quot;</span>,</span><br><span class="line">      <span class="attr">&quot;alg&quot;</span>: <span class="string">&quot;RS256&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">&quot;n&quot;</span>: <span class="string">&quot;rKZ-1zdz_CoLekSynOtyWv6cPSSkV28Kb9kZZHyYL-yhkKnH_bHl8OpWiGxQiKP0ulLRIaq1IhSMetkZ8FfXH-iptIDu4lPb8gt0HQYkjcy3HoaKRXBw2F8fJQO4jQ-ufR4l-E0HRqwLywzdtAImNWmju3A4kx8s0iSGHGSHyE4EUdh5WKt-NMtfUPfB5v9_2bC-w6wH7zAEsI5nscMXnvz1u8w7g2_agyhKSK0D9OkJ02w3I4xLMlrtKEv2naoBGerWckKcQ1kBYUh6WASPdvTqX4pcAJi7Tg6jwQXIP1aEq0JU8C0zE3d33kaMoCN3SenIxpRczRzUHpbZ-gk5PQ&quot;</span>,</span><br><span class="line">      <span class="attr">&quot;e&quot;</span>: <span class="string">&quot;AQAB&quot;</span>,</span><br><span class="line">      <span class="attr">&quot;use&quot;</span>: <span class="string">&quot;sig&quot;</span>,</span><br><span class="line">      <span class="attr">&quot;kid&quot;</span>: <span class="string">&quot;03b2d22c2fecf873ed19e5b8cf704afb7e2ed4be&quot;</span>,</span><br><span class="line">      <span class="attr">&quot;kty&quot;</span>: <span class="string">&quot;RSA&quot;</span>,</span><br><span class="line">      <span class="attr">&quot;alg&quot;</span>: <span class="string">&quot;RS256&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -288,19 +303,14 @@
 <p><strong>sub</strong> 필드는 Google서비스에서 계정마다 부여하는 <strong>id</strong> 값이다.</p>
 </blockquote>
 <h2 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h2><p>Open-Id : <a target="_blank" rel="noopener" href="https://openid.net/specs/openid-connect-discovery-1_0.html">https://openid.net/specs/openid-connect-discovery-1_0.html</a><br>Oauth2 : <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/rfc6749">https://tools.ietf.org/html/rfc6749</a><br>구글 Oauth2 API : <a target="_blank" rel="noopener" href="https://developers.google.com/identity/protocols/oauth2">https://developers.google.com/identity/protocols/oauth2</a><br>생활코딩 Oauth2(구) : <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=y5nNX5w0eqc&amp;t=1s">https://www.youtube.com/watch?v=y5nNX5w0eqc&amp;t=1s</a><br>생활코딩 Oauth2 : <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=hm2r6LtUbk8&amp;list=PLuHgQVnccGMA4guyznDlykFJh28_R08Q-">https://www.youtube.com/watch?v=hm2r6LtUbk8&amp;list=PLuHgQVnccGMA4guyznDlykFJh28_R08Q-</a></p>
-</div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
-            selector: '.gallery-item'
-        };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
-        }</script>
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="http://example.com/2021/01/29/springboot/security/OAuth2/oauth2/" data-id="cklzftc5l006tpy8d4050by4x" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://example.com/2021/01/29/springboot/security/OAuth2/oauth2/" data-id="ckm0ujooq00p4fb8da1rpegcf" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -368,7 +378,7 @@
         "@type": "BlogPosting",
         "author": {
             "@type": "Person",
-            "name": "Arthes93"
+            "name": "John Doe"
         },
         "headline": "OAuth2를 이용한 로그인 구현 이해하기",
         "image": "http://example.com/images/springboot/security/OAuth2/oauth2-scenario.png",
@@ -376,12 +386,12 @@
         "genre": "Springboot Spring Security Oauth2",
         "datePublished": "2021-01-29",
         "dateCreated": "2021-01-29",
-        "dateModified": "2021-03-04",
+        "dateModified": "2021-03-08",
         "url": "http://example.com/2021/01/29/springboot/security/OAuth2/oauth2/",
         "description": "
 OAuth2를 이용한 로그인 구현 이해하기OAuth란?OAuth란 Open Authorization의 약자이며 사용자 인증을 대신해서 해주고 Client에게 Access Token을 발급해 사용자 Resource에 대한 접근 권한(Authorization)을 제공하는 방법이다.
 OAuth가 등장하기 이전에는 각 사이트 별로 사용자 Id와 Password를",
-        "wordCount": 1060
+        "wordCount": 965
     }
 </script>
 
@@ -405,7 +415,7 @@ OAuth가 등장하기 이전에는 각 사이트 별로 사용자 Id와 Password
                     <aside id="sidebar">
     <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
     <div class="sidebar-top">
-        <p>follow:</p>
+        <p>팔로우:</p>
         <ul class="social-links">
             
                 
@@ -418,14 +428,12 @@ OAuth가 등장하기 이전에는 각 사이트 별로 사용자 Id와 Password
             
         </ul>
     </div>
-    <div class="github-card" data-github="Arthes93" data-width="" data-height="" data-theme="default"></div>
-    <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
     
         
 <nav id="article-nav">
     
         <a href="/2021/02/01/springboot/security/OAuth2/oauth2-modeling-md/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
+        <strong class="article-nav-caption">신규</strong>
         <p class="article-nav-title">
         
             oauth2를 이용한 로그인 구현하기 - 1
@@ -436,7 +444,7 @@ OAuth가 등장하기 이전에는 각 사이트 별로 사용자 Id와 Password
     
     
         <a href="/2021/01/29/springboot/security/Form-Login/form-signup-md/" id="article-nav-older" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">older</strong>
+        <strong class="article-nav-caption">이전</strong>
         <p class="article-nav-title">Spring Security Form Login - 4. 회원가입 페이지 만들기</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
@@ -452,9 +460,29 @@ OAuth가 등장하기 이전에는 각 사이트 별로 사용자 Id와 Password
             
                 
     <div class="widget-wrap">
-        <h3 class="widget-title">recents</h3>
+        <h3 class="widget-title">최근 글</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/03/09/hello-world/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2021/03/09/hello-world/" class="title">Hello World</a></p>
+                            <p class="item-date"><time datetime="2021-03-08T16:43:59.246Z" itemprop="datePublished">2021-03-09</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -536,26 +564,6 @@ OAuth가 등장하기 이전에는 각 사이트 별로 사용자 Id와 Password
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2021/03/06/springboot/sample-board/board-22-logging/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/springboot/sample-board/logback/logback.jpg)" alt="스프링부트를 이용한 게시판 만들기 22 - Log4jdbc를 이용해 Query 로그 기록하기" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Springboot/">Springboot</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Springboot/%EA%B2%8C%EC%8B%9C%ED%8C%90-%EB%A7%8C%EB%93%A4%EA%B8%B0/">게시판 만들기</a></p>
-                            <p class="item-title"><a href="/2021/03/06/springboot/sample-board/board-22-logging/" class="title">스프링부트를 이용한 게시판 만들기 22 - Log4jdbc를 이용해 Query 로그 기록하기</a></p>
-                            <p class="item-date"><time datetime="2021-03-06T12:59:57.000Z" itemprop="datePublished">2021-03-06</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -563,9 +571,9 @@ OAuth가 등장하기 이전에는 각 사이트 별로 사용자 Id와 Password
             
                 
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">categories</h3>
+        <h3 class="widget-title">카테고리</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Beakjoon/">Beakjoon</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Beakjoon/DFS/">DFS</a><span class="category-list-count">8</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Computer-Science/">Computer Science</a><span class="category-list-count">12</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Computer-Science/DataBase/">DataBase</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Computer-Science/DataBase/SQL/">SQL</a><span class="category-list-count">9</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Computer-Science/Network/">Network</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Computer-Science/OS/">OS</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/">JAVA</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/JPA/">JPA</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spring/">Spring</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Spring/Spring5-MVC/">Spring5 MVC</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/">Springboot</a><span class="category-list-count">68</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Core/">Spring Core</a><span class="category-list-count">6</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Core/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B8%B0%EB%B3%B8%ED%8E%B8/">스프링 핵심 원리 - 기본편</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Framework/">Spring Framework</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Rest/">Spring Rest</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Rest/RESTful-Web-Services-%EA%B0%95%EC%9D%98/">RESTful Web Services 강의</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Security/">Spring Security</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Security/Form-login/">Form login</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Security/JWT/">JWT</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Security/Oauth2/">Oauth2</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Security/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%8B%9C%ED%81%90%EB%A6%AC%ED%8B%B0-%EA%B0%95%EC%9D%98/">스프링 시큐리티 강의</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/%EA%B0%95%EC%9D%98/">강의</a><span class="category-list-count">19</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/%EA%B0%95%EC%9D%98/%EB%A0%88%EC%8A%A4%ED%86%A0%EB%9E%91-%EC%98%88%EC%95%BD-%EC%82%AC%EC%9D%B4%ED%8A%B8/">레스토랑 예약 사이트</a><span class="category-list-count">19</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/%EA%B2%8C%EC%8B%9C%ED%8C%90-%EB%A7%8C%EB%93%A4%EA%B8%B0/">게시판 만들기</a><span class="category-list-count">22</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Beakjoon/">Beakjoon</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Beakjoon/DFS/">DFS</a><span class="category-list-count">8</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Computer-Science/">Computer Science</a><span class="category-list-count">12</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Computer-Science/DataBase/">DataBase</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Computer-Science/DataBase/SQL/">SQL</a><span class="category-list-count">9</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Computer-Science/Network/">Network</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Computer-Science/OS/">OS</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/">JAVA</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/JAVA/JPA/">JPA</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spring/">Spring</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Spring/Spring5-MVC/">Spring5 MVC</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/">Springboot</a><span class="category-list-count">69</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Core/">Spring Core</a><span class="category-list-count">6</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Core/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B8%B0%EB%B3%B8%ED%8E%B8/">스프링 핵심 원리 - 기본편</a><span class="category-list-count">4</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Framework/">Spring Framework</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Rest/">Spring Rest</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Rest/RESTful-Web-Services-%EA%B0%95%EC%9D%98/">RESTful Web Services 강의</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Security/">Spring Security</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Security/Form-login/">Form login</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Security/JWT/">JWT</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Security/Oauth2/">Oauth2</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/Spring-Security/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%8B%9C%ED%81%90%EB%A6%AC%ED%8B%B0-%EA%B0%95%EC%9D%98/">스프링 시큐리티 강의</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/%EA%B0%95%EC%9D%98/">강의</a><span class="category-list-count">19</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/%EA%B0%95%EC%9D%98/%EB%A0%88%EC%8A%A4%ED%86%A0%EB%9E%91-%EC%98%88%EC%95%BD-%EC%82%AC%EC%9D%B4%ED%8A%B8/">레스토랑 예약 사이트</a><span class="category-list-count">19</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Springboot/%EA%B2%8C%EC%8B%9C%ED%8C%90-%EB%A7%8C%EB%93%A4%EA%B8%B0/">게시판 만들기</a><span class="category-list-count">23</span></li></ul></li></ul>
         </div>
     </div>
 
@@ -573,9 +581,9 @@ OAuth가 등장하기 이전에는 각 사이트 별로 사용자 Id와 Password
             
                 
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">archives</h3>
+        <h3 class="widget-title">아카이브</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a><span class="archive-list-count">65</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a><span class="archive-list-count">5</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">3월 2021</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">2월 2021</a><span class="archive-list-count">66</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">1월 2021</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">1월 2020</a><span class="archive-list-count">5</span></li></ul>
         </div>
     </div>
 
@@ -583,9 +591,9 @@ OAuth가 등장하기 이전에는 각 사이트 별로 사용자 Id와 Password
             
                 
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">tags</h3>
+        <h3 class="widget-title">태그</h3>
         <div class="widget">
-            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AutoConfiguration/" rel="tag">AutoConfiguration</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BFS/" rel="tag">BFS</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Beakjoon/" rel="tag">Beakjoon</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CRUD/" rel="tag">CRUD</a><span class="tag-list-count">22</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DFS/" rel="tag">DFS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Exception-Handling/" rel="tag">Exception Handling</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Form/" rel="tag">Form</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/" rel="tag">Github</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github-Action/" rel="tag">Github Action</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP-Status-Code/" rel="tag">HTTP Status Code</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IoC-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/" rel="tag">IoC 컨테이너</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JPA/" rel="tag">JPA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JWT/" rel="tag">JWT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jenkins/" rel="tag">Jenkins</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Logging/" rel="tag">Logging</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVC/" rel="tag">MVC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oauth2/" rel="tag">Oauth2</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Core/" rel="tag">Spring Core</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Framework/" rel="tag">Spring Framework</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Rest/" rel="tag">Spring Rest</a><span class="tag-list-count">22</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Security/" rel="tag">Spring Security</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Springboot/" rel="tag">Springboot</a><span class="tag-list-count">53</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/beakjoon/" rel="tag">beakjoon</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/error/" rel="tag">error</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/" rel="tag">nginx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/paging/" rel="tag">paging</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/properties/" rel="tag">properties</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EA%B0%95%EC%9D%98/" rel="tag">강의</a><span class="tag-list-count">23</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC/" rel="tag">다익스트라</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%82%BC%EC%84%B1-%EA%B8%B0%EC%B6%9C/" rel="tag">삼성 기출</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%8B%9C%EB%AE%AC%EB%A0%88%EC%9D%B4%EC%85%98/" rel="tag">시뮬레이션</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-1/" rel="tag">틀렸습니다 1</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-2/" rel="tag">틀렸습니다 2</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-4/" rel="tag">틀렸습니다 4</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-5/" rel="tag">틀렸습니다 5</a><span class="tag-list-count">2</span></li></ul>
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AutoConfiguration/" rel="tag">AutoConfiguration</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BFS/" rel="tag">BFS</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Beakjoon/" rel="tag">Beakjoon</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CRUD/" rel="tag">CRUD</a><span class="tag-list-count">23</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DFS/" rel="tag">DFS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Exception-Handling/" rel="tag">Exception Handling</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Form/" rel="tag">Form</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/" rel="tag">Github</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github-Action/" rel="tag">Github Action</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP-Status-Code/" rel="tag">HTTP Status Code</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IoC-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/" rel="tag">IoC 컨테이너</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JPA/" rel="tag">JPA</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JWT/" rel="tag">JWT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jenkins/" rel="tag">Jenkins</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Logging/" rel="tag">Logging</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVC/" rel="tag">MVC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oauth2/" rel="tag">Oauth2</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Core/" rel="tag">Spring Core</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Framework/" rel="tag">Spring Framework</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Rest/" rel="tag">Spring Rest</a><span class="tag-list-count">22</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Security/" rel="tag">Spring Security</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Springboot/" rel="tag">Springboot</a><span class="tag-list-count">54</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/beakjoon/" rel="tag">beakjoon</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/error/" rel="tag">error</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jenkins/" rel="tag">jenkins</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/" rel="tag">nginx</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/paging/" rel="tag">paging</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/properties/" rel="tag">properties</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EA%B0%95%EC%9D%98/" rel="tag">강의</a><span class="tag-list-count">23</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC/" rel="tag">다익스트라</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%82%BC%EC%84%B1-%EA%B8%B0%EC%B6%9C/" rel="tag">삼성 기출</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%8B%9C%EB%AE%AC%EB%A0%88%EC%9D%B4%EC%85%98/" rel="tag">시뮬레이션</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-1/" rel="tag">틀렸습니다 1</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-2/" rel="tag">틀렸습니다 2</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-4/" rel="tag">틀렸습니다 4</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-5/" rel="tag">틀렸습니다 5</a><span class="tag-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -593,9 +601,9 @@ OAuth가 등장하기 이전에는 각 사이트 별로 사용자 Id와 Password
             
                 
     <div class="widget-wrap widget-float">
-        <h3 class="widget-title">tag cloud</h3>
+        <h3 class="widget-title">태그 클라우드</h3>
         <div class="widget tagcloud">
-            <a href="/tags/AutoConfiguration/" style="font-size: 14.55px;">AutoConfiguration</a> <a href="/tags/BFS/" style="font-size: 13.64px;">BFS</a> <a href="/tags/Beakjoon/" style="font-size: 13.64px;">Beakjoon</a> <a href="/tags/C/" style="font-size: 10.91px;">C++</a> <a href="/tags/CRUD/" style="font-size: 18.18px;">CRUD</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/Exception-Handling/" style="font-size: 10.91px;">Exception Handling</a> <a href="/tags/Form/" style="font-size: 12.73px;">Form</a> <a href="/tags/Github/" style="font-size: 10.91px;">Github</a> <a href="/tags/Github-Action/" style="font-size: 10px;">Github Action</a> <a href="/tags/HTTP-Status-Code/" style="font-size: 17.27px;">HTTP Status Code</a> <a href="/tags/IoC-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/" style="font-size: 10.91px;">IoC 컨테이너</a> <a href="/tags/JPA/" style="font-size: 10.91px;">JPA</a> <a href="/tags/JWT/" style="font-size: 10px;">JWT</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Jenkins/" style="font-size: 11.82px;">Jenkins</a> <a href="/tags/Logging/" style="font-size: 10px;">Logging</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/Oauth2/" style="font-size: 11.82px;">Oauth2</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Spring-Core/" style="font-size: 13.64px;">Spring Core</a> <a href="/tags/Spring-Framework/" style="font-size: 16.36px;">Spring Framework</a> <a href="/tags/Spring-Rest/" style="font-size: 18.18px;">Spring Rest</a> <a href="/tags/Spring-Security/" style="font-size: 15.45px;">Spring Security</a> <a href="/tags/Springboot/" style="font-size: 20px;">Springboot</a> <a href="/tags/beakjoon/" style="font-size: 10.91px;">beakjoon</a> <a href="/tags/error/" style="font-size: 10px;">error</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/paging/" style="font-size: 10px;">paging</a> <a href="/tags/properties/" style="font-size: 10.91px;">properties</a> <a href="/tags/%EA%B0%95%EC%9D%98/" style="font-size: 19.09px;">강의</a> <a href="/tags/%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC/" style="font-size: 10px;">다익스트라</a> <a href="/tags/%EC%82%BC%EC%84%B1-%EA%B8%B0%EC%B6%9C/" style="font-size: 10.91px;">삼성 기출</a> <a href="/tags/%EC%8B%9C%EB%AE%AC%EB%A0%88%EC%9D%B4%EC%85%98/" style="font-size: 10.91px;">시뮬레이션</a> <a href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-1/" style="font-size: 10px;">틀렸습니다 1</a> <a href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-2/" style="font-size: 10.91px;">틀렸습니다 2</a> <a href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-4/" style="font-size: 10px;">틀렸습니다 4</a> <a href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-5/" style="font-size: 10.91px;">틀렸습니다 5</a>
+            <a href="/tags/AutoConfiguration/" style="font-size: 14.55px;">AutoConfiguration</a> <a href="/tags/BFS/" style="font-size: 13.64px;">BFS</a> <a href="/tags/Beakjoon/" style="font-size: 13.64px;">Beakjoon</a> <a href="/tags/C/" style="font-size: 10.91px;">C++</a> <a href="/tags/CRUD/" style="font-size: 19.09px;">CRUD</a> <a href="/tags/DFS/" style="font-size: 10px;">DFS</a> <a href="/tags/Exception-Handling/" style="font-size: 10.91px;">Exception Handling</a> <a href="/tags/Form/" style="font-size: 12.73px;">Form</a> <a href="/tags/Github/" style="font-size: 11.82px;">Github</a> <a href="/tags/Github-Action/" style="font-size: 10px;">Github Action</a> <a href="/tags/HTTP-Status-Code/" style="font-size: 17.27px;">HTTP Status Code</a> <a href="/tags/IoC-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/" style="font-size: 10.91px;">IoC 컨테이너</a> <a href="/tags/JPA/" style="font-size: 10.91px;">JPA</a> <a href="/tags/JWT/" style="font-size: 10px;">JWT</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Jenkins/" style="font-size: 10.91px;">Jenkins</a> <a href="/tags/Logging/" style="font-size: 10px;">Logging</a> <a href="/tags/MVC/" style="font-size: 10px;">MVC</a> <a href="/tags/Oauth2/" style="font-size: 11.82px;">Oauth2</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Spring-Core/" style="font-size: 13.64px;">Spring Core</a> <a href="/tags/Spring-Framework/" style="font-size: 16.36px;">Spring Framework</a> <a href="/tags/Spring-Rest/" style="font-size: 18.18px;">Spring Rest</a> <a href="/tags/Spring-Security/" style="font-size: 15.45px;">Spring Security</a> <a href="/tags/Springboot/" style="font-size: 20px;">Springboot</a> <a href="/tags/beakjoon/" style="font-size: 10.91px;">beakjoon</a> <a href="/tags/error/" style="font-size: 10px;">error</a> <a href="/tags/jenkins/" style="font-size: 10px;">jenkins</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/paging/" style="font-size: 10px;">paging</a> <a href="/tags/properties/" style="font-size: 10.91px;">properties</a> <a href="/tags/%EA%B0%95%EC%9D%98/" style="font-size: 19.09px;">강의</a> <a href="/tags/%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC/" style="font-size: 10px;">다익스트라</a> <a href="/tags/%EC%82%BC%EC%84%B1-%EA%B8%B0%EC%B6%9C/" style="font-size: 10.91px;">삼성 기출</a> <a href="/tags/%EC%8B%9C%EB%AE%AC%EB%A0%88%EC%9D%B4%EC%85%98/" style="font-size: 10.91px;">시뮬레이션</a> <a href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-1/" style="font-size: 10px;">틀렸습니다 1</a> <a href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-2/" style="font-size: 10.91px;">틀렸습니다 2</a> <a href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-4/" style="font-size: 10px;">틀렸습니다 4</a> <a href="/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-5/" style="font-size: 10.91px;">틀렸습니다 5</a>
         </div>
     </div>
 
@@ -603,7 +611,7 @@ OAuth가 등장하기 이전에는 각 사이트 별로 사용자 Id와 Password
             
                 
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">links</h3>
+        <h3 class="widget-title">링크</h3>
         <div class="widget">
             <ul>
                 
@@ -632,7 +640,7 @@ OAuth가 등장하기 이전에는 각 사이트 별로 사용자 Id와 Password
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
                 </h1>
-                <p>&copy; 2021 Arthes93</p>
+                <p>&copy; 2021 John Doe</p>
                 
                 <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
                 

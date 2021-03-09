@@ -155,104 +155,6 @@
         <article class="article article-summary">
     <div class="article-summary-inner">
         
-        <a href="/2021/02/04/springboot/fastcampus-eatgo/eat-go4-exception/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/springboot/spring-boot-logo.png)" alt="레스토랑 예약 사이트 만들기 4 - 예외 처리" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://example.com/2021/02/04/springboot/fastcampus-eatgo/eat-go4-exception/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Springboot/">Springboot</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Springboot/%EA%B0%95%EC%9D%98/">강의</a>
-            </div>
-            <div class="date"><time datetime="2021-02-04T00:37:02.000Z" itemprop="datePublished">2021-02-04</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2021/02/04/springboot/fastcampus-eatgo/eat-go4-exception/">레스토랑 예약 사이트 만들기 4 - 예외 처리</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-없는 페이지 요청에 대한 예외처리123456789@Testpublic void 없는_페이지에대한_예외처리를_한다() throws Exception&#123;    given(restaurantService.getRestaurant(404L)).willThrow(new RestaurantNotFoundException(404L));    ResultActi
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2021/02/04/springboot/fastcampus-eatgo/eat-go-client/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/springboot/spring-boot-logo.png)" alt="레스토랑 예약 사이트 만들기 3" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://example.com/2021/02/04/springboot/fastcampus-eatgo/eat-go-client/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Springboot/">Springboot</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Springboot/%EA%B0%95%EC%9D%98/">강의</a>
-            </div>
-            <div class="date"><time datetime="2021-02-03T15:59:58.000Z" itemprop="datePublished">2021-02-04</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2021/02/04/springboot/fastcampus-eatgo/eat-go-client/">레스토랑 예약 사이트 만들기 3</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-123456789101112&lt;!DOCTYPE html&gt;&lt;html lang=&quot;ko&quot;&gt;&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;title&gt;Title&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;div id=&quot
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
         <a href="/2021/02/03/springboot/fastcampus-eatgo/2.%20menuitem/eat-go2-restaurant/" class="thumbnail">
     
     
@@ -654,6 +556,105 @@ address : 레스토랑의 위치
         </div>
     
 
+    
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2021/02/03/springboot/Rest-Api/RESTful-Web-Services/User-Service-Api/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/springboot/Rest-Api/RESTful-Web-Services/spring-boot-logo.png)" alt="Spring Boot를 이용한 RESTful Web Services 개발" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://example.com/2021/02/03/springboot/Rest-Api/RESTful-Web-Services/User-Service-Api/">0</span>
+    
+</span>
+
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Springboot/">Springboot</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Springboot/Spring-Rest/">Spring Rest</a>
+            </div>
+            <div class="date"><time datetime="2021-02-02T15:04:00.000Z" itemprop="datePublished">2021-02-03</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2021/02/03/springboot/Rest-Api/RESTful-Web-Services/User-Service-Api/">Spring Boot를 이용한 RESTful Web Services 개발</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            
+User 도메인 클래스 생성12345678@Data@AllArgsConstructor@NoArgsConstructorpublic class User &#123;    private Integer id;    private String name;    private Date joinDate;&#125;
+서비스 클래스 생성12345678910111213141
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2021/02/02/springboot/Rest-Api/RESTful-Web-Services/RESTful-Web-Services/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/springboot/Rest-Api/RESTful-Web-Services/spring-boot-logo.png)" alt="Spring Boot를 이용한 RESTful Web Services 개발 - User Service API 구현" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://example.com/2021/02/02/springboot/Rest-Api/RESTful-Web-Services/RESTful-Web-Services/">0</span>
+    
+</span>
+
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Springboot/">Springboot</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Springboot/Spring-Rest/">Spring Rest</a>
+            </div>
+            <div class="date"><time datetime="2021-02-02T14:47:05.000Z" itemprop="datePublished">2021-02-02</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2021/02/02/springboot/Rest-Api/RESTful-Web-Services/RESTful-Web-Services/">Spring Boot를 이용한 RESTful Web Services 개발 - User Service API 구현</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            
+12345678910111213141516171819@RestControllerpublic class HelloWorldController &#123;    @GetMapping(&quot;/hello-world&quot;)    public String Hello()&#123;        return &quot;Hello World&quot;;    
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
 
     </div></section>
 
@@ -694,26 +695,6 @@ address : 레스토랑의 위치
         <h3 class="widget-title">최근 글</h3>
         <div class="widget">
             <ul id="recent-post" class="">
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2021/03/09/hello-world/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2021/03/09/hello-world/" class="title">Hello World</a></p>
-                            <p class="item-date"><time datetime="2021-03-08T16:43:59.246Z" itemprop="datePublished">2021-03-09</time></p>
-                        </div>
-                    </li>
                 
                     <li>
                         
@@ -778,10 +759,10 @@ address : 레스토랑의 위치
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2021/03/07/springboot/web-socket/springboot-chat-1/" class="thumbnail">
+                            <a href="/2021/03/06/springboot/sample-board/board-22-logging/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/images/springboot/sample-board/logback/logback.jpg)" alt="스프링부트를 이용한 게시판 만들기 22 - Log4jdbc를 이용해 Query 로그 기록하기" class="thumbnail-image"></span>
     
     
 </a>
@@ -789,9 +770,29 @@ address : 레스토랑의 위치
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2021/03/07/springboot/web-socket/springboot-chat-1/" class="title">Spring Boot WebSocket - 채팅 만들기 1</a></p>
-                            <p class="item-date"><time datetime="2021-03-07T12:32:48.000Z" itemprop="datePublished">2021-03-07</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Springboot/">Springboot</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Springboot/%EA%B2%8C%EC%8B%9C%ED%8C%90-%EB%A7%8C%EB%93%A4%EA%B8%B0/">게시판 만들기</a></p>
+                            <p class="item-title"><a href="/2021/03/06/springboot/sample-board/board-22-logging/" class="title">스프링부트를 이용한 게시판 만들기 22 - Log4jdbc를 이용해 Query 로그 기록하기</a></p>
+                            <p class="item-date"><time datetime="2021-03-06T12:59:57.000Z" itemprop="datePublished">2021-03-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/03/06/springboot/sample-board/board-21-github-action/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/springboot/sample-board/github-action/github-action.png)" alt="스프링부트를 이용한 게시판 만들기 21 - Github Action 사용하기" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Springboot/">Springboot</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Springboot/%EA%B2%8C%EC%8B%9C%ED%8C%90-%EB%A7%8C%EB%93%A4%EA%B8%B0/">게시판 만들기</a></p>
+                            <p class="item-title"><a href="/2021/03/06/springboot/sample-board/board-21-github-action/" class="title">스프링부트를 이용한 게시판 만들기 21 - Github Action 사용하기</a></p>
+                            <p class="item-date"><time datetime="2021-03-06T05:12:05.000Z" itemprop="datePublished">2021-03-06</time></p>
                         </div>
                     </li>
                 
@@ -814,7 +815,7 @@ address : 레스토랑의 위치
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">아카이브</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">3월 2021</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">2월 2021</a><span class="archive-list-count">66</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">1월 2021</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">1월 2020</a><span class="archive-list-count">5</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">3월 2021</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">2월 2021</a><span class="archive-list-count">66</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">1월 2021</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">1월 2020</a><span class="archive-list-count">5</span></li></ul>
         </div>
     </div>
 

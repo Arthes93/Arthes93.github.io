@@ -7,7 +7,7 @@
 
     
  
-    <title>태그: jenkins | Hexo</title>
+    <title>태그: Jenkins | Hexo</title>
     
     <meta
       name="viewport"
@@ -15,7 +15,7 @@
     />
      <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/tags/jenkins/index.html">
+<meta property="og:url" content="http://example.com/tags/Jenkins/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="ko_KR">
 <meta property="article:author" content="John Doe">
@@ -131,7 +131,7 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-tag"></i>태그: <em>jenkins</em>
+    <i class="icon fa fa-tag"></i>태그: <em>Jenkins</em>
     </h1>
 </div>
 
@@ -155,17 +155,17 @@
         <article class="article article-summary">
     <div class="article-summary-inner">
         
-        <a href="/2021/02/14/springboot/sample-board/board-13-jenkins/" class="thumbnail">
+        <a href="/2021/03/02/springboot/sample-board/board-20-jenkins-deploy/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/springboot/sample-board/jenkins/jenkins-main.png)" alt="스프링부트를 이용한 게시판 만들기 13 - jenkins를 이용해 build 하기" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/springboot/sample-board/jenkins-deploy/jenkins-management.png)" alt="스프링부트를 이용한 게시판 만들기 20 - 젠킨스를 이용해 배포하기" class="thumbnail-image"></span>
     
     
         
 <span class="comment-counter">
     <i class="fa fa-comments-o"></i>
     
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://example.com/2021/02/14/springboot/sample-board/board-13-jenkins/">0</span>
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://example.com/2021/03/02/springboot/sample-board/board-20-jenkins-deploy/">0</span>
     
 </span>
 
@@ -178,21 +178,83 @@
             <div class="category">
             <a class="article-category-link" href="/categories/Springboot/">Springboot</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Springboot/%EA%B2%8C%EC%8B%9C%ED%8C%90-%EB%A7%8C%EB%93%A4%EA%B8%B0/">게시판 만들기</a>
             </div>
-            <div class="date"><time datetime="2021-02-14T03:11:40.000Z" itemprop="datePublished">2021-02-14</time></div>
+            <div class="date"><time datetime="2021-03-01T15:13:12.000Z" itemprop="datePublished">2021-03-02</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2021/02/14/springboot/sample-board/board-13-jenkins/">스프링부트를 이용한 게시판 만들기 13 - jenkins를 이용해 build 하기</a>
+        <a href="/2021/03/02/springboot/sample-board/board-20-jenkins-deploy/">스프링부트를 이용한 게시판 만들기 20 - 젠킨스를 이용해 배포하기</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            20. 젠킨스를 이용해 배포하기플러그인 설치Jenkins 관리 &gt; 플러그인 관리
+
+Publish Over SSH를 설치해준다.
+
+
+원격 서버 접속 설정하기
+
+
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2021/02/14/springboot/sample-board/board-14-jenkins-plan/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/springboot/sample-board/jenkins-ci/new-project.png)" alt="스프링부트를 이용한 게시판 만들기 14 - Jenkins 프로젝트 만들기" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://example.com/2021/02/14/springboot/sample-board/board-14-jenkins-plan/">0</span>
+    
+</span>
+
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Springboot/">Springboot</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Springboot/%EA%B2%8C%EC%8B%9C%ED%8C%90-%EB%A7%8C%EB%93%A4%EA%B8%B0/">게시판 만들기</a>
+            </div>
+            <div class="date"><time datetime="2021-02-14T04:11:40.000Z" itemprop="datePublished">2021-02-14</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2021/02/14/springboot/sample-board/board-14-jenkins-plan/">스프링부트를 이용한 게시판 만들기 14 - Jenkins 프로젝트 만들기</a>
         </h1>
     
 
         <p class="article-excerpt">
             
-13. jenkins를 이용해 build하기jenkins를 로컬에 바로 설치해 사용해도 되지만 해당 프로젝트에서는 docker를 이용해 jenkins이미지를 불러와 빌드를 진행할 것이다.
-docker 설치하기도커는 https://docs.docker.com/get-docker/ 에서 본인 운영체제에 맞는 것을 선택해 다운로드 한다.
+14. Jenkins 프로젝트 만들기
+새 프로젝트 만들기
+소스 코드 관리
+소스 코드를 가져오기 위한 계정 추가하기
+빌드 유발 선택
+Build 선택하기
+프로젝트 확인
+프로젝트 build하기
+프로젝트 결과 확인
 
-본인이 사용하는 프로
+새 프로젝트 만들기create a Job &gt; FreeStyle project 를 선택해 새 프로젝트를 만든다.
+
+소스 코드 관리git을 선택한
         </p>
     </div>
 </article>
@@ -408,95 +470,6 @@ docker 설치하기도커는 https://docs.docker.com/get-docker/ 에서 본인 �
     <div class="container">
         <div class="container-inner">
             <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
-            <div class="credit">
-                <h1 class="logo-wrap">
-                    <a href="/" class="logo"></a>
-                </h1>
-                <p>&copy; 2021 John Doe</p>
-                
-                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
-                
-            </div>
-            <div class="footer-plugins">
-              
-    
-
-
-            </div>
-        </div>
-    </div>
-</footer>
-
-    </div>
-    
-    
-    <script>
-    var disqus_shortname = 'hexo-theme-hueman';
-    
-    
-    (function() {
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-    </script>
-
-
-
-
-
-    
-        
-<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-share.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-video.min.js"></script>
-
-    
-    
-        
-<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
-
-    
-    
-
-    
-    
-    
-
-
-
-<!-- Custom Scripts -->
-
-<script src="/js/main.js"></script>
-
-
-</body>
-</html>
-i></a>
             <div class="credit">
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>

@@ -22,15 +22,15 @@
 <meta property="og:site_name" content="Victor">
 <meta property="og:description" content="Spring properties 설정하기Spring Security에서 사용하는 기본적인 user정보를 등록한다. jpa를 사용하므로 관련 옵션도 추가해준다. application.yml123456789101112131415161718spring:  security:    user:      name: user      password: 1234  jpa">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/images/springboot/security/form-login.png">
+<meta property="og:image" content="http://example.com/images/springboot/security/Form-Login/form-login.png">
 <meta property="article:published_time" content="2021-01-27T18:54:27.000Z">
-<meta property="article:modified_time" content="2021-03-08T16:43:59.254Z">
+<meta property="article:modified_time" content="2021-03-10T23:09:20.286Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Springboot">
 <meta property="article:tag" content="Spring Security">
 <meta property="article:tag" content="Form">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/springboot/security/form-login.png">   
+<meta name="twitter:image" content="http://example.com/images/springboot/security/Form-Login/form-login.png">   
     <link rel="icon" href="/css/images/favicon/favicon.ico" />
      
 <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
@@ -189,7 +189,7 @@
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
   <a href="/2021/01/28/springboot/security/Form-Login/form-login-modeling/" class="article-date">
-     <time datetime="2021-03-08T16:43:59.254Z" itemprop="dateModified">2021-03-09</time>
+     <time datetime="2021-03-10T23:09:20.286Z" itemprop="dateModified">2021-03-11</time>
   </a>
 </div>
 
@@ -216,7 +216,7 @@
 
             
 
-            <p><img src="/images/springboot/security/form-login.png"></p>
+            <p><img src="/images/springboot/security/Form-Login/form-login.png"></p>
 <h2 id="Spring-properties-설정하기"><a href="#Spring-properties-설정하기" class="headerlink" title="Spring properties 설정하기"></a>Spring properties 설정하기</h2><p>Spring Security에서 사용하는 기본적인 user정보를 등록한다. jpa를 사용하므로 관련 옵션도 추가해준다.</p>
 <h3 id="application-yml"><a href="#application-yml" class="headerlink" title="application.yml"></a>application.yml</h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">security:</span></span><br><span class="line">    <span class="attr">user:</span></span><br><span class="line">      <span class="attr">name:</span> <span class="string">user</span></span><br><span class="line">      <span class="attr">password:</span> <span class="number">1234</span></span><br><span class="line">  <span class="attr">jpa:</span></span><br><span class="line">    <span class="attr">hibernate:</span></span><br><span class="line">      <span class="attr">ddl-auto:</span> <span class="string">create-drop</span></span><br><span class="line">    <span class="attr">properties:</span></span><br><span class="line">      <span class="attr">hibernate:</span></span><br><span class="line">        <span class="attr">show_sql:</span> <span class="literal">true</span></span><br><span class="line">        <span class="attr">format_sql:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">profiles:</span></span><br><span class="line">    <span class="attr">include:</span> <span class="string">mysql</span></span><br><span class="line"></span><br><span class="line"><span class="attr">logging:</span></span><br><span class="line">  <span class="attr">level:</span></span><br><span class="line">    <span class="attr">org.springframework.security:</span> <span class="string">DEBUG</span></span><br></pre></td></tr></table></figure>
 <h2 id="application-mysql-yml"><a href="#application-mysql-yml" class="headerlink" title="application-mysql.yml"></a>application-mysql.yml</h2><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">datasource:</span></span><br><span class="line">    <span class="attr">driver-class-name:</span> <span class="string">com.mysql.cj.jdbc.Driver</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">jdbc:mysql://localhost:3306/&#123;테이블명&#125;?serverTimezone=UTC&amp;characterEncoding=UTF-8</span></span><br><span class="line">    <span class="attr">username:</span> <span class="string">user_id</span></span><br><span class="line">    <span class="attr">password:</span> <span class="string">user_password</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">jpa:</span></span><br><span class="line">    <span class="attr">database:</span> <span class="string">mysql</span></span><br><span class="line">    <span class="attr">database-platform:</span> <span class="string">org.hibernate.dialect.MySQL5InnoDBDialect</span></span><br></pre></td></tr></table></figure>
@@ -231,7 +231,7 @@
 
 
 
-    <a data-url="http://example.com/2021/01/28/springboot/security/Form-Login/form-login-modeling/" data-id="ckm3qngef00fwj58d8affh47f" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://example.com/2021/01/28/springboot/security/Form-Login/form-login-modeling/" data-id="ckm421szt006qz18dcxbj0189" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -302,12 +302,12 @@
             "name": "John Doe"
         },
         "headline": "Spring Security Form Login - 1. 기본적인 모델 정의하기",
-        "image": "http://example.com/images/springboot/security/form-login.png",
+        "image": "http://example.com/images/springboot/security/Form-Login/form-login.png",
         "keywords": "Springboot Spring Security Form",
         "genre": "Springboot Spring Security Form login",
         "datePublished": "2021-01-28",
         "dateCreated": "2021-01-28",
-        "dateModified": "2021-03-09",
+        "dateModified": "2021-03-11",
         "url": "http://example.com/2021/01/28/springboot/security/Form-Login/form-login-modeling/",
         "description": "
 Spring properties 설정하기Spring Security에서 사용하는 기본적인 user정보를 등록한다. jpa를 사용하므로 관련 옵션도 추가해준다.

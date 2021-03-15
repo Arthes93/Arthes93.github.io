@@ -7,29 +7,29 @@
 
     
  
-    <title>스프링부트를 이용한 게시판 만들기 1 - 게시글 작성 페이지 | Victor</title>
+    <title>Spring-JWT(JSON Web Token) - 4. JWT 다루기 | Victor</title>
     
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1"
     />
     
-    <meta name="keywords" content="Spring Boot,CRUD" />
-     <meta name="description" content="1. 게시글 작성 페이지 만들기간단하게 게시글 제목, 사용자 이름, 게시글 내용 세가지만 입력 받는 폼을 만들 것이다. 게시글 작성페이지는 Bootstrap을 이용해 만들건데, BootsWatch의 Cosmo navbar가 마음에 들어 이것도 사용할 것이다.   먼저, Bootstrap 사이트에서 css, js, fonts를 다운 받고 BootsWatch">
+    <meta name="keywords" content="Spring Boot,JWT" />
+     <meta name="description" content="4. JWT 다루기JWT를 다루기 위한 Util Class만들기JwtUtil 객체는 Jwts.builder를 이용해 JWT를 생성하고 Jwts.parser를 이용해 Token을 JWT로 변환시켜 데이터를 가져오도록 한다. Jwts.builder(JwtBuilder) setHeader JWT의 Header에 대한 설정을 위한 메소드   setXXX setS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="스프링부트를 이용한 게시판 만들기 1 - 게시글 작성 페이지">
-<meta property="og:url" content="http://example.com/2021/02/11/springboot/sample-board/board-1-init/index.html">
+<meta property="og:title" content="Spring-JWT(JSON Web Token) - 4. JWT 다루기">
+<meta property="og:url" content="http://example.com/2021/03/15/springboot/security/JWT/spring-jwt-4/index.html">
 <meta property="og:site_name" content="Victor">
-<meta property="og:description" content="1. 게시글 작성 페이지 만들기간단하게 게시글 제목, 사용자 이름, 게시글 내용 세가지만 입력 받는 폼을 만들 것이다. 게시글 작성페이지는 Bootstrap을 이용해 만들건데, BootsWatch의 Cosmo navbar가 마음에 들어 이것도 사용할 것이다.   먼저, Bootstrap 사이트에서 css, js, fonts를 다운 받고 BootsWatch">
+<meta property="og:description" content="4. JWT 다루기JWT를 다루기 위한 Util Class만들기JwtUtil 객체는 Jwts.builder를 이용해 JWT를 생성하고 Jwts.parser를 이용해 Token을 JWT로 변환시켜 데이터를 가져오도록 한다. Jwts.builder(JwtBuilder) setHeader JWT의 Header에 대한 설정을 위한 메소드   setXXX setS">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/images/springboot/sample-board/board-post.png">
-<meta property="article:published_time" content="2021-02-11T07:53:15.000Z">
-<meta property="article:modified_time" content="2021-03-13T11:30:50.155Z">
+<meta property="og:image" content="http://example.com/images/springboot/security/JWT/JWT3.png">
+<meta property="article:published_time" content="2021-03-14T17:20:47.000Z">
+<meta property="article:modified_time" content="2021-03-15T03:29:10.164Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Spring Boot">
-<meta property="article:tag" content="CRUD">
+<meta property="article:tag" content="JWT">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/springboot/sample-board/board-post.png">   
+<meta name="twitter:image" content="http://example.com/images/springboot/security/JWT/JWT3.png">   
     <link rel="icon" href="/css/images/favicon/favicon.ico" />
      
 <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
@@ -156,19 +156,19 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Spring-Boot/">Spring Boot</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Spring-Boot/%EA%B2%8C%EC%8B%9C%ED%8C%90-%EB%A7%8C%EB%93%A4%EA%B8%B0/">게시판 만들기</a>
+    <a class="page-title-link" href="/categories/Spring-Boot/">Spring Boot</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Spring-Boot/Spring-Security/">Spring Security</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Spring-Boot/Spring-Security/JWT/">JWT</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-springboot/sample-board/board-1-init" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-springboot/security/JWT/spring-jwt-4" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        스프링부트를 이용한 게시판 만들기 1 - 게시글 작성 페이지
+        Spring-JWT(JSON Web Token) - 4. JWT 다루기
         </h1>
     
 
@@ -179,16 +179,16 @@
                 
   <div class="article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/2021/02/11/springboot/sample-board/board-1-init/" class="article-date">
-       <time datetime="2021-02-11T07:53:15.000Z" itemprop="datePublished">2021-02-11</time>
+    <a href="/2021/03/15/springboot/security/JWT/spring-jwt-4/" class="article-date">
+       <time datetime="2021-03-14T17:20:47.000Z" itemprop="datePublished">2021-03-15</time>
     </a>
   </div>
 
 
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
-  <a href="/2021/02/11/springboot/sample-board/board-1-init/" class="article-date">
-     <time datetime="2021-03-13T11:30:50.155Z" itemprop="dateModified">2021-03-13</time>
+  <a href="/2021/03/15/springboot/security/JWT/spring-jwt-4/" class="article-date">
+     <time datetime="2021-03-15T03:29:10.164Z" itemprop="dateModified">2021-03-15</time>
   </a>
 </div>
 
@@ -198,7 +198,7 @@
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link-link" href="/tags/CRUD/" rel="tag">CRUD</a>, <a class="tag-link-link" href="/tags/Spring-Boot/" rel="tag">Spring Boot</a>
+        <a class="tag-link-link" href="/tags/JWT/" rel="tag">JWT</a>, <a class="tag-link-link" href="/tags/Spring-Boot/" rel="tag">Spring Boot</a>
     </div>
 
                 
@@ -215,49 +215,73 @@
 
             
 
-            <p><img src="/images/springboot/sample-board/board-post.png"></p>
-<h2 id="1-게시글-작성-페이지-만들기"><a href="#1-게시글-작성-페이지-만들기" class="headerlink" title="1. 게시글 작성 페이지 만들기"></a>1. 게시글 작성 페이지 만들기</h2><p>간단하게 <strong><em>게시글 제목</em></strong>, <strong><em>사용자 이름</em></strong>, <strong><em>게시글 내용</em></strong> 세가지만 입력 받는 폼을 만들 것이다. 게시글 작성페이지는 <strong>Bootstrap</strong>을 이용해 만들건데, <strong>BootsWatch</strong>의 Cosmo navbar가 마음에 들어 이것도 사용할 것이다.  </p>
-<p>먼저, Bootstrap 사이트에서 <strong>css</strong>, <strong>js</strong>, <strong>fonts</strong>를 다운 받고 BootsWatch사이트 Cosmo 페이지에서 <strong>custom.min.css</strong>을 다운 받은 후 springboot 프로젝트내의 <code>resources/static</code>위치에 폴더들은 넣는다.</p>
-<p>Bootstrap 사이트 : <a target="_blank" rel="noopener" href="https://getbootstrap.com/docs/4.6/getting-started/introduction/">https://getbootstrap.com/docs/4.6/getting-started/introduction/</a><br>Bootswatch 사이트 : <a target="_blank" rel="noopener" href="https://bootswatch.com/">https://bootswatch.com/</a></p>
-<img src="/images/springboot/sample-board/board-resources.png" width="300px"  style="float:left;"/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
-
-<h2 id="Post-페이지"><a href="#Post-페이지" class="headerlink" title="Post 페이지"></a>Post 페이지</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;Content-Type&quot;</span> <span class="attr">content</span>=<span class="string">&quot;text/html; charset=UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;./css/bootstrap.css&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;./css/custom.min.css&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>게시글 작성 페이지<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">class</span>=<span class="string">&quot;bg-light&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">nav</span> <span class="attr">class</span>=<span class="string">&quot;navbar navbar-expand-lg navbar-dark bg-primary fixed-top&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">&quot;navbar-brand&quot;</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>게시판<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- &lt;div class=&quot;container bg-white&quot; style=&quot;padding: 20px; border-radius: 15px;&quot;&gt; --&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card col-lg-6&quot;</span> <span class="attr">style</span>=<span class="string">&quot;padding: 20px; border-radius: 15px; margin: 50px auto;&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">form</span> <span class="attr">class</span>=<span class="string">&quot; form-horizontal&quot;</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span> <span class="attr">onsubmit</span>=<span class="string">&quot;return registerBoard(this)&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;form-group&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">label</span>&gt;</span>제목<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-sm-12&quot;</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">class</span>=<span class="string">&quot;form-control&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;제목을 입력해 주세요.&quot;</span> /&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;form-group&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">label</span>&gt;</span>이름<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-sm-12&quot;</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">class</span>=<span class="string">&quot;form-control&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;이름을 입력해 주세요.&quot;</span> /&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;form-group&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">label</span>&gt;</span>내용<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-sm-12&quot;</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">class</span>=<span class="string">&quot;form-control&quot;</span> <span class="attr">style</span>=<span class="string">&quot;height: 300px;&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;내용을 입력해 주세요.&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;btn_wrap text-center&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-default waves-effect waves-light&quot;</span>&gt;</span>뒤로가기<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-primary waves-effect waves-light&quot;</span>&gt;</span>저장하기<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="스프링-프로젝트-만들기"><a href="#스프링-프로젝트-만들기" class="headerlink" title="스프링 프로젝트 만들기"></a>스프링 프로젝트 만들기</h2><p>게시판 만들기 프로젝트를 진행하면서 <strong>Thymeleaf</strong>라는 템플릿 엔진을 사용할 것이고, 총 7가지 의존성을 사용할 것이다.</p>
-<ul>
-<li>JPA</li>
-<li>Thymeleaf</li>
-<li>Web</li>
-<li>Lombok</li>
-<li>Devtools</li>
-<li>H2</li>
-<li>validation</li>
+            <p><img src="/images/springboot/security/JWT/JWT3.png"></p>
+<h1 id="4-JWT-다루기"><a href="#4-JWT-다루기" class="headerlink" title="4. JWT 다루기"></a>4. JWT 다루기</h1><h2 id="JWT를-다루기-위한-Util-Class만들기"><a href="#JWT를-다루기-위한-Util-Class만들기" class="headerlink" title="JWT를 다루기 위한 Util Class만들기"></a>JWT를 다루기 위한 Util Class만들기</h2><p>JwtUtil 객체는 <strong>Jwts.builder</strong>를 이용해 JWT를 생성하고 <strong>Jwts.parser</strong>를 이용해 Token을 JWT로 변환시켜 데이터를 가져오도록 한다.</p>
+<h4 id="Jwts-builder-JwtBuilder"><a href="#Jwts-builder-JwtBuilder" class="headerlink" title="Jwts.builder(JwtBuilder)"></a>Jwts.builder(JwtBuilder)</h4><ul>
+<li><strong>setHeader</strong><ul>
+<li>JWT의 Header에 대한 설정을 위한 메소드</li>
 </ul>
-<p>build.gradle</p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">    implementation <span class="string">&#x27;org.springframework.boot:spring-boot-starter-data-jpa&#x27;</span></span><br><span class="line">    implementation <span class="string">&#x27;org.springframework.boot:spring-boot-starter-thymeleaf&#x27;</span></span><br><span class="line">    implementation <span class="string">&#x27;org.springframework.boot:spring-boot-starter-web&#x27;</span></span><br><span class="line">    implementation <span class="string">&#x27;org.springframework.boot:spring-boot-starter-validation&#x27;</span></span><br><span class="line"></span><br><span class="line">    compileOnly <span class="string">&#x27;org.projectlombok:lombok&#x27;</span></span><br><span class="line">    developmentOnly <span class="string">&#x27;org.springframework.boot:spring-boot-devtools&#x27;</span></span><br><span class="line">    runtimeOnly <span class="string">&#x27;com.h2database:h2&#x27;</span></span><br><span class="line">    annotationProcessor <span class="string">&#x27;org.projectlombok:lombok&#x27;</span></span><br><span class="line">    testImplementation <span class="string">&#x27;org.springframework.boot:spring-boot-starter-test&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="게시글-작성-페이지로-이동하기"><a href="#게시글-작성-페이지로-이동하기" class="headerlink" title="게시글 작성 페이지로 이동하기"></a>게시글 작성 페이지로 이동하기</h2><p><code>/post</code>경로를 통해 요청이 들어오면 게시글을 작성하는 페이지로 이동시킬 예정이다.</p>
-<h2 id="테스트-코드-작성"><a href="#테스트-코드-작성" class="headerlink" title="테스트 코드 작성"></a>테스트 코드 작성</h2><p><code>/post</code>경로로 요청이 들어왔을 때 정상적으로 control이 작동하는 경우 <code>ok(status code : 200)</code>을 반환한다.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@WebMvcTest</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PostControllerTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    MockMvc mockMvc;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="meta">@DisplayName(&quot;게시글 작성페이지로 이동하는지 확인한다.&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">movePost</span><span class="params">()</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">        ResultActions resultActions = mockMvc.perform(get(<span class="string">&quot;/post&quot;</span>));</span><br><span class="line"></span><br><span class="line">        resultActions</span><br><span class="line">                .andExpect(status().isOk())</span><br><span class="line">                .andDo(print());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="control-구현"><a href="#control-구현" class="headerlink" title="control 구현"></a>control 구현</h2><p><code>/post</code>경로로 요청이 들어왔을 때 <strong>post.html</strong>을 반환해 사용자에게 게시글 작성 페이지를 보여준다.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PostController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/post&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">post</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;post&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><strong>setXXX</strong><ul>
+<li>setSubject, setExpiration, setIssuer, …</li>
+<li>Registed Payload는 각각에 해당하는 set 메소드들이 제공된다.</li>
+</ul>
+</li>
+<li><strong>setClaims</strong><ul>
+<li>JWT의 Claim 데이터를 추가하기 위한 메소드</li>
+</ul>
+</li>
+<li><strong>signWith</strong><ul>
+<li>Header와 Payload를 갖고 screteKey로 서명한다.</li>
+<li>암호화 알고리즘으로는 보통 <code>HMAC</code> or <code>RSA</code> 알고리즘을 사용한다.</li>
+</ul>
+</li>
+</ul>
+<h4 id="Jwts-parser-JwtParser"><a href="#Jwts-parser-JwtParser" class="headerlink" title="Jwts.parser(JwtParser)"></a>Jwts.parser(JwtParser)</h4><ul>
+<li><strong>setSigningKey</strong><ul>
+<li>데이터 위변조 확인을 위해 secretKey를 이용해 JWS에 대한 유효성 검증을 한다.</li>
+<li>secretKey를 이용한 검증 실패시 해당 JWT는 사용하지 못한다.</li>
+</ul>
+</li>
+<li><strong>parseClaimsJws</strong><ul>
+<li>token을 JWS로 파싱해준다.</li>
+</ul>
+</li>
+</ul>
+<p><em>JwtUtil.java</em></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JwtUtil</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String secretKey = <span class="string">&quot;ThisIsA_SecretKeyForJwtExample&quot;</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">generateToken</span><span class="params">(String username)</span> </span>&#123;</span><br><span class="line">        String JSONWebToken = Jwts.builder()</span><br><span class="line">                .setHeader(createHeader())</span><br><span class="line">                .setClaims(createClaims(username))</span><br><span class="line">                .setExpiration(createExpireDateForOneYear())</span><br><span class="line">                .signWith(SignatureAlgorithm.HS256, secretKey)</span><br><span class="line">                .compact();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> JSONWebToken;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> Map&lt;String, Object&gt; <span class="title">createHeader</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Map&lt;String, Object&gt; header = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        header.put(<span class="string">&quot;typ&quot;</span>, <span class="string">&quot;JWT&quot;</span>);</span><br><span class="line">        header.put(<span class="string">&quot;alg&quot;</span>, <span class="string">&quot;HS256&quot;</span>);</span><br><span class="line">        header.put(<span class="string">&quot;regDate&quot;</span>, System.currentTimeMillis());</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> header;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> Map&lt;String, Object&gt; <span class="title">createClaims</span><span class="params">(String username)</span> </span>&#123;</span><br><span class="line">        Map&lt;String, Object&gt; claims = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        claims.put(<span class="string">&quot;username&quot;</span>, username);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> Date <span class="title">createExpireDateForOneYear</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 토큰 만료시간은 30일으로 설정</span></span><br><span class="line">        Calendar calendar = Calendar.getInstance();</span><br><span class="line">        calendar.add(Calendar.DATE, <span class="number">30</span>);</span><br><span class="line">        <span class="keyword">return</span> calendar.getTime();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> Claims <span class="title">getAllClaims</span><span class="params">(String token)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Jwts.parser()</span><br><span class="line">                .setSigningKey(secretKey)</span><br><span class="line">                .parseClaimsJws(token)</span><br><span class="line">                .getBody();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getUsername</span><span class="params">(String token)</span> </span>&#123;</span><br><span class="line">        Claims claims = getAllClaims(token);</span><br><span class="line">        String username = claims.get(<span class="string">&quot;username&quot;</span>, String.class);</span><br><span class="line">        <span class="keyword">return</span> username;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Date <span class="title">getExpiration</span><span class="params">(String token)</span> </span>&#123;</span><br><span class="line">        Claims claims = getAllClaims(token);</span><br><span class="line">        <span class="keyword">return</span> claims.getExpiration();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Boolean <span class="title">validateToken</span><span class="params">(String token, UserDetails userDetails)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">final</span> String username = getUsername(token);</span><br><span class="line">        <span class="keyword">return</span> (username.equals(userDetails.getUsername()) &amp;&amp; !isTokenExpired(token));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> Boolean <span class="title">isTokenExpired</span><span class="params">(String token)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> getExpiration(token).before(<span class="keyword">new</span> Date());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="JWT를-이용한-인증을-위해-새로운-Filter정의하기"><a href="#JWT를-이용한-인증을-위해-새로운-Filter정의하기" class="headerlink" title="JWT를 이용한 인증을 위해 새로운 Filter정의하기"></a>JWT를 이용한 인증을 위해 새로운 Filter정의하기</h2><p><strong>OncePerRequestFilter</strong>를 상속 받아 JWT로 인증을 진행하는 JwtAuthenticationFilter를 생성한다.<br>JwtAuthenticationFilter에서는 요청이 들어왔을 때 Token이 있는지 확인하고 해당 Token을 이용해 인증을 진행한 후 AuthenticationToken을 생성해 SecurityContextHolder에 저장한다.</p>
+<ul>
+<li><code>UsernamePasswordAuthenticationToken</code><ul>
+<li>사용자의 Username과 Password를 이용하여 <strong>AuthenticationToken</strong>을 생성한다.</li>
+</ul>
+</li>
+</ul>
+<p><em>JwtAuthenticationFilter.java</em></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JwtAuthenticationFilter</span> <span class="keyword">extends</span> <span class="title">OncePerRequestFilter</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> Logger logger = LoggerFactory.getLogger(JwtAuthenticationFilter.class);</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> JwtUtil jwtUtil;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> CustomUserDetailsService service;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doFilterInternal</span><span class="params">(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="comment">// Http 요청이 들어왔을 때 header를 검사해 Authorization 값을 가져온다.</span></span><br><span class="line">        String authorizationHeader = request.getHeader(<span class="string">&quot;Authorization&quot;</span>);</span><br><span class="line"></span><br><span class="line">        String token = <span class="keyword">null</span>;</span><br><span class="line">        String username = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 인증 토큰을 받았을 경우</span></span><br><span class="line">        <span class="comment">// Bearer 토큰인지 확인한다.</span></span><br><span class="line">        <span class="keyword">if</span> (authorizationHeader != <span class="keyword">null</span> &amp;&amp; authorizationHeader.startsWith(<span class="string">&quot;Bearer &quot;</span>)) &#123;</span><br><span class="line">            token = authorizationHeader.substring(<span class="number">7</span>);</span><br><span class="line">            username = jwtUtil.extractUsername(token);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Bearer 토큰으로부터 추출한 username을 이용해</span></span><br><span class="line">        <span class="comment">// 해당 유저가 등록된 유저인지 검증한다.</span></span><br><span class="line">        <span class="keyword">if</span> (username != <span class="keyword">null</span> &amp;&amp; SecurityContextHolder.getContext().getAuthentication() == <span class="keyword">null</span>) &#123;</span><br><span class="line"></span><br><span class="line">            UserDetails userDetails = service.loadUserByUsername(username);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (jwtUtil.validateToken(token, userDetails)) &#123;</span><br><span class="line"></span><br><span class="line">                UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken =</span><br><span class="line">                        <span class="keyword">new</span> UsernamePasswordAuthenticationToken(userDetails, <span class="keyword">null</span>, userDetails.getAuthorities());</span><br><span class="line">                usernamePasswordAuthenticationToken</span><br><span class="line">                        .setDetails(<span class="keyword">new</span> WebAuthenticationDetailsSource().buildDetails(request));</span><br><span class="line">                SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        filterChain.doFilter(request, response);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="로그인을-위한-Controller-추가"><a href="#로그인을-위한-Controller-추가" class="headerlink" title="로그인을 위한 Controller 추가"></a>로그인을 위한 Controller 추가</h2><p>Username과 Password를 이용해 <code>/api/user/login</code> 경로로 인증을 시도하면 <strong>AuthenticationManager</strong> 객체를 이용해 인증을 진행하고 인증이 성공적으로 완료 되면 JWT를 생성해 Header에 JWT를 넣어 <strong>Status code : 200</strong>과 함께 반환한다.</p>
+<p><em>JwtController.java</em></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">....</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> AuthenticationManager authenticationManager;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> JwtUtil jwtUtil;</span><br><span class="line"></span><br><span class="line"><span class="meta">@PostMapping(&quot;/login&quot;)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> ResponseEntity <span class="title">login</span><span class="params">(<span class="meta">@RequestBody</span> AuthRequest authRequest)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    String username = authRequest.getUsername();</span><br><span class="line">    String password = authRequest.getPassword();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">// AuthnRequest로부터 받은 username과 password를 이용하여 UsernamePasswordAuthenticationToken을 생성한 후</span></span><br><span class="line">        <span class="comment">// 생성된 토큰을 이용해 인증을 시도한다.</span></span><br><span class="line">        authenticationManager.authenticate(</span><br><span class="line">                <span class="keyword">new</span> UsernamePasswordAuthenticationToken(username, password));</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception ex) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> Exception(<span class="string">&quot;inavalid username/password&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    String token = jwtUtil.generateToken(authRequest.getUsername());</span><br><span class="line"></span><br><span class="line">    HttpHeaders httpHeaders = <span class="keyword">new</span> HttpHeaders();</span><br><span class="line">    httpHeaders.add(<span class="string">&quot;Authorization&quot;</span>, <span class="string">&quot;Bearer &quot;</span> +token);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 인증이 정상적으로 이루어진 경우 username을 이용해 JWT를 생성해 반환한다.</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> ResponseEntity(httpHeaders, HttpStatus.OK);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="권한을-갖고-접근하기-위한-Controller-추가"><a href="#권한을-갖고-접근하기-위한-Controller-추가" class="headerlink" title="권한을 갖고 접근하기 위한 Controller 추가"></a>권한을 갖고 접근하기 위한 Controller 추가</h2><ul>
+<li>반환받은 JWT를 갖고 <code>/api/user/access</code> 경로로 접근하면 <code>Permission to Access</code> 문구가 반환된다.</li>
+</ul>
+<p><em>JwtController.java</em></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping(&quot;/access&quot;)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">accessByToken</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;Permission to Access&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Security-설정-추가하기"><a href="#Security-설정-추가하기" class="headerlink" title="Security 설정 추가하기"></a>Security 설정 추가하기</h2><p>AuthenticationManagerBuilder객체의 userDetailsService 메소드를 이용해 사용자가 정의한 CustomUserDetailsService 객체를 사용하도록 등록한다.</p>
+<p><em>SecurityConfig.java</em></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">configure</span><span class="params">(AuthenticationManagerBuilder auth)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    <span class="comment">// 사용자가 정의한 UserDetailsService를 사용한다.</span></span><br><span class="line">    auth.userDetailsService(customUserDetailsService);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>회원가입을 위한 <code>/api/user/signup</code> 경로와 로그인을 위한 <code>/api/user/login</code> 경로는 인증전에 접근하기 위한 경로이므로 권한 없이 접근 가능해야 한다. 그외 모든 경로는 인증된 사용자만 접근 할 수 있도록 설정한다.</p>
+<p>사용자 정의 Filter인 <strong>JwtAuthenticationFilter</strong>를 Spring Filter에 추가한다.</p>
+<p><em>SecurityConfig.java</em></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">configure</span><span class="params">(HttpSecurity http)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    http.csrf().disable().authorizeRequests()</span><br><span class="line">            .antMatchers(<span class="string">&quot;/api/user/login&quot;</span>).permitAll()</span><br><span class="line">            .antMatchers(<span class="string">&quot;/api/user/signup&quot;</span>).permitAll()</span><br><span class="line">            .anyRequest().authenticated()</span><br><span class="line">            .and()</span><br><span class="line">            <span class="comment">// 토큰을 활용하면 세션이 필요 없으므로 STATELESS로 설정하여 Session을 사용하지 않는다.</span></span><br><span class="line">            .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)</span><br><span class="line">            .and()</span><br><span class="line">            <span class="comment">// form 기반의 로그인에 대해 비활성화 한다.</span></span><br><span class="line">            .formLogin().disable()</span><br><span class="line">            <span class="comment">// 새롭게 정의한 Filter를 등록한다.</span></span><br><span class="line">            .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="http://example.com/2021/02/11/springboot/sample-board/board-1-init/" data-id="ckma14xwe002efc8ddbircggl" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://example.com/2021/03/15/springboot/security/JWT/spring-jwt-4/" data-id="ckma14xyg007tfc8d7nnp3a8c" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -327,18 +351,24 @@
             "@type": "Person",
             "name": "John Doe"
         },
-        "headline": "스프링부트를 이용한 게시판 만들기 1 - 게시글 작성 페이지",
-        "image": "http://example.com/images/springboot/sample-board/board-post.png",
-        "keywords": "Spring Boot CRUD",
-        "genre": "Spring Boot 게시판 만들기",
-        "datePublished": "2021-02-11",
-        "dateCreated": "2021-02-11",
-        "dateModified": "2021-03-13",
-        "url": "http://example.com/2021/02/11/springboot/sample-board/board-1-init/",
+        "headline": "Spring-JWT(JSON Web Token) - 4. JWT 다루기",
+        "image": "http://example.com/images/springboot/security/JWT/JWT3.png",
+        "keywords": "Spring Boot JWT",
+        "genre": "Spring Boot Spring Security JWT",
+        "datePublished": "2021-03-15",
+        "dateCreated": "2021-03-15",
+        "dateModified": "2021-03-15",
+        "url": "http://example.com/2021/03/15/springboot/security/JWT/spring-jwt-4/",
         "description": "
-1. 게시글 작성 페이지 만들기간단하게 게시글 제목, 사용자 이름, 게시글 내용 세가지만 입력 받는 폼을 만들 것이다. 게시글 작성페이지는 Bootstrap을 이용해 만들건데, BootsWatch의 Cosmo navbar가 마음에 들어 이것도 사용할 것이다.  
-먼저, Bootstrap 사이트에서 css, js, fonts를 다운 받고 BootsWatch",
-        "wordCount": 1172
+4. JWT 다루기JWT를 다루기 위한 Util Class만들기JwtUtil 객체는 Jwts.builder를 이용해 JWT를 생성하고 Jwts.parser를 이용해 Token을 JWT로 변환시켜 데이터를 가져오도록 한다.
+Jwts.builder(JwtBuilder)
+setHeader
+JWT의 Header에 대한 설정을 위한 메소드
+
+
+setXXX
+setS",
+        "wordCount": 1944
     }
 </script>
 
@@ -379,20 +409,10 @@
         
 <nav id="article-nav">
     
-        <a href="/2021/02/11/springboot/sample-board/board-2-post/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            스프링부트를 이용한 게시판 만들기 2 - 게시글 작성페이지 만들기
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2021/02/11/computer-science/Http/http-explain/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2021/03/15/springboot/security/JWT/spring-jwt-3/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">http-explain</p>
+        <p class="article-nav-title">Spring-JWT(JSON Web Token) - 3. Spring Security 적용하기</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -609,7 +629,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://example.com/2021/02/11/springboot/sample-board/board-1-init/';
+    var disqus_url = 'http://example.com/2021/03/15/springboot/security/JWT/spring-jwt-4/';
     
     (function() {
     var dsq = document.createElement('script');

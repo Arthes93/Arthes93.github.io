@@ -3,11 +3,11 @@
   <title>Victor</title>
   
   <subtitle>백문이 불여일타</subtitle>
-  <link href="https://ckck803.github.io/atom.xml" rel="self"/>
+  <link href="http://example.com/atom.xml" rel="self"/>
   
-  <link href="https://ckck803.github.io/"/>
+  <link href="http://example.com/"/>
   <updated>2021-03-16T02:23:45.791Z</updated>
-  <id>https://ckck803.github.io/</id>
+  <id>http://example.com/</id>
   
   <author>
     <name>John Doe</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>프로그래머스 - 수식 최대화</title>
-    <link href="https://ckck803.github.io/2021/03/15/algorithm/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/67257-%EC%88%98%EC%8B%9D%EC%B5%9C%EB%8C%80%ED%99%94/"/>
-    <id>https://ckck803.github.io/2021/03/15/algorithm/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/67257-%EC%88%98%EC%8B%9D%EC%B5%9C%EB%8C%80%ED%99%94/</id>
+    <link href="http://example.com/2021/03/15/algorithm/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/67257-%EC%88%98%EC%8B%9D%EC%B5%9C%EB%8C%80%ED%99%94/"/>
+    <id>http://example.com/2021/03/15/algorithm/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/67257-%EC%88%98%EC%8B%9D%EC%B5%9C%EB%8C%80%ED%99%94/</id>
     <published>2021-03-15T11:10:40.000Z</published>
     <updated>2021-03-16T02:23:45.791Z</updated>
     
@@ -34,27 +34,27 @@
     
     
     
-    <category term="Algorithm" scheme="https://ckck803.github.io/categories/Algorithm/"/>
+    <category term="Algorithm" scheme="http://example.com/categories/Algorithm/"/>
     
-    <category term="Programmers" scheme="https://ckck803.github.io/categories/Algorithm/Programmers/"/>
+    <category term="Programmers" scheme="http://example.com/categories/Algorithm/Programmers/"/>
     
-    <category term="자료구조" scheme="https://ckck803.github.io/categories/Algorithm/Programmers/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/"/>
+    <category term="자료구조" scheme="http://example.com/categories/Algorithm/Programmers/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/"/>
     
-    <category term="스택" scheme="https://ckck803.github.io/categories/Algorithm/Programmers/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/%EC%8A%A4%ED%83%9D/"/>
+    <category term="스택" scheme="http://example.com/categories/Algorithm/Programmers/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/%EC%8A%A4%ED%83%9D/"/>
     
     
-    <category term="틀렸습니다 2" scheme="https://ckck803.github.io/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-2/"/>
+    <category term="틀렸습니다 2" scheme="http://example.com/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-2/"/>
     
-    <category term="Java" scheme="https://ckck803.github.io/tags/Java/"/>
+    <category term="Java" scheme="http://example.com/tags/Java/"/>
     
-    <category term="Programmers" scheme="https://ckck803.github.io/tags/Programmers/"/>
+    <category term="Programmers" scheme="http://example.com/tags/Programmers/"/>
     
   </entry>
   
   <entry>
     <title>백준 1406 - 후위표기식</title>
-    <link href="https://ckck803.github.io/2021/03/15/algorithm/baekjoon/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/1918-%ED%9B%84%EC%9C%84%ED%91%9C%EA%B8%B0%EC%8B%9D/"/>
-    <id>https://ckck803.github.io/2021/03/15/algorithm/baekjoon/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/1918-%ED%9B%84%EC%9C%84%ED%91%9C%EA%B8%B0%EC%8B%9D/</id>
+    <link href="http://example.com/2021/03/15/algorithm/baekjoon/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/1918-%ED%9B%84%EC%9C%84%ED%91%9C%EA%B8%B0%EC%8B%9D/"/>
+    <id>http://example.com/2021/03/15/algorithm/baekjoon/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/1918-%ED%9B%84%EC%9C%84%ED%91%9C%EA%B8%B0%EC%8B%9D/</id>
     <published>2021-03-15T11:10:40.000Z</published>
     <updated>2021-03-15T15:03:34.345Z</updated>
     
@@ -69,27 +69,27 @@
     
     
     
-    <category term="Algorithm" scheme="https://ckck803.github.io/categories/Algorithm/"/>
+    <category term="Algorithm" scheme="http://example.com/categories/Algorithm/"/>
     
-    <category term="Beakjoon" scheme="https://ckck803.github.io/categories/Algorithm/Beakjoon/"/>
+    <category term="Beakjoon" scheme="http://example.com/categories/Algorithm/Beakjoon/"/>
     
-    <category term="자료구조" scheme="https://ckck803.github.io/categories/Algorithm/Beakjoon/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/"/>
+    <category term="자료구조" scheme="http://example.com/categories/Algorithm/Beakjoon/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/"/>
     
-    <category term="스택" scheme="https://ckck803.github.io/categories/Algorithm/Beakjoon/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/%EC%8A%A4%ED%83%9D/"/>
+    <category term="스택" scheme="http://example.com/categories/Algorithm/Beakjoon/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/%EC%8A%A4%ED%83%9D/"/>
     
     
-    <category term="beakjoon" scheme="https://ckck803.github.io/tags/beakjoon/"/>
+    <category term="beakjoon" scheme="http://example.com/tags/beakjoon/"/>
     
-    <category term="틀렸습니다 2" scheme="https://ckck803.github.io/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-2/"/>
+    <category term="틀렸습니다 2" scheme="http://example.com/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-2/"/>
     
-    <category term="Java" scheme="https://ckck803.github.io/tags/Java/"/>
+    <category term="Java" scheme="http://example.com/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>백준 1406 - 에디터</title>
-    <link href="https://ckck803.github.io/2021/03/15/algorithm/baekjoon/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/1406%20-%20%EC%97%90%EB%94%94%ED%84%B0/"/>
-    <id>https://ckck803.github.io/2021/03/15/algorithm/baekjoon/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/1406%20-%20%EC%97%90%EB%94%94%ED%84%B0/</id>
+    <link href="http://example.com/2021/03/15/algorithm/baekjoon/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/1406%20-%20%EC%97%90%EB%94%94%ED%84%B0/"/>
+    <id>http://example.com/2021/03/15/algorithm/baekjoon/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/1406%20-%20%EC%97%90%EB%94%94%ED%84%B0/</id>
     <published>2021-03-15T06:23:54.000Z</published>
     <updated>2021-03-15T14:54:09.194Z</updated>
     
@@ -104,27 +104,27 @@
     
     
     
-    <category term="Algorithm" scheme="https://ckck803.github.io/categories/Algorithm/"/>
+    <category term="Algorithm" scheme="http://example.com/categories/Algorithm/"/>
     
-    <category term="Beakjoon" scheme="https://ckck803.github.io/categories/Algorithm/Beakjoon/"/>
+    <category term="Beakjoon" scheme="http://example.com/categories/Algorithm/Beakjoon/"/>
     
-    <category term="자료구조" scheme="https://ckck803.github.io/categories/Algorithm/Beakjoon/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/"/>
+    <category term="자료구조" scheme="http://example.com/categories/Algorithm/Beakjoon/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/"/>
     
-    <category term="스택" scheme="https://ckck803.github.io/categories/Algorithm/Beakjoon/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/%EC%8A%A4%ED%83%9D/"/>
+    <category term="스택" scheme="http://example.com/categories/Algorithm/Beakjoon/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/%EC%8A%A4%ED%83%9D/"/>
     
     
-    <category term="beakjoon" scheme="https://ckck803.github.io/tags/beakjoon/"/>
+    <category term="beakjoon" scheme="http://example.com/tags/beakjoon/"/>
     
-    <category term="틀렸습니다 2" scheme="https://ckck803.github.io/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-2/"/>
+    <category term="틀렸습니다 2" scheme="http://example.com/tags/%ED%8B%80%EB%A0%B8%EC%8A%B5%EB%8B%88%EB%8B%A4-2/"/>
     
-    <category term="Java" scheme="https://ckck803.github.io/tags/Java/"/>
+    <category term="Java" scheme="http://example.com/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Spring-JWT(JSON Web Token) - 4. JWT 다루기</title>
-    <link href="https://ckck803.github.io/2021/03/15/springboot/security/JWT/spring-jwt-4/"/>
-    <id>https://ckck803.github.io/2021/03/15/springboot/security/JWT/spring-jwt-4/</id>
+    <link href="http://example.com/2021/03/15/springboot/security/JWT/spring-jwt-4/"/>
+    <id>http://example.com/2021/03/15/springboot/security/JWT/spring-jwt-4/</id>
     <published>2021-03-14T17:20:47.000Z</published>
     <updated>2021-03-15T03:29:10.164Z</updated>
     
@@ -139,23 +139,23 @@
     
     
     
-    <category term="Spring Boot" scheme="https://ckck803.github.io/categories/Spring-Boot/"/>
+    <category term="Spring Boot" scheme="http://example.com/categories/Spring-Boot/"/>
     
-    <category term="Spring Security" scheme="https://ckck803.github.io/categories/Spring-Boot/Spring-Security/"/>
+    <category term="Spring Security" scheme="http://example.com/categories/Spring-Boot/Spring-Security/"/>
     
-    <category term="JWT" scheme="https://ckck803.github.io/categories/Spring-Boot/Spring-Security/JWT/"/>
+    <category term="JWT" scheme="http://example.com/categories/Spring-Boot/Spring-Security/JWT/"/>
     
     
-    <category term="Spring Boot" scheme="https://ckck803.github.io/tags/Spring-Boot/"/>
+    <category term="Spring Boot" scheme="http://example.com/tags/Spring-Boot/"/>
     
-    <category term="JWT" scheme="https://ckck803.github.io/tags/JWT/"/>
+    <category term="JWT" scheme="http://example.com/tags/JWT/"/>
     
   </entry>
   
   <entry>
     <title>Spring-JWT(JSON Web Token) - 3. Spring Security 적용하기</title>
-    <link href="https://ckck803.github.io/2021/03/15/springboot/security/JWT/spring-jwt-3/"/>
-    <id>https://ckck803.github.io/2021/03/15/springboot/security/JWT/spring-jwt-3/</id>
+    <link href="http://example.com/2021/03/15/springboot/security/JWT/spring-jwt-3/"/>
+    <id>http://example.com/2021/03/15/springboot/security/JWT/spring-jwt-3/</id>
     <published>2021-03-14T15:49:30.000Z</published>
     <updated>2021-03-14T17:22:22.806Z</updated>
     
@@ -170,23 +170,23 @@
     
     
     
-    <category term="Spring Boot" scheme="https://ckck803.github.io/categories/Spring-Boot/"/>
+    <category term="Spring Boot" scheme="http://example.com/categories/Spring-Boot/"/>
     
-    <category term="Spring Security" scheme="https://ckck803.github.io/categories/Spring-Boot/Spring-Security/"/>
+    <category term="Spring Security" scheme="http://example.com/categories/Spring-Boot/Spring-Security/"/>
     
-    <category term="JWT" scheme="https://ckck803.github.io/categories/Spring-Boot/Spring-Security/JWT/"/>
+    <category term="JWT" scheme="http://example.com/categories/Spring-Boot/Spring-Security/JWT/"/>
     
     
-    <category term="Spring Boot" scheme="https://ckck803.github.io/tags/Spring-Boot/"/>
+    <category term="Spring Boot" scheme="http://example.com/tags/Spring-Boot/"/>
     
-    <category term="JWT" scheme="https://ckck803.github.io/tags/JWT/"/>
+    <category term="JWT" scheme="http://example.com/tags/JWT/"/>
     
   </entry>
   
   <entry>
     <title>Spring-JWT(JSON Web Token) - 2. 회원가입</title>
-    <link href="https://ckck803.github.io/2021/03/14/springboot/security/JWT/spring-jwt-2/"/>
-    <id>https://ckck803.github.io/2021/03/14/springboot/security/JWT/spring-jwt-2/</id>
+    <link href="http://example.com/2021/03/14/springboot/security/JWT/spring-jwt-2/"/>
+    <id>http://example.com/2021/03/14/springboot/security/JWT/spring-jwt-2/</id>
     <published>2021-03-14T13:11:14.000Z</published>
     <updated>2021-03-14T16:06:03.171Z</updated>
     
@@ -201,23 +201,23 @@
     
     
     
-    <category term="Spring Boot" scheme="https://ckck803.github.io/categories/Spring-Boot/"/>
+    <category term="Spring Boot" scheme="http://example.com/categories/Spring-Boot/"/>
     
-    <category term="Spring Security" scheme="https://ckck803.github.io/categories/Spring-Boot/Spring-Security/"/>
+    <category term="Spring Security" scheme="http://example.com/categories/Spring-Boot/Spring-Security/"/>
     
-    <category term="JWT" scheme="https://ckck803.github.io/categories/Spring-Boot/Spring-Security/JWT/"/>
+    <category term="JWT" scheme="http://example.com/categories/Spring-Boot/Spring-Security/JWT/"/>
     
     
-    <category term="Spring Boot" scheme="https://ckck803.github.io/tags/Spring-Boot/"/>
+    <category term="Spring Boot" scheme="http://example.com/tags/Spring-Boot/"/>
     
-    <category term="JWT" scheme="https://ckck803.github.io/tags/JWT/"/>
+    <category term="JWT" scheme="http://example.com/tags/JWT/"/>
     
   </entry>
   
   <entry>
     <title>메모리 관리</title>
-    <link href="https://ckck803.github.io/2021/03/08/computer-science/os/memory-management/"/>
-    <id>https://ckck803.github.io/2021/03/08/computer-science/os/memory-management/</id>
+    <link href="http://example.com/2021/03/08/computer-science/os/memory-management/"/>
+    <id>http://example.com/2021/03/08/computer-science/os/memory-management/</id>
     <published>2021-03-07T15:16:13.000Z</published>
     <updated>2021-03-11T13:18:09.050Z</updated>
     
@@ -234,17 +234,17 @@
     
     
     
-    <category term="CS" scheme="https://ckck803.github.io/categories/CS/"/>
+    <category term="CS" scheme="http://example.com/categories/CS/"/>
     
-    <category term="OS" scheme="https://ckck803.github.io/categories/CS/OS/"/>
+    <category term="OS" scheme="http://example.com/categories/CS/OS/"/>
     
     
   </entry>
   
   <entry>
     <title>TCP</title>
-    <link href="https://ckck803.github.io/2021/03/07/computer-science/network/TCP/"/>
-    <id>https://ckck803.github.io/2021/03/07/computer-science/network/TCP/</id>
+    <link href="http://example.com/2021/03/07/computer-science/network/TCP/"/>
+    <id>http://example.com/2021/03/07/computer-science/network/TCP/</id>
     <published>2021-03-07T14:21:17.000Z</published>
     <updated>2021-03-11T13:17:42.371Z</updated>
     
@@ -258,17 +258,17 @@
     
     
     
-    <category term="CS" scheme="https://ckck803.github.io/categories/CS/"/>
+    <category term="CS" scheme="http://example.com/categories/CS/"/>
     
-    <category term="Network" scheme="https://ckck803.github.io/categories/CS/Network/"/>
+    <category term="Network" scheme="http://example.com/categories/CS/Network/"/>
     
     
   </entry>
   
   <entry>
     <title>클라우드 서비스</title>
-    <link href="https://ckck803.github.io/2021/03/07/computer-science/network/cloud/"/>
-    <id>https://ckck803.github.io/2021/03/07/computer-science/network/cloud/</id>
+    <link href="http://example.com/2021/03/07/computer-science/network/cloud/"/>
+    <id>http://example.com/2021/03/07/computer-science/network/cloud/</id>
     <published>2021-03-07T14:16:32.000Z</published>
     <updated>2021-03-11T13:17:36.327Z</updated>
     
@@ -283,17 +283,17 @@
     
     
     
-    <category term="CS" scheme="https://ckck803.github.io/categories/CS/"/>
+    <category term="CS" scheme="http://example.com/categories/CS/"/>
     
-    <category term="Network" scheme="https://ckck803.github.io/categories/CS/Network/"/>
+    <category term="Network" scheme="http://example.com/categories/CS/Network/"/>
     
     
   </entry>
   
   <entry>
     <title>스프링부트를 이용한 게시판 만들기 22 - Log4jdbc를 이용해 Query 로그 기록하기</title>
-    <link href="https://ckck803.github.io/2021/03/06/springboot/sample-board/board-22-logging/"/>
-    <id>https://ckck803.github.io/2021/03/06/springboot/sample-board/board-22-logging/</id>
+    <link href="http://example.com/2021/03/06/springboot/sample-board/board-22-logging/"/>
+    <id>http://example.com/2021/03/06/springboot/sample-board/board-22-logging/</id>
     <published>2021-03-06T12:59:57.000Z</published>
     <updated>2021-03-13T11:29:21.304Z</updated>
     
@@ -308,23 +308,23 @@
     
     
     
-    <category term="Spring Boot" scheme="https://ckck803.github.io/categories/Spring-Boot/"/>
+    <category term="Spring Boot" scheme="http://example.com/categories/Spring-Boot/"/>
     
-    <category term="게시판 만들기" scheme="https://ckck803.github.io/categories/Spring-Boot/%EA%B2%8C%EC%8B%9C%ED%8C%90-%EB%A7%8C%EB%93%A4%EA%B8%B0/"/>
+    <category term="게시판 만들기" scheme="http://example.com/categories/Spring-Boot/%EA%B2%8C%EC%8B%9C%ED%8C%90-%EB%A7%8C%EB%93%A4%EA%B8%B0/"/>
     
     
-    <category term="Spring Boot" scheme="https://ckck803.github.io/tags/Spring-Boot/"/>
+    <category term="Spring Boot" scheme="http://example.com/tags/Spring-Boot/"/>
     
-    <category term="CRUD" scheme="https://ckck803.github.io/tags/CRUD/"/>
+    <category term="CRUD" scheme="http://example.com/tags/CRUD/"/>
     
-    <category term="Logging" scheme="https://ckck803.github.io/tags/Logging/"/>
+    <category term="Logging" scheme="http://example.com/tags/Logging/"/>
     
   </entry>
   
   <entry>
     <title>스프링부트를 이용한 게시판 만들기 21 - Github Action 사용하기</title>
-    <link href="https://ckck803.github.io/2021/03/06/springboot/sample-board/board-21-github-action/"/>
-    <id>https://ckck803.github.io/2021/03/06/springboot/sample-board/board-21-github-action/</id>
+    <link href="http://example.com/2021/03/06/springboot/sample-board/board-21-github-action/"/>
+    <id>http://example.com/2021/03/06/springboot/sample-board/board-21-github-action/</id>
     <published>2021-03-06T05:12:05.000Z</published>
     <updated>2021-03-13T11:29:24.371Z</updated>
     
@@ -339,23 +339,23 @@
     
     
     
-    <category term="Spring Boot" scheme="https://ckck803.github.io/categories/Spring-Boot/"/>
+    <category term="Spring Boot" scheme="http://example.com/categories/Spring-Boot/"/>
     
-    <category term="게시판 만들기" scheme="https://ckck803.github.io/categories/Spring-Boot/%EA%B2%8C%EC%8B%9C%ED%8C%90-%EB%A7%8C%EB%93%A4%EA%B8%B0/"/>
+    <category term="게시판 만들기" scheme="http://example.com/categories/Spring-Boot/%EA%B2%8C%EC%8B%9C%ED%8C%90-%EB%A7%8C%EB%93%A4%EA%B8%B0/"/>
     
     
-    <category term="Spring Boot" scheme="https://ckck803.github.io/tags/Spring-Boot/"/>
+    <category term="Spring Boot" scheme="http://example.com/tags/Spring-Boot/"/>
     
-    <category term="CRUD" scheme="https://ckck803.github.io/tags/CRUD/"/>
+    <category term="CRUD" scheme="http://example.com/tags/CRUD/"/>
     
-    <category term="Github Action" scheme="https://ckck803.github.io/tags/Github-Action/"/>
+    <category term="Github Action" scheme="http://example.com/tags/Github-Action/"/>
     
   </entry>
   
   <entry>
     <title>복수의 테이블 다루기</title>
-    <link href="https://ckck803.github.io/2021/03/06/computer-science/database/SQL/union-join/"/>
-    <id>https://ckck803.github.io/2021/03/06/computer-science/database/SQL/union-join/</id>
+    <link href="http://example.com/2021/03/06/computer-science/database/SQL/union-join/"/>
+    <id>http://example.com/2021/03/06/computer-science/database/SQL/union-join/</id>
     <published>2021-03-06T01:02:35.000Z</published>
     <updated>2021-03-11T13:17:24.068Z</updated>
     
@@ -369,19 +369,19 @@
     
     
     
-    <category term="CS" scheme="https://ckck803.github.io/categories/CS/"/>
+    <category term="CS" scheme="http://example.com/categories/CS/"/>
     
-    <category term="DataBase" scheme="https://ckck803.github.io/categories/CS/DataBase/"/>
+    <category term="DataBase" scheme="http://example.com/categories/CS/DataBase/"/>
     
-    <category term="SQL" scheme="https://ckck803.github.io/categories/CS/DataBase/SQL/"/>
+    <category term="SQL" scheme="http://example.com/categories/CS/DataBase/SQL/"/>
     
     
   </entry>
   
   <entry>
     <title>데이터베이스 객체 작성과 삭제</title>
-    <link href="https://ckck803.github.io/2021/03/06/computer-science/database/SQL/delete/"/>
-    <id>https://ckck803.github.io/2021/03/06/computer-science/database/SQL/delete/</id>
+    <link href="http://example.com/2021/03/06/computer-science/database/SQL/delete/"/>
+    <id>http://example.com/2021/03/06/computer-science/database/SQL/delete/</id>
     <published>2021-03-06T01:01:46.000Z</published>
     <updated>2021-03-11T13:13:41.626Z</updated>
     
@@ -395,19 +395,19 @@
     
     
     
-    <category term="CS" scheme="https://ckck803.github.io/categories/CS/"/>
+    <category term="CS" scheme="http://example.com/categories/CS/"/>
     
-    <category term="DataBase" scheme="https://ckck803.github.io/categories/CS/DataBase/"/>
+    <category term="DataBase" scheme="http://example.com/categories/CS/DataBase/"/>
     
-    <category term="SQL" scheme="https://ckck803.github.io/categories/CS/DataBase/SQL/"/>
+    <category term="SQL" scheme="http://example.com/categories/CS/DataBase/SQL/"/>
     
     
   </entry>
   
   <entry>
     <title>집계와 서브쿼리</title>
-    <link href="https://ckck803.github.io/2021/03/06/computer-science/database/SQL/subquery/"/>
-    <id>https://ckck803.github.io/2021/03/06/computer-science/database/SQL/subquery/</id>
+    <link href="http://example.com/2021/03/06/computer-science/database/SQL/subquery/"/>
+    <id>http://example.com/2021/03/06/computer-science/database/SQL/subquery/</id>
     <published>2021-03-06T01:01:04.000Z</published>
     <updated>2021-03-11T13:17:16.353Z</updated>
     
@@ -421,19 +421,19 @@
     
     
     
-    <category term="CS" scheme="https://ckck803.github.io/categories/CS/"/>
+    <category term="CS" scheme="http://example.com/categories/CS/"/>
     
-    <category term="DataBase" scheme="https://ckck803.github.io/categories/CS/DataBase/"/>
+    <category term="DataBase" scheme="http://example.com/categories/CS/DataBase/"/>
     
-    <category term="SQL" scheme="https://ckck803.github.io/categories/CS/DataBase/SQL/"/>
+    <category term="SQL" scheme="http://example.com/categories/CS/DataBase/SQL/"/>
     
     
   </entry>
   
   <entry>
     <title>데이터 추가, 삭제, 갱신</title>
-    <link href="https://ckck803.github.io/2021/03/06/computer-science/database/SQL/dml/"/>
-    <id>https://ckck803.github.io/2021/03/06/computer-science/database/SQL/dml/</id>
+    <link href="http://example.com/2021/03/06/computer-science/database/SQL/dml/"/>
+    <id>http://example.com/2021/03/06/computer-science/database/SQL/dml/</id>
     <published>2021-03-06T01:00:09.000Z</published>
     <updated>2021-03-11T13:13:45.305Z</updated>
     
@@ -447,19 +447,19 @@
     
     
     
-    <category term="CS" scheme="https://ckck803.github.io/categories/CS/"/>
+    <category term="CS" scheme="http://example.com/categories/CS/"/>
     
-    <category term="DataBase" scheme="https://ckck803.github.io/categories/CS/DataBase/"/>
+    <category term="DataBase" scheme="http://example.com/categories/CS/DataBase/"/>
     
-    <category term="SQL" scheme="https://ckck803.github.io/categories/CS/DataBase/SQL/"/>
+    <category term="SQL" scheme="http://example.com/categories/CS/DataBase/SQL/"/>
     
     
   </entry>
   
   <entry>
     <title>정렬과 연산</title>
-    <link href="https://ckck803.github.io/2021/03/06/computer-science/database/SQL/sort-and-operation/"/>
-    <id>https://ckck803.github.io/2021/03/06/computer-science/database/SQL/sort-and-operation/</id>
+    <link href="http://example.com/2021/03/06/computer-science/database/SQL/sort-and-operation/"/>
+    <id>http://example.com/2021/03/06/computer-science/database/SQL/sort-and-operation/</id>
     <published>2021-03-06T00:58:46.000Z</published>
     <updated>2021-03-11T13:16:42.803Z</updated>
     
@@ -473,19 +473,19 @@
     
     
     
-    <category term="CS" scheme="https://ckck803.github.io/categories/CS/"/>
+    <category term="CS" scheme="http://example.com/categories/CS/"/>
     
-    <category term="DataBase" scheme="https://ckck803.github.io/categories/CS/DataBase/"/>
+    <category term="DataBase" scheme="http://example.com/categories/CS/DataBase/"/>
     
-    <category term="SQL" scheme="https://ckck803.github.io/categories/CS/DataBase/SQL/"/>
+    <category term="SQL" scheme="http://example.com/categories/CS/DataBase/SQL/"/>
     
     
   </entry>
   
   <entry>
     <title>테이블에서 데이터 검색</title>
-    <link href="https://ckck803.github.io/2021/03/06/computer-science/database/SQL/search/"/>
-    <id>https://ckck803.github.io/2021/03/06/computer-science/database/SQL/search/</id>
+    <link href="http://example.com/2021/03/06/computer-science/database/SQL/search/"/>
+    <id>http://example.com/2021/03/06/computer-science/database/SQL/search/</id>
     <published>2021-03-06T00:56:37.000Z</published>
     <updated>2021-03-11T13:13:50.950Z</updated>
     
@@ -499,19 +499,19 @@
     
     
     
-    <category term="CS" scheme="https://ckck803.github.io/categories/CS/"/>
+    <category term="CS" scheme="http://example.com/categories/CS/"/>
     
-    <category term="DataBase" scheme="https://ckck803.github.io/categories/CS/DataBase/"/>
+    <category term="DataBase" scheme="http://example.com/categories/CS/DataBase/"/>
     
-    <category term="SQL" scheme="https://ckck803.github.io/categories/CS/DataBase/SQL/"/>
+    <category term="SQL" scheme="http://example.com/categories/CS/DataBase/SQL/"/>
     
     
   </entry>
   
   <entry>
     <title>SQL - DDL DML DCL</title>
-    <link href="https://ckck803.github.io/2021/03/06/computer-science/database/SQL/ddl-dml-dcl/"/>
-    <id>https://ckck803.github.io/2021/03/06/computer-science/database/SQL/ddl-dml-dcl/</id>
+    <link href="http://example.com/2021/03/06/computer-science/database/SQL/ddl-dml-dcl/"/>
+    <id>http://example.com/2021/03/06/computer-science/database/SQL/ddl-dml-dcl/</id>
     <published>2021-03-05T16:21:23.000Z</published>
     <updated>2021-03-11T13:13:37.594Z</updated>
     
@@ -526,19 +526,19 @@
     
     
     
-    <category term="CS" scheme="https://ckck803.github.io/categories/CS/"/>
+    <category term="CS" scheme="http://example.com/categories/CS/"/>
     
-    <category term="DataBase" scheme="https://ckck803.github.io/categories/CS/DataBase/"/>
+    <category term="DataBase" scheme="http://example.com/categories/CS/DataBase/"/>
     
-    <category term="SQL" scheme="https://ckck803.github.io/categories/CS/DataBase/SQL/"/>
+    <category term="SQL" scheme="http://example.com/categories/CS/DataBase/SQL/"/>
     
     
   </entry>
   
   <entry>
     <title>트랜잭션과 ACID</title>
-    <link href="https://ckck803.github.io/2021/03/06/computer-science/database/SQL/ACID/"/>
-    <id>https://ckck803.github.io/2021/03/06/computer-science/database/SQL/ACID/</id>
+    <link href="http://example.com/2021/03/06/computer-science/database/SQL/ACID/"/>
+    <id>http://example.com/2021/03/06/computer-science/database/SQL/ACID/</id>
     <published>2021-03-05T16:15:42.000Z</published>
     <updated>2021-03-11T13:13:32.030Z</updated>
     
@@ -553,19 +553,19 @@
     
     
     
-    <category term="CS" scheme="https://ckck803.github.io/categories/CS/"/>
+    <category term="CS" scheme="http://example.com/categories/CS/"/>
     
-    <category term="DataBase" scheme="https://ckck803.github.io/categories/CS/DataBase/"/>
+    <category term="DataBase" scheme="http://example.com/categories/CS/DataBase/"/>
     
-    <category term="SQL" scheme="https://ckck803.github.io/categories/CS/DataBase/SQL/"/>
+    <category term="SQL" scheme="http://example.com/categories/CS/DataBase/SQL/"/>
     
     
   </entry>
   
   <entry>
     <title>sql.md</title>
-    <link href="https://ckck803.github.io/2021/03/06/computer-science/database/SQL/sql-md/"/>
-    <id>https://ckck803.github.io/2021/03/06/computer-science/database/SQL/sql-md/</id>
+    <link href="http://example.com/2021/03/06/computer-science/database/SQL/sql-md/"/>
+    <id>http://example.com/2021/03/06/computer-science/database/SQL/sql-md/</id>
     <published>2021-03-05T16:10:22.000Z</published>
     <updated>2021-03-11T13:16:53.489Z</updated>
     
@@ -581,11 +581,11 @@
     
     
     
-    <category term="CS" scheme="https://ckck803.github.io/categories/CS/"/>
+    <category term="CS" scheme="http://example.com/categories/CS/"/>
     
-    <category term="DataBase" scheme="https://ckck803.github.io/categories/CS/DataBase/"/>
+    <category term="DataBase" scheme="http://example.com/categories/CS/DataBase/"/>
     
-    <category term="SQL" scheme="https://ckck803.github.io/categories/CS/DataBase/SQL/"/>
+    <category term="SQL" scheme="http://example.com/categories/CS/DataBase/SQL/"/>
     
     
   </entry>

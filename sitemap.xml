@@ -3,22 +3,22 @@
 
 
     <sitemap>
-        <loc>https://ckck803.github.io/post-sitemap.xml</loc>
+        <loc>http://example.com/post-sitemap.xml</loc>
         <lastmod>2021-03-16T02:23:45.791Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>https://ckck803.github.io/page-sitemap.xml</loc>
+        <loc>http://example.com/page-sitemap.xml</loc>
         <lastmod>2021-02-16T15:17:29.131Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>https://ckck803.github.io/category-sitemap.xml</loc>
+        <loc>http://example.com/category-sitemap.xml</loc>
         <lastmod>2021-03-16T02:23:45.791Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>https://ckck803.github.io/tag-sitemap.xml</loc>
+        <loc>http://example.com/tag-sitemap.xml</loc>
         <lastmod>2021-03-16T02:23:45.791Z</lastmod>
     </sitemap>
 

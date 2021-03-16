@@ -1,25 +1,21 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="google" content="notranslate">
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="google" content="notranslate">
-
-
-  
 
     
-      <title>
-        
-          스프링부트를 이용한 게시판 만들기 15 - Github와 jenkins 연동하기 | 
-              Victor
-      </title>
-      
-          <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-          
-            <meta name="keywords" content="Spring Boot,CRUD,Github" />
-            
-              <meta name="description" content="15. Github와 jenkins 연동하기Github webhookngrok을 이용해 외부접근이 가능하도록 네트워크 열기Push 이벤트가 일어났을 때 로컬 Jenkins가 해당 훅을 받기 위해서는 해당 네트워크(포트)를 외부접근이 가능하게 열어놔야 한다.ngrok 프로그램을 사용해 Github로부터 hook을 받을 수 있도록 Jenkins 포트를 열어준">
+ 
+    <title>스프링부트를 이용한 게시판 만들기 15 - Github와 jenkins 연동하기 | Victor</title>
+    
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    
+    <meta name="keywords" content="Spring Boot,CRUD,Github" />
+     <meta name="description" content="15. Github와 jenkins 연동하기Github webhookngrok을 이용해 외부접근이 가능하도록 네트워크 열기Push 이벤트가 일어났을 때 로컬 Jenkins가 해당 훅을 받기 위해서는 해당 네트워크(포트)를 외부접근이 가능하게 열어놔야 한다.ngrok 프로그램을 사용해 Github로부터 hook을 받을 수 있도록 Jenkins 포트를 열어준">
 <meta property="og:type" content="article">
 <meta property="og:title" content="스프링부트를 이용한 게시판 만들기 15 - Github와 jenkins 연동하기">
 <meta property="og:url" content="https://ckck803.github.io/2021/02/15/springboot/sample-board/board-15-github-webhook/index.html">
@@ -34,29 +30,19 @@
 <meta property="article:tag" content="CRUD">
 <meta property="article:tag" content="Github">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://ckck803.github.io/images/springboot/sample-board/jenkins-github/jenkins-build.png">
-                
-                  <link rel="canonical" href="https://ckck803.github.io/2021/02/15/springboot/sample-board/board-15-github-webhook/"/>
-                    
-                        
-                          <link rel="icon" href="/css/images/favicon/favicon.ico" />
-                          
-                            
+<meta name="twitter:image" content="https://ckck803.github.io/images/springboot/sample-board/jenkins-github/jenkins-build.png">  <link rel="canonical" href="https://ckck803.github.io/2021/02/15/springboot/sample-board/board-15-github-webhook/"/>  
+    <link rel="icon" href="/css/images/favicon/favicon.ico" />
+     
 <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-
-                              
+ 
 <link rel="stylesheet" href="/libs/titillium-web/styles.css">
-
-                                
+ 
 <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
-
-                                  
+ 
 <link rel="stylesheet" href="/css/style.css">
-
-                                    
+ 
 <script src="/libs/jquery/3.5.0/jquery.min.js"></script>
-
-                                      
+ 
     
         
 <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
@@ -72,19 +58,19 @@
     
 
 
-                                        
+    
 <link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">
-
-                                          
+	
+    
 <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
 
-                                            
+    
 <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosanskr.css">
 
-<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Victor" type="application/atom+xml">
+  <meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Victor" type="application/atom+xml">
 </head>
-
 </html>
+
 <body>
     <div id="wrap">
         <header id="header">
@@ -264,7 +250,7 @@
 
 
 
-    <a data-url="https://ckck803.github.io/2021/02/15/springboot/sample-board/board-15-github-webhook/" data-id="ckmbndqx2002t1p8da9ll21i5" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ckck803.github.io/2021/02/15/springboot/sample-board/board-15-github-webhook/" data-id="ckmbnep6f004j7o8dho16bmnt" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {

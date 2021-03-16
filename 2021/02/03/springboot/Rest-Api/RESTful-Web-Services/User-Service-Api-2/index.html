@@ -1,25 +1,21 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="google" content="notranslate">
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="google" content="notranslate">
-
-
-  
 
     
-      <title>
-        
-          Spring Boot를 이용한 RESTful Web Services 개발 - User Service API 구현 | 
-              Victor
-      </title>
-      
-          <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-          
-            <meta name="keywords" content="Spring Boot,Spring Rest,강의,HTTP Status Code,Exception Handling" />
-            
-              <meta name="description" content="HTTP Status Code 제어1234567891011@PostMapping(&quot;&#x2F;users&quot;)public ResponseEntity&lt;User&gt; createUser(@RequestBody @Valid User user)&amp;#123;    User savedUser &#x3D; service.save(user);    URI locati">
+ 
+    <title>Spring Boot를 이용한 RESTful Web Services 개발 - User Service API 구현 | Victor</title>
+    
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    
+    <meta name="keywords" content="Spring Boot,Spring Rest,강의,HTTP Status Code,Exception Handling" />
+     <meta name="description" content="HTTP Status Code 제어1234567891011@PostMapping(&quot;&#x2F;users&quot;)public ResponseEntity&lt;User&gt; createUser(@RequestBody @Valid User user)&amp;#123;    User savedUser &#x3D; service.save(user);    URI locati">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring Boot를 이용한 RESTful Web Services 개발 - User Service API 구현">
 <meta property="og:url" content="https://ckck803.github.io/2021/02/03/springboot/Rest-Api/RESTful-Web-Services/User-Service-Api-2/index.html">
@@ -36,29 +32,19 @@
 <meta property="article:tag" content="HTTP Status Code">
 <meta property="article:tag" content="Exception Handling">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://ckck803.github.io/images/springboot/Rest-Api/RESTful-Web-Services/spring-boot-logo.png">
-                
-                  <link rel="canonical" href="https://ckck803.github.io/2021/02/03/springboot/rest-api/restful-web-services/user-service-api-2/"/>
-                    
-                        
-                          <link rel="icon" href="/css/images/favicon/favicon.ico" />
-                          
-                            
+<meta name="twitter:image" content="https://ckck803.github.io/images/springboot/Rest-Api/RESTful-Web-Services/spring-boot-logo.png">  <link rel="canonical" href="https://ckck803.github.io/2021/02/03/springboot/rest-api/restful-web-services/user-service-api-2/"/>  
+    <link rel="icon" href="/css/images/favicon/favicon.ico" />
+     
 <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-
-                              
+ 
 <link rel="stylesheet" href="/libs/titillium-web/styles.css">
-
-                                
+ 
 <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
-
-                                  
+ 
 <link rel="stylesheet" href="/css/style.css">
-
-                                    
+ 
 <script src="/libs/jquery/3.5.0/jquery.min.js"></script>
-
-                                      
+ 
     
         
 <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
@@ -74,19 +60,19 @@
     
 
 
-                                        
+    
 <link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">
-
-                                          
+	
+    
 <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
 
-                                            
+    
 <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosanskr.css">
 
-<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Victor" type="application/atom+xml">
+  <meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Victor" type="application/atom+xml">
 </head>
-
 </html>
+
 <body>
     <div id="wrap">
         <header id="header">
@@ -247,7 +233,7 @@
 
 
 
-    <a data-url="https://ckck803.github.io/2021/02/03/springboot/Rest-Api/RESTful-Web-Services/User-Service-Api-2/" data-id="ckmbndqyk005u1p8dcamj197s" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ckck803.github.io/2021/02/03/springboot/Rest-Api/RESTful-Web-Services/User-Service-Api-2/" data-id="ckmbnep7t007s7o8dad2hgb5b" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {

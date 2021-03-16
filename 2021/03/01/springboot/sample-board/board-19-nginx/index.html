@@ -1,25 +1,21 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="google" content="notranslate">
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="google" content="notranslate">
-
-
-  
 
     
-      <title>
-        
-          스프링부트를 이용한 게시판 만들기 19 - 프록시 서버 이용하기 | 
-              Victor
-      </title>
-      
-          <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-          
-            <meta name="keywords" content="Spring Boot,CRUD,nginx" />
-            
-              <meta name="description" content="19. 프록시 서버 이용하기현재는 client 가 Web Application에 접근하기 위해서는 8080포트를 사용해야 한다. client가 쉽게 접근 할 수 있도록 80번 포트로 어플리케이션을 띄어야 하는데 ubuntu에서는 일반 사용자가 80번 포트를 사용할 수 있는 권한이 없다. 만약 80번 포트로 프로그램을 실행하게 되면 아래와 같은 권한 오류가">
+ 
+    <title>스프링부트를 이용한 게시판 만들기 19 - 프록시 서버 이용하기 | Victor</title>
+    
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    
+    <meta name="keywords" content="Spring Boot,CRUD,nginx" />
+     <meta name="description" content="19. 프록시 서버 이용하기현재는 client 가 Web Application에 접근하기 위해서는 8080포트를 사용해야 한다. client가 쉽게 접근 할 수 있도록 80번 포트로 어플리케이션을 띄어야 하는데 ubuntu에서는 일반 사용자가 80번 포트를 사용할 수 있는 권한이 없다. 만약 80번 포트로 프로그램을 실행하게 되면 아래와 같은 권한 오류가">
 <meta property="og:type" content="article">
 <meta property="og:title" content="스프링부트를 이용한 게시판 만들기 19 - 프록시 서버 이용하기">
 <meta property="og:url" content="https://ckck803.github.io/2021/03/01/springboot/sample-board/board-19-nginx/index.html">
@@ -34,29 +30,19 @@
 <meta property="article:tag" content="CRUD">
 <meta property="article:tag" content="nginx">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://ckck803.github.io/images/springboot/sample-board/nginx/nginx.png">
-                
-                  <link rel="canonical" href="https://ckck803.github.io/2021/03/01/springboot/sample-board/board-19-nginx/"/>
-                    
-                        
-                          <link rel="icon" href="/css/images/favicon/favicon.ico" />
-                          
-                            
+<meta name="twitter:image" content="https://ckck803.github.io/images/springboot/sample-board/nginx/nginx.png">  <link rel="canonical" href="https://ckck803.github.io/2021/03/01/springboot/sample-board/board-19-nginx/"/>  
+    <link rel="icon" href="/css/images/favicon/favicon.ico" />
+     
 <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-
-                              
+ 
 <link rel="stylesheet" href="/libs/titillium-web/styles.css">
-
-                                
+ 
 <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
-
-                                  
+ 
 <link rel="stylesheet" href="/css/style.css">
-
-                                    
+ 
 <script src="/libs/jquery/3.5.0/jquery.min.js"></script>
-
-                                      
+ 
     
         
 <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
@@ -72,19 +58,19 @@
     
 
 
-                                        
+    
 <link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">
-
-                                          
+	
+    
 <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
 
-                                            
+    
 <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosanskr.css">
 
-<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Victor" type="application/atom+xml">
+  <meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Victor" type="application/atom+xml">
 </head>
-
 </html>
+
 <body>
     <div id="wrap">
         <header id="header">
@@ -265,7 +251,7 @@
 
 
 
-    <a data-url="https://ckck803.github.io/2021/03/01/springboot/sample-board/board-19-nginx/" data-id="ckmbndqx800301p8det0b0fb0" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ckck803.github.io/2021/03/01/springboot/sample-board/board-19-nginx/" data-id="ckmbnep6k004v7o8dhli21snw" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {

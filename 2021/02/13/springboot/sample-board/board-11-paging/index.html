@@ -1,25 +1,21 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="google" content="notranslate">
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="google" content="notranslate">
-
-
-  
 
     
-      <title>
-        
-          스프링부트를 이용한 게시판 만들기 11 - 페이징 처리하기 | 
-              Victor
-      </title>
-      
-          <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-          
-            <meta name="keywords" content="Spring Boot,CRUD,paging" />
-            
-              <meta name="description" content="11. 페이징 처리하기메인 게시판을 접근하게 되면 한번에 너무 많은 게시글들이 쏟아져 나오게 돼 보기가 좋지 않고 서버도 많은 양의 데이터를 한번에 보내야 하기 때문에 성능에서도 좋지 않다.사용자에게 전체 데이터에서 적당한 양의 데이터만 보여줘 사용자 입장에서도 서버 입장에서도 부담이 없게 한다. Control 로직 수정하기Spring에서 제공하는 Pag">
+ 
+    <title>스프링부트를 이용한 게시판 만들기 11 - 페이징 처리하기 | Victor</title>
+    
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    
+    <meta name="keywords" content="Spring Boot,CRUD,paging" />
+     <meta name="description" content="11. 페이징 처리하기메인 게시판을 접근하게 되면 한번에 너무 많은 게시글들이 쏟아져 나오게 돼 보기가 좋지 않고 서버도 많은 양의 데이터를 한번에 보내야 하기 때문에 성능에서도 좋지 않다.사용자에게 전체 데이터에서 적당한 양의 데이터만 보여줘 사용자 입장에서도 서버 입장에서도 부담이 없게 한다. Control 로직 수정하기Spring에서 제공하는 Pag">
 <meta property="og:type" content="article">
 <meta property="og:title" content="스프링부트를 이용한 게시판 만들기 11 - 페이징 처리하기">
 <meta property="og:url" content="https://ckck803.github.io/2021/02/13/springboot/sample-board/board-11-paging/index.html">
@@ -34,29 +30,19 @@
 <meta property="article:tag" content="CRUD">
 <meta property="article:tag" content="paging">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://ckck803.github.io/images/springboot/sample-board/paging/board-paging.png">
-                
-                  <link rel="canonical" href="https://ckck803.github.io/2021/02/13/springboot/sample-board/board-11-paging/"/>
-                    
-                        
-                          <link rel="icon" href="/css/images/favicon/favicon.ico" />
-                          
-                            
+<meta name="twitter:image" content="https://ckck803.github.io/images/springboot/sample-board/paging/board-paging.png">  <link rel="canonical" href="https://ckck803.github.io/2021/02/13/springboot/sample-board/board-11-paging/"/>  
+    <link rel="icon" href="/css/images/favicon/favicon.ico" />
+     
 <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-
-                              
+ 
 <link rel="stylesheet" href="/libs/titillium-web/styles.css">
-
-                                
+ 
 <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
-
-                                  
+ 
 <link rel="stylesheet" href="/css/style.css">
-
-                                    
+ 
 <script src="/libs/jquery/3.5.0/jquery.min.js"></script>
-
-                                      
+ 
     
         
 <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
@@ -72,19 +58,19 @@
     
 
 
-                                        
+    
 <link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">
-
-                                          
+	
+    
 <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
 
-                                            
+    
 <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosanskr.css">
 
-<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Victor" type="application/atom+xml">
+  <meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Victor" type="application/atom+xml">
 </head>
-
 </html>
+
 <body>
     <div id="wrap">
         <header id="header">
@@ -269,7 +255,7 @@
 
 
 
-    <a data-url="https://ckck803.github.io/2021/02/13/springboot/sample-board/board-11-paging/" data-id="ckmbndqwv002c1p8dd2pf7rzt" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ckck803.github.io/2021/02/13/springboot/sample-board/board-11-paging/" data-id="ckmbnep6700477o8d00elcirk" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {

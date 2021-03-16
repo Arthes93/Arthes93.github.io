@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="google" content="notranslate">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="google" content="notranslate">
 
 
+  
+
     
- 
-    <title>스프링부트를 이용한 게시판 만들기 13 - jenkins를 이용해 build 하기 | Victor</title>
-    
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1"
-    />
-    
-    <meta name="keywords" content="Spring Boot,CRUD,jenkins" />
-     <meta name="description" content="13. jenkins를 이용해 build하기jenkins를 로컬에 바로 설치해 사용해도 되지만 해당 프로젝트에서는 docker를 이용해 jenkins이미지를 불러와 빌드를 진행할 것이다. docker 설치하기도커는 https:&#x2F;&#x2F;docs.docker.com&#x2F;get-docker&#x2F; 에서 본인 운영체제에 맞는 것을 선택해 다운로드 한다.  본인이 사용하는 프로">
+      <title>
+        
+          스프링부트를 이용한 게시판 만들기 13 - jenkins를 이용해 build 하기 | 
+              Victor
+      </title>
+      
+          <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+          
+            <meta name="keywords" content="Spring Boot,CRUD,jenkins" />
+            
+              <meta name="description" content="13. jenkins를 이용해 build하기jenkins를 로컬에 바로 설치해 사용해도 되지만 해당 프로젝트에서는 docker를 이용해 jenkins이미지를 불러와 빌드를 진행할 것이다. docker 설치하기도커는 https:&#x2F;&#x2F;docs.docker.com&#x2F;get-docker&#x2F; 에서 본인 운영체제에 맞는 것을 선택해 다운로드 한다.  본인이 사용하는 프로">
 <meta property="og:type" content="article">
 <meta property="og:title" content="스프링부트를 이용한 게시판 만들기 13 - jenkins를 이용해 build 하기">
-<meta property="og:url" content="http://example.com/2021/02/14/springboot/sample-board/board-13-jenkins/index.html">
+<meta property="og:url" content="https://ckck803.github.io/2021/02/14/springboot/sample-board/board-13-jenkins/index.html">
 <meta property="og:site_name" content="Victor">
 <meta property="og:description" content="13. jenkins를 이용해 build하기jenkins를 로컬에 바로 설치해 사용해도 되지만 해당 프로젝트에서는 docker를 이용해 jenkins이미지를 불러와 빌드를 진행할 것이다. docker 설치하기도커는 https:&#x2F;&#x2F;docs.docker.com&#x2F;get-docker&#x2F; 에서 본인 운영체제에 맞는 것을 선택해 다운로드 한다.  본인이 사용하는 프로">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/images/springboot/sample-board/jenkins-ci/jenkins-main.png">
+<meta property="og:image" content="https://ckck803.github.io/images/springboot/sample-board/jenkins-ci/jenkins-main.png">
 <meta property="article:published_time" content="2021-02-14T03:11:40.000Z">
 <meta property="article:modified_time" content="2021-03-13T11:44:38.794Z">
 <meta property="article:author" content="John Doe">
@@ -30,19 +34,29 @@
 <meta property="article:tag" content="CRUD">
 <meta property="article:tag" content="jenkins">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/springboot/sample-board/jenkins-ci/jenkins-main.png">  <link rel="canonical" href="http://example.com/2021/02/14/springboot/sample-board/board-13-jenkins/"/>  
-    <link rel="icon" href="/css/images/favicon/favicon.ico" />
-     
+<meta name="twitter:image" content="https://ckck803.github.io/images/springboot/sample-board/jenkins-ci/jenkins-main.png">
+                
+                  <link rel="canonical" href="https://ckck803.github.io/2021/02/14/springboot/sample-board/board-13-jenkins/"/>
+                    
+                        
+                          <link rel="icon" href="/css/images/favicon/favicon.ico" />
+                          
+                            
 <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
- 
+
+                              
 <link rel="stylesheet" href="/libs/titillium-web/styles.css">
- 
+
+                                
 <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
- 
+
+                                  
 <link rel="stylesheet" href="/css/style.css">
- 
+
+                                    
 <script src="/libs/jquery/3.5.0/jquery.min.js"></script>
- 
+
+                                      
     
         
 <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
@@ -58,19 +72,19 @@
     
 
 
-    
+                                        
 <link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">
-	
-    
+
+                                          
 <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
 
-    
+                                            
 <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosanskr.css">
 
-  <meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Victor" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Victor" type="application/atom+xml">
 </head>
-</html>ㄴ
 
+</html>
 <body>
     <div id="wrap">
         <header id="header">
@@ -263,7 +277,7 @@
 
 
 
-    <a data-url="http://example.com/2021/02/14/springboot/sample-board/board-13-jenkins/" data-id="ckmbn0sq4002jq18d6b4dgtb6" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ckck803.github.io/2021/02/14/springboot/sample-board/board-13-jenkins/" data-id="ckmbndqww002f1p8d91gn7mz2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -334,13 +348,13 @@
             "name": "John Doe"
         },
         "headline": "스프링부트를 이용한 게시판 만들기 13 - jenkins를 이용해 build 하기",
-        "image": "http://example.com/images/springboot/sample-board/jenkins-ci/jenkins-main.png",
+        "image": "https://ckck803.github.io/images/springboot/sample-board/jenkins-ci/jenkins-main.png",
         "keywords": "Spring Boot CRUD jenkins",
         "genre": "Spring Boot 게시판 만들기",
         "datePublished": "2021-02-14",
         "dateCreated": "2021-02-14",
         "dateModified": "2021-03-13",
-        "url": "http://example.com/2021/02/14/springboot/sample-board/board-13-jenkins/",
+        "url": "https://ckck803.github.io/2021/02/14/springboot/sample-board/board-13-jenkins/",
         "description": "
 13. jenkins를 이용해 build하기jenkins를 로컬에 바로 설치해 사용해도 되지만 해당 프로젝트에서는 docker를 이용해 jenkins이미지를 불러와 빌드를 진행할 것이다.
 docker 설치하기도커는 https://docs.docker.com/get-docker/ 에서 본인 운영체제에 맞는 것을 선택해 다운로드 한다.
@@ -617,7 +631,7 @@ docker 설치하기도커는 https://docs.docker.com/get-docker/ 에서 본인 �
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://example.com/2021/02/14/springboot/sample-board/board-13-jenkins/';
+    var disqus_url = 'https://ckck803.github.io/2021/02/14/springboot/sample-board/board-13-jenkins/';
     
     (function() {
     var dsq = document.createElement('script');

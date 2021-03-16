@@ -1,46 +1,60 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="google" content="notranslate">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="google" content="notranslate">
 
 
+  
+
     
- 
-    <title>JPA - Entity Manager Factory와 Entity Manager | Victor</title>
-    
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1"
-    />
-    
-    <meta name="keywords" content="JPA" />
-     <meta name="description" content="JPA - Entity Manager Factory와 Entity ManagerEntityManagerEntity Manager는 transaction 단위로 만들고 DataBase transaction이 끝나면 같이 종료 시킨다.EntityManager.persist(entity) : 사실 DB에 저장하는 것이 아니다. 영속성 context를 통해 En">
+      <title>
+        
+          JPA - Entity Manager Factory와 Entity Manager | 
+              Victor
+      </title>
+      
+          <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+          
+            <meta name="keywords" content="JPA" />
+            
+              <meta name="description" content="JPA - Entity Manager Factory와 Entity ManagerEntityManagerEntity Manager는 transaction 단위로 만들고 DataBase transaction이 끝나면 같이 종료 시킨다.EntityManager.persist(entity) : 사실 DB에 저장하는 것이 아니다. 영속성 context를 통해 En">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JPA - Entity Manager Factory와 Entity Manager">
-<meta property="og:url" content="http://example.com/2021/02/15/springboot/JPA/entitymanager/index.html">
+<meta property="og:url" content="https://ckck803.github.io/2021/02/15/springboot/JPA/entitymanager/index.html">
 <meta property="og:site_name" content="Victor">
 <meta property="og:description" content="JPA - Entity Manager Factory와 Entity ManagerEntityManagerEntity Manager는 transaction 단위로 만들고 DataBase transaction이 끝나면 같이 종료 시킨다.EntityManager.persist(entity) : 사실 DB에 저장하는 것이 아니다. 영속성 context를 통해 En">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/images/JPA/jpa.png">
+<meta property="og:image" content="https://ckck803.github.io/images/JPA/jpa.png">
 <meta property="article:published_time" content="2021-02-14T19:31:46.000Z">
 <meta property="article:modified_time" content="2021-02-17T23:05:03.106Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="JPA">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/JPA/jpa.png">  <link rel="canonical" href="http://example.com/2021/02/15/springboot/jpa/entitymanager/"/>  
-    <link rel="icon" href="/css/images/favicon/favicon.ico" />
-     
+<meta name="twitter:image" content="https://ckck803.github.io/images/JPA/jpa.png">
+                
+                  <link rel="canonical" href="https://ckck803.github.io/2021/02/15/springboot/jpa/entitymanager/"/>
+                    
+                        
+                          <link rel="icon" href="/css/images/favicon/favicon.ico" />
+                          
+                            
 <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
- 
+
+                              
 <link rel="stylesheet" href="/libs/titillium-web/styles.css">
- 
+
+                                
 <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
- 
+
+                                  
 <link rel="stylesheet" href="/css/style.css">
- 
+
+                                    
 <script src="/libs/jquery/3.5.0/jquery.min.js"></script>
- 
+
+                                      
     
         
 <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
@@ -56,19 +70,19 @@
     
 
 
-    
+                                        
 <link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">
-	
-    
+
+                                          
 <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
 
-    
+                                            
 <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosanskr.css">
 
-  <meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Victor" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Victor" type="application/atom+xml">
 </head>
-</html>ㄴ
 
+</html>
 <body>
     <div id="wrap">
         <header id="header">
@@ -228,7 +242,7 @@
 
 
 
-    <a data-url="http://example.com/2021/02/15/springboot/JPA/entitymanager/" data-id="ckmbn0sph0017q18d094ldu74" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ckck803.github.io/2021/02/15/springboot/JPA/entitymanager/" data-id="ckmbndqw600171p8dbog0d2q3" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -299,13 +313,13 @@
             "name": "John Doe"
         },
         "headline": "JPA - Entity Manager Factory와 Entity Manager",
-        "image": "http://example.com/images/JPA/jpa.png",
+        "image": "https://ckck803.github.io/images/JPA/jpa.png",
         "keywords": "JPA",
         "genre": "JAVA JPA",
         "datePublished": "2021-02-15",
         "dateCreated": "2021-02-15",
         "dateModified": "2021-02-18",
-        "url": "http://example.com/2021/02/15/springboot/JPA/entitymanager/",
+        "url": "https://ckck803.github.io/2021/02/15/springboot/JPA/entitymanager/",
         "description": "
 JPA - Entity Manager Factory와 Entity ManagerEntityManagerEntity Manager는 transaction 단위로 만들고 DataBase transaction이 끝나면 같이 종료 시킨다.EntityManager.persist(entity) : 사실 DB에 저장하는 것이 아니다. 영속성 context를 통해 En",
         "wordCount": 58
@@ -579,7 +593,7 @@ JPA - Entity Manager Factory와 Entity ManagerEntityManagerEntity Manager는 tra
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://example.com/2021/02/15/springboot/JPA/entitymanager/';
+    var disqus_url = 'https://ckck803.github.io/2021/02/15/springboot/JPA/entitymanager/';
     
     (function() {
     var dsq = document.createElement('script');

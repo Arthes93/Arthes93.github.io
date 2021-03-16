@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="google" content="notranslate">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="google" content="notranslate">
 
 
+  
+
     
- 
-    <title>Spring Security Form Login - 4. 회원가입 페이지 만들기 | Victor</title>
-    
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1"
-    />
-    
-    <meta name="keywords" content="Spring Boot,Spring Security,Form" />
-     <meta name="description" content="회원가입을 처리하기 위한 Controller 추가 요청으로 들어온 데이터를 받기 위한 DTO객체 생성 회원가입 page생성하기  회원 가입을 처리하기 위한 Controller 추가&#x2F;signup으로 들어온 사용자 정보를 DTO객체로 받고 Account객체를 생성한 후 DB에 저장한다. 123456789101112131415161718192021222324">
+      <title>
+        
+          Spring Security Form Login - 4. 회원가입 페이지 만들기 | 
+              Victor
+      </title>
+      
+          <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+          
+            <meta name="keywords" content="Spring Boot,Spring Security,Form" />
+            
+              <meta name="description" content="회원가입을 처리하기 위한 Controller 추가 요청으로 들어온 데이터를 받기 위한 DTO객체 생성 회원가입 page생성하기  회원 가입을 처리하기 위한 Controller 추가&#x2F;signup으로 들어온 사용자 정보를 DTO객체로 받고 Account객체를 생성한 후 DB에 저장한다. 123456789101112131415161718192021222324">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring Security Form Login - 4. 회원가입 페이지 만들기">
-<meta property="og:url" content="http://example.com/2021/01/29/springboot/security/Form-Login/form-signup-md/index.html">
+<meta property="og:url" content="https://ckck803.github.io/2021/01/29/springboot/security/Form-Login/form-signup-md/index.html">
 <meta property="og:site_name" content="Victor">
 <meta property="og:description" content="회원가입을 처리하기 위한 Controller 추가 요청으로 들어온 데이터를 받기 위한 DTO객체 생성 회원가입 page생성하기  회원 가입을 처리하기 위한 Controller 추가&#x2F;signup으로 들어온 사용자 정보를 DTO객체로 받고 Account객체를 생성한 후 DB에 저장한다. 123456789101112131415161718192021222324">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/images/springboot/security/Form-Login/signup.png">
+<meta property="og:image" content="https://ckck803.github.io/images/springboot/security/Form-Login/signup.png">
 <meta property="article:published_time" content="2021-01-29T02:10:40.000Z">
 <meta property="article:modified_time" content="2021-03-13T11:31:14.781Z">
 <meta property="article:author" content="John Doe">
@@ -30,19 +34,29 @@
 <meta property="article:tag" content="Spring Security">
 <meta property="article:tag" content="Form">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/springboot/security/Form-Login/signup.png">  <link rel="canonical" href="http://example.com/2021/01/29/springboot/security/form-login/form-signup-md/"/>  
-    <link rel="icon" href="/css/images/favicon/favicon.ico" />
-     
+<meta name="twitter:image" content="https://ckck803.github.io/images/springboot/security/Form-Login/signup.png">
+                
+                  <link rel="canonical" href="https://ckck803.github.io/2021/01/29/springboot/security/form-login/form-signup-md/"/>
+                    
+                        
+                          <link rel="icon" href="/css/images/favicon/favicon.ico" />
+                          
+                            
 <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
- 
+
+                              
 <link rel="stylesheet" href="/libs/titillium-web/styles.css">
- 
+
+                                
 <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
- 
+
+                                  
 <link rel="stylesheet" href="/css/style.css">
- 
+
+                                    
 <script src="/libs/jquery/3.5.0/jquery.min.js"></script>
- 
+
+                                      
     
         
 <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
@@ -58,19 +72,19 @@
     
 
 
-    
+                                        
 <link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">
-	
-    
+
+                                          
 <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
 
-    
+                                            
 <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosanskr.css">
 
-  <meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Victor" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Victor" type="application/atom+xml">
 </head>
-</html>ㄴ
 
+</html>
 <body>
     <div id="wrap">
         <header id="header">
@@ -235,7 +249,7 @@
 
 
 
-    <a data-url="http://example.com/2021/01/29/springboot/security/Form-Login/form-signup-md/" data-id="ckmbn0ss5007iq18dafgi0qtk" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ckck803.github.io/2021/01/29/springboot/security/Form-Login/form-signup-md/" data-id="ckmbndqz800771p8dedvi88kf" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -306,13 +320,13 @@
             "name": "John Doe"
         },
         "headline": "Spring Security Form Login - 4. 회원가입 페이지 만들기",
-        "image": "http://example.com/images/springboot/security/Form-Login/signup.png",
+        "image": "https://ckck803.github.io/images/springboot/security/Form-Login/signup.png",
         "keywords": "Spring Boot Spring Security Form",
         "genre": "Spring Boot Spring Security Form login",
         "datePublished": "2021-01-29",
         "dateCreated": "2021-01-29",
         "dateModified": "2021-03-13",
-        "url": "http://example.com/2021/01/29/springboot/security/Form-Login/form-signup-md/",
+        "url": "https://ckck803.github.io/2021/01/29/springboot/security/Form-Login/form-signup-md/",
         "description": "
 
 회원가입을 처리하기 위한 Controller 추가
@@ -592,7 +606,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://example.com/2021/01/29/springboot/security/Form-Login/form-signup-md/';
+    var disqus_url = 'https://ckck803.github.io/2021/01/29/springboot/security/Form-Login/form-signup-md/';
     
     (function() {
     var dsq = document.createElement('script');

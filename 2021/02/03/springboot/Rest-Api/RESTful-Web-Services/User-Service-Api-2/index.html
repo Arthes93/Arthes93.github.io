@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="google" content="notranslate">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="google" content="notranslate">
 
 
+  
+
     
- 
-    <title>Spring Boot를 이용한 RESTful Web Services 개발 - User Service API 구현 | Victor</title>
-    
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1"
-    />
-    
-    <meta name="keywords" content="Spring Boot,Spring Rest,강의,HTTP Status Code,Exception Handling" />
-     <meta name="description" content="HTTP Status Code 제어1234567891011@PostMapping(&quot;&#x2F;users&quot;)public ResponseEntity&lt;User&gt; createUser(@RequestBody @Valid User user)&amp;#123;    User savedUser &#x3D; service.save(user);    URI locati">
+      <title>
+        
+          Spring Boot를 이용한 RESTful Web Services 개발 - User Service API 구현 | 
+              Victor
+      </title>
+      
+          <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+          
+            <meta name="keywords" content="Spring Boot,Spring Rest,강의,HTTP Status Code,Exception Handling" />
+            
+              <meta name="description" content="HTTP Status Code 제어1234567891011@PostMapping(&quot;&#x2F;users&quot;)public ResponseEntity&lt;User&gt; createUser(@RequestBody @Valid User user)&amp;#123;    User savedUser &#x3D; service.save(user);    URI locati">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring Boot를 이용한 RESTful Web Services 개발 - User Service API 구현">
-<meta property="og:url" content="http://example.com/2021/02/03/springboot/Rest-Api/RESTful-Web-Services/User-Service-Api-2/index.html">
+<meta property="og:url" content="https://ckck803.github.io/2021/02/03/springboot/Rest-Api/RESTful-Web-Services/User-Service-Api-2/index.html">
 <meta property="og:site_name" content="Victor">
 <meta property="og:description" content="HTTP Status Code 제어1234567891011@PostMapping(&quot;&#x2F;users&quot;)public ResponseEntity&lt;User&gt; createUser(@RequestBody @Valid User user)&amp;#123;    User savedUser &#x3D; service.save(user);    URI locati">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/images/springboot/Rest-Api/RESTful-Web-Services/spring-boot-logo.png">
+<meta property="og:image" content="https://ckck803.github.io/images/springboot/Rest-Api/RESTful-Web-Services/spring-boot-logo.png">
 <meta property="article:published_time" content="2021-02-02T17:02:37.000Z">
 <meta property="article:modified_time" content="2021-03-13T11:39:42.814Z">
 <meta property="article:author" content="John Doe">
@@ -32,19 +36,29 @@
 <meta property="article:tag" content="HTTP Status Code">
 <meta property="article:tag" content="Exception Handling">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/springboot/Rest-Api/RESTful-Web-Services/spring-boot-logo.png">  <link rel="canonical" href="http://example.com/2021/02/03/springboot/rest-api/restful-web-services/user-service-api-2/"/>  
-    <link rel="icon" href="/css/images/favicon/favicon.ico" />
-     
+<meta name="twitter:image" content="https://ckck803.github.io/images/springboot/Rest-Api/RESTful-Web-Services/spring-boot-logo.png">
+                
+                  <link rel="canonical" href="https://ckck803.github.io/2021/02/03/springboot/rest-api/restful-web-services/user-service-api-2/"/>
+                    
+                        
+                          <link rel="icon" href="/css/images/favicon/favicon.ico" />
+                          
+                            
 <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
- 
+
+                              
 <link rel="stylesheet" href="/libs/titillium-web/styles.css">
- 
+
+                                
 <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
- 
+
+                                  
 <link rel="stylesheet" href="/css/style.css">
- 
+
+                                    
 <script src="/libs/jquery/3.5.0/jquery.min.js"></script>
- 
+
+                                      
     
         
 <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
@@ -60,19 +74,19 @@
     
 
 
-    
+                                        
 <link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">
-	
-    
+
+                                          
 <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
 
-    
+                                            
 <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosanskr.css">
 
-  <meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Victor" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Victor" type="application/atom+xml">
 </head>
-</html>ㄴ
 
+</html>
 <body>
     <div id="wrap">
         <header id="header">
@@ -233,7 +247,7 @@
 
 
 
-    <a data-url="http://example.com/2021/02/03/springboot/Rest-Api/RESTful-Web-Services/User-Service-Api-2/" data-id="ckmbn0sri0062q18d21wo3cjj" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ckck803.github.io/2021/02/03/springboot/Rest-Api/RESTful-Web-Services/User-Service-Api-2/" data-id="ckmbndqyk005u1p8dcamj197s" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -304,13 +318,13 @@
             "name": "John Doe"
         },
         "headline": "Spring Boot를 이용한 RESTful Web Services 개발 - User Service API 구현",
-        "image": "http://example.com/images/springboot/Rest-Api/RESTful-Web-Services/spring-boot-logo.png",
+        "image": "https://ckck803.github.io/images/springboot/Rest-Api/RESTful-Web-Services/spring-boot-logo.png",
         "keywords": "Spring Boot Spring Rest 강의 HTTP Status Code Exception Handling",
         "genre": "Spring Boot Spring Rest RESTful Web Services 강의",
         "datePublished": "2021-02-03",
         "dateCreated": "2021-02-03",
         "dateModified": "2021-03-13",
-        "url": "http://example.com/2021/02/03/springboot/Rest-Api/RESTful-Web-Services/User-Service-Api-2/",
+        "url": "https://ckck803.github.io/2021/02/03/springboot/Rest-Api/RESTful-Web-Services/User-Service-Api-2/",
         "description": "
 HTTP Status Code 제어1234567891011@PostMapping(&quot;/users&quot;)public ResponseEntity&lt;User&gt; createUser(@RequestBody @Valid User user)&#123;    User savedUser = service.save(user);    URI locati",
         "wordCount": 714
@@ -584,7 +598,7 @@ HTTP Status Code 제어1234567891011@PostMapping(&quot;/users&quot;)public Respo
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://example.com/2021/02/03/springboot/Rest-Api/RESTful-Web-Services/User-Service-Api-2/';
+    var disqus_url = 'https://ckck803.github.io/2021/02/03/springboot/Rest-Api/RESTful-Web-Services/User-Service-Api-2/';
     
     (function() {
     var dsq = document.createElement('script');

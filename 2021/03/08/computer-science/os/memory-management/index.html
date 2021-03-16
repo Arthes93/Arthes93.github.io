@@ -1,43 +1,57 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="google" content="notranslate">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="google" content="notranslate">
 
 
+  
+
     
- 
-    <title>메모리 관리 | Victor</title>
-    
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1"
-    />
-    
-    <meta name="keywords" content="" />
-     <meta name="description" content="메모리 관리 기본적인 메모리 관리 swapping 가상 메모리 Page replacement 알고리즘 세그멘테이션  프로그래머들이 가장 바라는 메모리는 바로  크고 빠르고 비 휘발성인것을 원한다.  Memory Manager(메모리 관리자) 메모리 계층을 관리하는 운영체제의 일부분 사용하고 있는 메모리와 사용하고있지 않는 메모리를 계속해서 추적한다. 메모리">
+      <title>
+        
+          메모리 관리 | 
+              Victor
+      </title>
+      
+          <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+          
+            <meta name="keywords" content="" />
+            
+              <meta name="description" content="메모리 관리 기본적인 메모리 관리 swapping 가상 메모리 Page replacement 알고리즘 세그멘테이션  프로그래머들이 가장 바라는 메모리는 바로  크고 빠르고 비 휘발성인것을 원한다.  Memory Manager(메모리 관리자) 메모리 계층을 관리하는 운영체제의 일부분 사용하고 있는 메모리와 사용하고있지 않는 메모리를 계속해서 추적한다. 메모리">
 <meta property="og:type" content="article">
 <meta property="og:title" content="메모리 관리">
-<meta property="og:url" content="http://example.com/2021/03/08/computer-science/os/memory-management/index.html">
+<meta property="og:url" content="https://ckck803.github.io/2021/03/08/computer-science/os/memory-management/index.html">
 <meta property="og:site_name" content="Victor">
 <meta property="og:description" content="메모리 관리 기본적인 메모리 관리 swapping 가상 메모리 Page replacement 알고리즘 세그멘테이션  프로그래머들이 가장 바라는 메모리는 바로  크고 빠르고 비 휘발성인것을 원한다.  Memory Manager(메모리 관리자) 메모리 계층을 관리하는 운영체제의 일부분 사용하고 있는 메모리와 사용하고있지 않는 메모리를 계속해서 추적한다. 메모리">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-03-07T15:16:13.000Z">
 <meta property="article:modified_time" content="2021-03-11T13:18:09.050Z">
 <meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">  <link rel="canonical" href="http://example.com/2021/03/08/computer-science/os/memory-management/"/>  
-    <link rel="icon" href="/css/images/favicon/favicon.ico" />
-     
+<meta name="twitter:card" content="summary">
+                
+                  <link rel="canonical" href="https://ckck803.github.io/2021/03/08/computer-science/os/memory-management/"/>
+                    
+                        
+                          <link rel="icon" href="/css/images/favicon/favicon.ico" />
+                          
+                            
 <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
- 
+
+                              
 <link rel="stylesheet" href="/libs/titillium-web/styles.css">
- 
+
+                                
 <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
- 
+
+                                  
 <link rel="stylesheet" href="/css/style.css">
- 
+
+                                    
 <script src="/libs/jquery/3.5.0/jquery.min.js"></script>
- 
+
+                                      
     
         
 <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
@@ -53,19 +67,19 @@
     
 
 
-    
+                                        
 <link rel="stylesheet" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.css">
-	
-    
+
+                                          
 <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css">
 
-    
+                                            
 <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosanskr.css">
 
-  <meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Victor" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Victor" type="application/atom+xml">
 </head>
-</html>ㄴ
 
+</html>
 <body>
     <div id="wrap">
         <header id="header">
@@ -240,7 +254,7 @@
 
 
 
-    <a data-url="http://example.com/2021/03/08/computer-science/os/memory-management/" data-id="ckmbn0spd0011q18d868n6gq1" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ckck803.github.io/2021/03/08/computer-science/os/memory-management/" data-id="ckmbndqw400131p8d6cgwbncl" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -311,13 +325,13 @@
             "name": "John Doe"
         },
         "headline": "메모리 관리",
-        "image": "http://example.com",
+        "image": "https://ckck803.github.io",
         "keywords": "",
         "genre": "CS OS",
         "datePublished": "2021-03-08",
         "dateCreated": "2021-03-08",
         "dateModified": "2021-03-11",
-        "url": "http://example.com/2021/03/08/computer-science/os/memory-management/",
+        "url": "https://ckck803.github.io/2021/03/08/computer-science/os/memory-management/",
         "description": "메모리 관리
 기본적인 메모리 관리
 swapping
@@ -606,7 +620,7 @@ Memory Manager(메모리 관리자)
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://example.com/2021/03/08/computer-science/os/memory-management/';
+    var disqus_url = 'https://ckck803.github.io/2021/03/08/computer-science/os/memory-management/';
     
     (function() {
     var dsq = document.createElement('script');

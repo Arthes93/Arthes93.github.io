@@ -9,6 +9,38 @@
 
 
     <url>
+        <loc>https://ckck803.github.io/2021/02/16/JPA/persistence/</loc>
+        <lastmod>2021-03-19T17:22:30.515Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ckck803.github.io/2021/02/15/JPA/entitymanager/</loc>
+        <lastmod>2021-03-19T17:22:21.273Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ckck803.github.io/2021/03/20/algorithm/baekjoon/BFS/1194-%EB%8B%AC%EC%9D%B4%EC%B0%A8%EC%98%A4%EB%A5%B8%EB%8B%A4-%EA%B0%80%EC%9E%90/</loc>
+        <lastmod>2021-03-19T17:21:23.451Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://ckck803.github.io/2021/03/20/springboot/security/study/usernamepasswordAuthenticationFilter/</loc>
+        <lastmod>2021-03-19T17:19:34.183Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://ckck803.github.io/2021/03/15/algorithm/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/%EC%8A%A4%ED%83%9D/67257-%EC%88%98%EC%8B%9D%EC%B5%9C%EB%8C%80%ED%99%94/</loc>
         <lastmod>2021-03-19T17:13:01.600Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -91,14 +123,6 @@
     <url>
         <loc>https://ckck803.github.io/2020/01/29/algorithm/baekjoon/BFS/1012/</loc>
         <lastmod>2021-03-19T17:08:41.068Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://ckck803.github.io/2021/03/20/springboot/security/study/usernamepasswordAuthenticationFilter/</loc>
-        <lastmod>2021-03-19T17:02:25.451Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -779,22 +803,6 @@
     <url>
         <loc>https://ckck803.github.io/2021/03/06/computer-science/database/SQL/ACID/</loc>
         <lastmod>2021-03-11T13:13:32.030Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://ckck803.github.io/2021/02/16/springboot/JPA/persistence/</loc>
-        <lastmod>2021-02-18T13:13:11.321Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://ckck803.github.io/2021/02/15/springboot/JPA/entitymanager/</loc>
-        <lastmod>2021-02-17T23:05:03.106Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

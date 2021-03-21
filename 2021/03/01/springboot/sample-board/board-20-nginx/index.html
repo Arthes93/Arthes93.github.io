@@ -7,27 +7,27 @@
 
     
  
-    <title>스프링부트를 이용한 게시판 만들기 18 - Build시 DB 연결 Bug Fix 및 Profile 설정 | Victor</title>
+    <title>Spring Boot 게시판 만들기 20 - 프록시 서버 이용하기 | Victor</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="keywords" content="Spring Boot,CRUD,properties">
-     <meta name="description" content="18. Build시 DB 연결 Bug Fix 및 Profile 설정Jenkins에서 build 오류Jenkins에서 Build를 진행하면 Test시 해당 오류가 발생하게 된다. Test를 진행하면서 DBConfigByYml 클래스내 필드를 Application-mysql.yml 를 이용해 채우게 되는데 Application-mysql.yml 파일이 Git">
+    <meta name="keywords" content="Spring Boot,CRUD,nginx">
+     <meta name="description" content="20. 프록시 서버 이용하기현재는 client 가 Web Application에 접근하기 위해서는 8080포트를 사용해야 한다. client가 쉽게 접근 할 수 있도록 80번 포트로 어플리케이션을 띄어야 하는데 ubuntu에서는 일반 사용자가 80번 포트를 사용할 수 있는 권한이 없다. 만약 80번 포트로 프로그램을 실행하게 되면 아래와 같은 권한 오류가">
 <meta property="og:type" content="article">
-<meta property="og:title" content="스프링부트를 이용한 게시판 만들기 18 - Build시 DB 연결 Bug Fix 및 Profile 설정">
-<meta property="og:url" content="https://ckck803.github.io/2021/02/26/springboot/sample-board/board-18-profile/index.html">
+<meta property="og:title" content="Spring Boot 게시판 만들기 20 - 프록시 서버 이용하기">
+<meta property="og:url" content="https://ckck803.github.io/2021/03/01/springboot/sample-board/board-20-nginx/index.html">
 <meta property="og:site_name" content="Victor">
-<meta property="og:description" content="18. Build시 DB 연결 Bug Fix 및 Profile 설정Jenkins에서 build 오류Jenkins에서 Build를 진행하면 Test시 해당 오류가 발생하게 된다. Test를 진행하면서 DBConfigByYml 클래스내 필드를 Application-mysql.yml 를 이용해 채우게 되는데 Application-mysql.yml 파일이 Git">
+<meta property="og:description" content="20. 프록시 서버 이용하기현재는 client 가 Web Application에 접근하기 위해서는 8080포트를 사용해야 한다. client가 쉽게 접근 할 수 있도록 80번 포트로 어플리케이션을 띄어야 하는데 ubuntu에서는 일반 사용자가 80번 포트를 사용할 수 있는 권한이 없다. 만약 80번 포트로 프로그램을 실행하게 되면 아래와 같은 권한 오류가">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://ckck803.github.io/images/springboot/sample-board/profile/jenkins-error.png">
-<meta property="article:published_time" content="2021-02-25T23:03:09.000Z">
-<meta property="article:modified_time" content="2021-03-13T11:29:35.699Z">
+<meta property="og:image" content="https://ckck803.github.io/images/springboot/sample-board/nginx/nginx.png">
+<meta property="article:published_time" content="2021-03-01T05:07:30.000Z">
+<meta property="article:modified_time" content="2021-03-21T15:54:59.940Z">
 <meta property="article:author" content="ckck803">
 <meta property="article:tag" content="Spring Boot">
 <meta property="article:tag" content="CRUD">
-<meta property="article:tag" content="properties">
+<meta property="article:tag" content="nginx">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://ckck803.github.io/images/springboot/sample-board/profile/jenkins-error.png">  <link rel="canonical" href="https://ckck803.github.io/2021/02/26/springboot/sample-board/board-18-profile/">  
+<meta name="twitter:image" content="https://ckck803.github.io/images/springboot/sample-board/nginx/nginx.png">  <link rel="canonical" href="https://ckck803.github.io/2021/03/01/springboot/sample-board/board-20-nginx/">  
     <link rel="icon" href="/css/images/favicon/favicon.ico">
      
 <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
@@ -173,14 +173,14 @@ ga('send', 'pageview');
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-springboot/sample-board/board-18-profile" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-springboot/sample-board/board-20-nginx" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        스프링부트를 이용한 게시판 만들기 18 - Build시 DB 연결 Bug Fix 및 Profile 설정
+        Spring Boot 게시판 만들기 20 - 프록시 서버 이용하기
         </h1>
     
 
@@ -191,16 +191,16 @@ ga('send', 'pageview');
                 
   <div class="article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/2021/02/26/springboot/sample-board/board-18-profile/" class="article-date">
-       <time datetime="2021-02-25T23:03:09.000Z" itemprop="datePublished">2021-02-26</time>
+    <a href="/2021/03/01/springboot/sample-board/board-20-nginx/" class="article-date">
+       <time datetime="2021-03-01T05:07:30.000Z" itemprop="datePublished">2021-03-01</time>
     </a>
   </div>
 
 
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
-  <a href="/2021/02/26/springboot/sample-board/board-18-profile/" class="article-date">
-     <time datetime="2021-03-13T11:29:35.699Z" itemprop="dateModified">2021-03-13</time>
+  <a href="/2021/03/01/springboot/sample-board/board-20-nginx/" class="article-date">
+     <time datetime="2021-03-21T15:54:59.940Z" itemprop="dateModified">2021-03-22</time>
   </a>
 </div>
 
@@ -210,7 +210,7 @@ ga('send', 'pageview');
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link-link" href="/tags/CRUD/" rel="tag">CRUD</a>, <a class="tag-link-link" href="/tags/Spring-Boot/" rel="tag">Spring Boot</a>, <a class="tag-link-link" href="/tags/properties/" rel="tag">properties</a>
+        <a class="tag-link-link" href="/tags/CRUD/" rel="tag">CRUD</a>, <a class="tag-link-link" href="/tags/Spring-Boot/" rel="tag">Spring Boot</a>, <a class="tag-link-link" href="/tags/nginx/" rel="tag">nginx</a>
     </div>
 
                 
@@ -227,24 +227,41 @@ ga('send', 'pageview');
 
             
 
-            <p><img src="/images/springboot/sample-board/profile/jenkins-error.png"></p>
-<h1 id="18-Build시-DB-연결-Bug-Fix-및-Profile-설정"><a href="#18-Build시-DB-연결-Bug-Fix-및-Profile-설정" class="headerlink" title="18. Build시 DB 연결 Bug Fix 및 Profile 설정"></a>18. Build시 DB 연결 Bug Fix 및 Profile 설정</h1><h2 id="Jenkins에서-build-오류"><a href="#Jenkins에서-build-오류" class="headerlink" title="Jenkins에서 build 오류"></a>Jenkins에서 build 오류</h2><p>Jenkins에서 Build를 진행하면 Test시 해당 오류가 발생하게 된다. Test를 진행하면서 DBConfigByYml 클래스내 필드를 <strong>Application-mysql.yml</strong> 를 이용해 채우게 되는데 <strong>Application-mysql.yml</strong> 파일이 Github에는 올라가 있지 않아 문제가 생기게 되는 것이다.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&gt; Task :test</span><br><span class="line">SampleBoardApplicationTests &gt; contextLoads() FAILED</span><br><span class="line">    java.lang.IllegalStateException at DefaultCacheAwareContextLoaderDelegate.java:<span class="number">132</span></span><br><span class="line">        Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException at ConstructorResolver.java:<span class="number">800</span></span><br><span class="line">            Caused by: org.springframework.beans.factory.BeanCreationException at AutowiredAnnotationBeanPostProcessor.java:<span class="number">405</span></span><br><span class="line">                Caused by: java.lang.IllegalArgumentException at PropertyPlaceholderHelper.java:<span class="number">178</span></span><br><span class="line"></span><br><span class="line"><span class="number">2021</span>-<span class="number">02</span>-<span class="number">24</span> <span class="number">16</span>:<span class="number">17</span>:<span class="number">02.458</span>  INFO <span class="number">1610</span> --- [extShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService <span class="string">&#x27;applicationTaskExecutor&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="number">17</span> tests completed, <span class="number">1</span> failed</span><br><span class="line"></span><br><span class="line">&gt; Task :test FAILED</span><br><span class="line"></span><br><span class="line">FAILURE: Build failed with an exception.</span><br><span class="line"></span><br><span class="line">* What went wrong:</span><br><span class="line">Execution failed <span class="keyword">for</span> task <span class="string">&#x27;:test&#x27;</span>.</span><br><span class="line">&gt; There were failing tests. See the report at: file:<span class="comment">///var/jenkins_home/workspace/sample-board/build/reports/tests/test/index.html</span></span><br><span class="line"></span><br><span class="line">* Try:</span><br><span class="line">Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.</span><br><span class="line"></span><br><span class="line">* Get more help at https:<span class="comment">//help.gradle.org</span></span><br><span class="line"></span><br><span class="line">BUILD FAILED in 53s</span><br><span class="line"><span class="number">7</span> actionable tasks: <span class="number">7</span> executed</span><br><span class="line">Build step <span class="string">&#x27;Invoke Gradle script&#x27;</span> changed build result to FAILURE</span><br><span class="line">Build step <span class="string">&#x27;Invoke Gradle script&#x27;</span> marked build as failure</span><br><span class="line">Finished: FAILURE</span><br></pre></td></tr></table></figure>
-<h2 id="여러개의-PropertySource-사용하기"><a href="#여러개의-PropertySource-사용하기" class="headerlink" title="여러개의 @PropertySource 사용하기"></a>여러개의 @PropertySource 사용하기</h2><p>첫번째로 해결한 방법은 <strong>@PropertySource</strong>를 두개 사용하여 test를 진행할 시에는 <strong>H2 database</strong>를 바라보게 하고 운영시에는 <strong>MySQL</strong>을 바라 볼 수 있게 설정 파일을 두게 만들어 사용했다. @PropertySource는 순서에 따라 아래 값이 이전 값을 덮어 쓰게 된다.</p>
-<p><em>DBConfigByYml.java</em></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@PropertySource(value = &quot;classpath:application-h2.yml&quot;, factory = YamlPropertySourceFactory.class, ignoreResourceNotFound = true)</span></span><br><span class="line"><span class="meta">@PropertySource(value = &quot;classpath:application-mysql.yml&quot;, factory = YamlPropertySourceFactory.class, ignoreResourceNotFound = true)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DBConfigByYml</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;spring.datasource.driver-class-name&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String driverClassName;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;spring.datasource.url&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String url;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;spring.datasource.username&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String username;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;spring.datasource.password&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> DataSource <span class="title">dataSource</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> DataSourceBuilder.create()</span><br><span class="line">                .driverClassName(driverClassName)</span><br><span class="line">                .url(url)</span><br><span class="line">                .username(username)</span><br><span class="line">                .password(password)</span><br><span class="line">                .build();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="여러개의-PropertySource-묶기"><a href="#여러개의-PropertySource-묶기" class="headerlink" title="여러개의 PropertySource 묶기"></a>여러개의 PropertySource 묶기</h3><p><strong>PropertySources</strong> 어노테이션을 사용하면 여러개의 PropertySource를 묶을 수 있다.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@PropertySources(&#123;</span></span><br><span class="line"><span class="meta">        @PropertySource(value = &quot;classpath:application-h2.yml&quot;, factory = YamlPropertySourceFactory.class, ignoreResourceNotFound = true),</span></span><br><span class="line"><span class="meta">        @PropertySource(value = &quot;classpath:application-mysql.yml&quot;, factory = YamlPropertySourceFactory.class, ignoreResourceNotFound = true)</span></span><br><span class="line"><span class="meta">&#125;)</span></span><br></pre></td></tr></table></figure>
-<h2 id="Profile-어노테이션을-이용한-방법"><a href="#Profile-어노테이션을-이용한-방법" class="headerlink" title="Profile 어노테이션을 이용한 방법"></a>Profile 어노테이션을 이용한 방법</h2><p>두번째로 해결한 방법은 <strong>Profile</strong> 어노테이션을 사용해 운영시에만 설정을 구성하도록 했다. 운영외에는 MySQL 설정을 구성하지 않도록 해 오류가 발생하지 않게 했다.</p>
-<p><em>DBConfigByYml.java</em></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@Profile(&quot;prod&quot;)</span></span><br><span class="line"><span class="meta">@PropertySource(value = &quot;classpath:application-mysql.yml&quot;, factory = YamlPropertySourceFactory.class, ignoreResourceNotFound = true)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DBConfigByYml</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;spring.datasource.driver-class-name&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String driverClassName;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;spring.datasource.url&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String url;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;spring.datasource.username&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String username;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;spring.datasource.password&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> DataSource <span class="title">dataSource</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> DataSourceBuilder.create()</span><br><span class="line">                .driverClassName(driverClassName)</span><br><span class="line">                .url(url)</span><br><span class="line">                .username(username)</span><br><span class="line">                .password(password)</span><br><span class="line">                .build();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <p><img src="/images/springboot/sample-board/nginx/nginx.png"></p>
+<h1 id="20-프록시-서버-이용하기"><a href="#20-프록시-서버-이용하기" class="headerlink" title="20. 프록시 서버 이용하기"></a>20. 프록시 서버 이용하기</h1><p>현재는 client 가 Web Application에 접근하기 위해서는 8080포트를 사용해야 한다. client가 쉽게 접근 할 수 있도록 <strong>80번 포트</strong>로 어플리케이션을 띄어야 하는데 ubuntu에서는 일반 사용자가 80번 포트를 사용할 수 있는 권한이 없다. 만약 80번 포트로 프로그램을 실행하게 되면 아래와 같은 권한 오류가 뜨게 된다. 그렇다고 어플리케이션을 띄울 때 마다 매번 <strong>sudo</strong>권한으로 실행시킬 수도 없는 노릇이다.</p>
+<blockquote>
+<p>맥에서는 80번 포트로 잘 열리는데 우분투에서 오류가 떠서 당황 했다. 우분투에서 1024미만 포트는 일반 사용자가 사용할 수 없는 포트이다.</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Caused by: java.net.SocketException: Permission denied</span><br><span class="line">	at java.base/sun.nio.ch.Net.bind0(Native Method) ~[na:na]</span><br><span class="line">	at java.base/sun.nio.ch.Net.bind(Net.java:<span class="number">455</span>) ~[na:na]</span><br><span class="line">	at java.base/sun.nio.ch.Net.bind(Net.java:<span class="number">447</span>) ~[na:na]</span><br><span class="line">	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:<span class="number">227</span>) ~[na:na]</span><br><span class="line">	at java.base/sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:<span class="number">80</span>) ~[na:na]</span><br><span class="line">	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:<span class="number">228</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.41</span>.jar!/:<span class="number">9.0</span><span class="number">.41</span>]</span><br><span class="line">	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:<span class="number">211</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.41</span>.jar!/:<span class="number">9.0</span><span class="number">.41</span>]</span><br><span class="line">	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:<span class="number">1159</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.41</span>.jar!/:<span class="number">9.0</span><span class="number">.41</span>]</span><br><span class="line">	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:<span class="number">1245</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.41</span>.jar!/:<span class="number">9.0</span><span class="number">.41</span>]</span><br><span class="line">	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:<span class="number">603</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.41</span>.jar!/:<span class="number">9.0</span><span class="number">.41</span>]</span><br><span class="line">	at org.apache.catalina.connector.Connector.startInternal(Connector.java:<span class="number">1064</span>) ~[tomcat-embed-core-<span class="number">9.0</span><span class="number">.41</span>.jar!/:<span class="number">9.0</span><span class="number">.41</span>]</span><br><span class="line">	... <span class="number">29</span> common frames omitted</span><br></pre></td></tr></table></figure>
+<h2 id="nginx를-이용해-프록시-서버-만들어주기"><a href="#nginx를-이용해-프록시-서버-만들어주기" class="headerlink" title="nginx를 이용해 프록시 서버 만들어주기"></a>nginx를 이용해 프록시 서버 만들어주기</h2><p>80번 포트를 사용하기 위해 <strong>Proxy 서버</strong>를 띄어 놓고 Proxy 서버로 요청이 들어오면 Spring Boot 프로그램으로 <strong>Forwarding</strong> 해주도록 설정을 할 것이다.</p>
+<blockquote>
+<p>sudo 명령어를 사용해 프로그램을 시키는 방법도 있지만, 매번하기에는 번거롭다는 단점도 있고 /etc/sudoers에 패스워드 권한을 풀어줄 수도 있지만 보안상의 문제가 있어서 가장 안전한 방법으로 Proxy 서버를 이용하기로 했다.</p>
+</blockquote>
+<p><img src="/images/springboot/sample-board/nginx/nginx-springboot.png"></p>
+<h2 id="nginx-설치하기"><a href="#nginx-설치하기" class="headerlink" title="nginx 설치하기"></a>nginx 설치하기</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install nginx</span><br></pre></td></tr></table></figure>
+<h2 id="nginx-실행"><a href="#nginx-실행" class="headerlink" title="nginx 실행"></a>nginx 실행</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service nginx start</span><br></pre></td></tr></table></figure>
+<p>프로그램을 실행행한 후 80번 포트로 접속하게 되면 환영한다는 nginx 페이지가 보인다.</p>
+<p><img src="/images/springboot/sample-board/nginx/nginx-page.png"></p>
+<h2 id="nginx-설정-확인하기"><a href="#nginx-설정-확인하기" class="headerlink" title="nginx 설정 확인하기"></a>nginx 설정 확인하기</h2><p>nignx의 기본적인 설정은 <strong>nginx.conf</strong>파일에 저장돼 있다. 마지막 부분을 보면 <strong>conf.d</strong>폴더에 nginx에 추가적인 설정 정보를 불러오게 하는 설정이 있다. 여기에 80번 요청이 들어오면 8080포트로 포워딩 할 수 있게 설정 파일을 만들어 주도록한다.</p>
+<blockquote>
+<p>설정 파일을 살펴보면 conf.d 디렉터리와 sites-enabled(sites-available) 디렉터리 내의 구성을 읽어오는 부분이 있다.<br>sites-enabled에는 nginx에 대한 기본 설정값이 있다. 둘 중 아무곳에나 설정 값을 넣어도 되지만, 설정과 관련된 부분이라 conf.d 디렉터리에 저장하도록 했다.</p>
+</blockquote>
+<p><em>/etc/nginx/nginx.conf</em></p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">http</span> &#123;</span><br><span class="line">	...</span><br><span class="line">	<span class="attribute">include</span> /etc/nginx/conf.d/<span class="regexp">*.conf</span>;</span><br><span class="line">	<span class="comment"># include /etc/nginx/sites-enabled/*; 덮어쓰기를 방지하기 위한 주석 처리</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>/etc/nginx/conf.d 폴더로 이동해 포트 포워딩 설정을 위한 server.conf파일을 생성한다.<br>nginx listen 포트로는 80번 포트를 사용하고 해당 url로 들어오는 모든 요청을 8080포트로 보내주는 설정을 추가한다.</p>
+<p><code>proxy_set_header X-Real-Ip $remote_addr</code> : X-Real-Ip 헤더 값으로 Client의 IP값을 넣어준다.<br><code>proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for</code> : X-Forwarded-For 헤더 값으로 포워딩 된 프록시 서버의 IP값을 넣어준다.<br><code>proxy_set_header Host $http_host</code> : Host 헤더에는 서버의 주소 or 도메인을 넣어준다. (도메인 정보를 매핑하고 싶을 때도 사용)</p>
+<p><em>/etc/nginx/conf.d/server.conf</em></p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span>       <span class="number">80</span>;</span><br><span class="line">    <span class="attribute">server_name</span>  localhost;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">location</span> / &#123;</span><br><span class="line">        <span class="attribute">proxy_pass</span> http://localhost:8080;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-Real-Ip $remote_addr;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> Host $http_host;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>80번 포트로 접근 했을 때 8080포트에 떠있는 Web Application이 나타나는 것을 확인할 수 있다.</p>
+<p><img src="/images/springboot/sample-board/nginx/server.png"></p>
+
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://ckck803.github.io/2021/02/26/springboot/sample-board/board-18-profile/" data-id="ckmj1ntjq002l8p8dgqx99z99" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ckck803.github.io/2021/03/01/springboot/sample-board/board-20-nginx/" data-id="ckmjcdfxn002sbr8dcchi4eos" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -314,17 +331,17 @@ ga('send', 'pageview');
             "@type": "Person",
             "name": "ckck803"
         },
-        "headline": "스프링부트를 이용한 게시판 만들기 18 - Build시 DB 연결 Bug Fix 및 Profile 설정",
-        "image": "https://ckck803.github.io/images/springboot/sample-board/profile/jenkins-error.png",
-        "keywords": "Spring Boot CRUD properties",
+        "headline": "Spring Boot 게시판 만들기 20 - 프록시 서버 이용하기",
+        "image": "https://ckck803.github.io/images/springboot/sample-board/nginx/nginx.png",
+        "keywords": "Spring Boot CRUD nginx",
         "genre": "Spring Boot 게시판 만들기",
-        "datePublished": "2021-02-26",
-        "dateCreated": "2021-02-26",
-        "dateModified": "2021-03-13",
-        "url": "https://ckck803.github.io/2021/02/26/springboot/sample-board/board-18-profile/",
+        "datePublished": "2021-03-01",
+        "dateCreated": "2021-03-01",
+        "dateModified": "2021-03-22",
+        "url": "https://ckck803.github.io/2021/03/01/springboot/sample-board/board-20-nginx/",
         "description": "
-18. Build시 DB 연결 Bug Fix 및 Profile 설정Jenkins에서 build 오류Jenkins에서 Build를 진행하면 Test시 해당 오류가 발생하게 된다. Test를 진행하면서 DBConfigByYml 클래스내 필드를 Application-mysql.yml 를 이용해 채우게 되는데 Application-mysql.yml 파일이 Git",
-        "wordCount": 907
+20. 프록시 서버 이용하기현재는 client 가 Web Application에 접근하기 위해서는 8080포트를 사용해야 한다. client가 쉽게 접근 할 수 있도록 80번 포트로 어플리케이션을 띄어야 하는데 ubuntu에서는 일반 사용자가 80번 포트를 사용할 수 있는 권한이 없다. 만약 80번 포트로 프로그램을 실행하게 되면 아래와 같은 권한 오류가",
+        "wordCount": 548
     }
 </script>
 
@@ -365,20 +382,20 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2021/03/01/springboot/sample-board/board-19-nginx/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2021/03/02/springboot/sample-board/board-21-jenkins-deploy/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
-            스프링부트를 이용한 게시판 만들기 19 - 프록시 서버 이용하기
+            Spring Boot 게시판 만들기 21 - 젠킨스를 이용해 배포하기
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/2021/02/24/springboot/sample-board/board-17-yml/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2021/02/26/springboot/sample-board/board-19-profile/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">스프링부트를 이용한 게시판 만들기 17 - 외부로부터 설정 받기(yml)</p>
+        <p class="article-nav-title">Spring Boot 게시판 만들기 19 - Build시 DB 연결 Bug Fix 및 Profile 설정</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -460,26 +477,6 @@ ga('send', 'pageview');
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2021/03/15/algorithm/baekjoon/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/%EC%8A%A4%ED%83%9D/1918-%ED%9B%84%EC%9C%84%ED%91%9C%EA%B8%B0%EC%8B%9D/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/baekjoon/baekjoon.png)" alt="백준 1406 - 후위표기식" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/Beakjoon/">Beakjoon</a></p>
-                            <p class="item-title"><a href="/2021/03/15/algorithm/baekjoon/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/%EC%8A%A4%ED%83%9D/1918-%ED%9B%84%EC%9C%84%ED%91%9C%EA%B8%B0%EC%8B%9D/" class="title">백준 1406 - 후위표기식</a></p>
-                            <p class="item-date"><time datetime="2021-03-15T11:10:40.000Z" itemprop="datePublished">2021-03-15</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
                             <a href="/2021/03/15/algorithm/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/%EC%8A%A4%ED%83%9D/67257-%EC%88%98%EC%8B%9D%EC%B5%9C%EB%8C%80%ED%99%94/" class="thumbnail">
     
     
@@ -493,6 +490,26 @@ ga('send', 'pageview');
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/Programmers/">Programmers</a></p>
                             <p class="item-title"><a href="/2021/03/15/algorithm/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/%EC%8A%A4%ED%83%9D/67257-%EC%88%98%EC%8B%9D%EC%B5%9C%EB%8C%80%ED%99%94/" class="title">프로그래머스 - 수식 최대화</a></p>
+                            <p class="item-date"><time datetime="2021-03-15T11:10:40.000Z" itemprop="datePublished">2021-03-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/03/15/algorithm/baekjoon/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/%EC%8A%A4%ED%83%9D/1918-%ED%9B%84%EC%9C%84%ED%91%9C%EA%B8%B0%EC%8B%9D/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/baekjoon/baekjoon.png)" alt="백준 1406 - 후위표기식" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/Beakjoon/">Beakjoon</a></p>
+                            <p class="item-title"><a href="/2021/03/15/algorithm/baekjoon/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/%EC%8A%A4%ED%83%9D/1918-%ED%9B%84%EC%9C%84%ED%91%9C%EA%B8%B0%EC%8B%9D/" class="title">백준 1406 - 후위표기식</a></p>
                             <p class="item-date"><time datetime="2021-03-15T11:10:40.000Z" itemprop="datePublished">2021-03-15</time></p>
                         </div>
                     </li>
@@ -595,7 +612,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://ckck803.github.io/2021/02/26/springboot/sample-board/board-18-profile/';
+    var disqus_url = 'https://ckck803.github.io/2021/03/01/springboot/sample-board/board-20-nginx/';
     
     (function() {
     var dsq = document.createElement('script');

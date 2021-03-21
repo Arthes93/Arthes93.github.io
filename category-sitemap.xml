@@ -9,6 +9,20 @@
 
 
     <url>
+        <loc>https://ckck803.github.io/categories/Spring-Boot/%25EA%25B2%258C%25EC%258B%259C%25ED%258C%2590-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0/</loc>
+        <lastmod>2021-03-21T15:55:12.488Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://ckck803.github.io/categories/Spring-Boot/</loc>
+        <lastmod>2021-03-21T15:55:12.488Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://ckck803.github.io/categories/Programming/JAVA/JPA/</loc>
         <lastmod>2021-03-19T17:22:30.515Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -31,13 +45,6 @@
 
     <url>
         <loc>https://ckck803.github.io/categories/Spring-Boot/Spring-Security/</loc>
-        <lastmod>2021-03-19T17:19:34.183Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ckck803.github.io/categories/Spring-Boot/</loc>
         <lastmod>2021-03-19T17:19:34.183Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -123,13 +130,6 @@
     <url>
         <loc>https://ckck803.github.io/categories/Spring-Boot/Spring-Security/Oauth2/</loc>
         <lastmod>2021-03-13T11:44:56.915Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://ckck803.github.io/categories/Spring-Boot/%25EA%25B2%258C%25EC%258B%259C%25ED%258C%2590-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0/</loc>
-        <lastmod>2021-03-13T11:44:42.955Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

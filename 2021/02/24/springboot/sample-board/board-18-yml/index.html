@@ -7,27 +7,27 @@
 
     
  
-    <title>스프링부트를 이용한 게시판 만들기 22 - Log4jdbc를 이용해 Query 로그 기록하기 | Victor</title>
+    <title>Spring Boot 게시판 만들기 18 - 외부로부터 설정 받기(yml) | Victor</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="keywords" content="Spring Boot,CRUD,Logging">
-     <meta name="description" content="22. Log4jdbc를 이용해 Query 로그 기록하기로그 레벨 TRACE &gt; DEBUG &gt; INFO &gt; WARN &gt; ERROR  로그 레벨은 TRACE로 갈 수록 표현되는 Log의 양이 많아지고 ERROR로 갈 수록 표현되는 Log의 양이 적어진다. Configure 파일 문법Logback Configure파일을 구성하는 3가지">
+    <meta name="keywords" content="Spring Boot,CRUD,properties">
+     <meta name="description" content="18. 외부로부터 설정 받기(yml)YamlPropertySourceFactory.java 1234567891011121314151617181920212223242526272829public class YamlPropertySourceFactory implements PropertySourceFactory &amp;#123;    @Override    publ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="스프링부트를 이용한 게시판 만들기 22 - Log4jdbc를 이용해 Query 로그 기록하기">
-<meta property="og:url" content="https://ckck803.github.io/2021/03/06/springboot/sample-board/board-22-logging/index.html">
+<meta property="og:title" content="Spring Boot 게시판 만들기 18 - 외부로부터 설정 받기(yml)">
+<meta property="og:url" content="https://ckck803.github.io/2021/02/24/springboot/sample-board/board-18-yml/index.html">
 <meta property="og:site_name" content="Victor">
-<meta property="og:description" content="22. Log4jdbc를 이용해 Query 로그 기록하기로그 레벨 TRACE &gt; DEBUG &gt; INFO &gt; WARN &gt; ERROR  로그 레벨은 TRACE로 갈 수록 표현되는 Log의 양이 많아지고 ERROR로 갈 수록 표현되는 Log의 양이 적어진다. Configure 파일 문법Logback Configure파일을 구성하는 3가지">
+<meta property="og:description" content="18. 외부로부터 설정 받기(yml)YamlPropertySourceFactory.java 1234567891011121314151617181920212223242526272829public class YamlPropertySourceFactory implements PropertySourceFactory &amp;#123;    @Override    publ">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://ckck803.github.io/images/springboot/sample-board/logback/logback.jpg">
-<meta property="article:published_time" content="2021-03-06T12:59:57.000Z">
-<meta property="article:modified_time" content="2021-03-13T11:29:21.304Z">
+<meta property="og:image" content="https://ckck803.github.io/images/springboot/sample-board/paging/board-paging.png">
+<meta property="article:published_time" content="2021-02-24T12:34:39.000Z">
+<meta property="article:modified_time" content="2021-03-21T15:54:37.378Z">
 <meta property="article:author" content="ckck803">
 <meta property="article:tag" content="Spring Boot">
 <meta property="article:tag" content="CRUD">
-<meta property="article:tag" content="Logging">
+<meta property="article:tag" content="properties">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://ckck803.github.io/images/springboot/sample-board/logback/logback.jpg">  <link rel="canonical" href="https://ckck803.github.io/2021/03/06/springboot/sample-board/board-22-logging/">  
+<meta name="twitter:image" content="https://ckck803.github.io/images/springboot/sample-board/paging/board-paging.png">  <link rel="canonical" href="https://ckck803.github.io/2021/02/24/springboot/sample-board/board-18-yml/">  
     <link rel="icon" href="/css/images/favicon/favicon.ico">
      
 <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
@@ -173,14 +173,14 @@ ga('send', 'pageview');
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-springboot/sample-board/board-22-logging" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-springboot/sample-board/board-18-yml" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        스프링부트를 이용한 게시판 만들기 22 - Log4jdbc를 이용해 Query 로그 기록하기
+        Spring Boot 게시판 만들기 18 - 외부로부터 설정 받기(yml)
         </h1>
     
 
@@ -191,16 +191,16 @@ ga('send', 'pageview');
                 
   <div class="article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/2021/03/06/springboot/sample-board/board-22-logging/" class="article-date">
-       <time datetime="2021-03-06T12:59:57.000Z" itemprop="datePublished">2021-03-06</time>
+    <a href="/2021/02/24/springboot/sample-board/board-18-yml/" class="article-date">
+       <time datetime="2021-02-24T12:34:39.000Z" itemprop="datePublished">2021-02-24</time>
     </a>
   </div>
 
 
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
-  <a href="/2021/03/06/springboot/sample-board/board-22-logging/" class="article-date">
-     <time datetime="2021-03-13T11:29:21.304Z" itemprop="dateModified">2021-03-13</time>
+  <a href="/2021/02/24/springboot/sample-board/board-18-yml/" class="article-date">
+     <time datetime="2021-03-21T15:54:37.378Z" itemprop="dateModified">2021-03-22</time>
   </a>
 </div>
 
@@ -210,7 +210,7 @@ ga('send', 'pageview');
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link-link" href="/tags/CRUD/" rel="tag">CRUD</a>, <a class="tag-link-link" href="/tags/Logging/" rel="tag">Logging</a>, <a class="tag-link-link" href="/tags/Spring-Boot/" rel="tag">Spring Boot</a>
+        <a class="tag-link-link" href="/tags/CRUD/" rel="tag">CRUD</a>, <a class="tag-link-link" href="/tags/Spring-Boot/" rel="tag">Spring Boot</a>, <a class="tag-link-link" href="/tags/properties/" rel="tag">properties</a>
     </div>
 
                 
@@ -227,128 +227,18 @@ ga('send', 'pageview');
 
             
 
-            <p><img src="/images/springboot/sample-board/logback/logback.jpg"></p>
-<h1 id="22-Log4jdbc를-이용해-Query-로그-기록하기"><a href="#22-Log4jdbc를-이용해-Query-로그-기록하기" class="headerlink" title="22. Log4jdbc를 이용해 Query 로그 기록하기"></a>22. Log4jdbc를 이용해 Query 로그 기록하기</h1><h2 id="로그-레벨"><a href="#로그-레벨" class="headerlink" title="로그 레벨"></a>로그 레벨</h2><blockquote>
-<p>TRACE &gt; DEBUG &gt; INFO &gt; WARN &gt; ERROR</p>
-</blockquote>
-<p>로그 레벨은 TRACE로 갈 수록 표현되는 Log의 양이 많아지고 ERROR로 갈 수록 표현되는 Log의 양이 적어진다.</p>
-<h2 id="Configure-파일-문법"><a href="#Configure-파일-문법" class="headerlink" title="Configure 파일 문법"></a>Configure 파일 문법</h2><p>Logback Configure파일을 구성하는 3가지 태그가 있다.</p>
-<ul>
-<li><code>appender</code><ul>
-<li>로그의 <strong>출력 위치</strong>, <strong>출력 형식</strong>및 로깅에 대한 설정(ex. 기간, 용량 등)을 지정한다</li>
-</ul>
-</li>
-<li><code>root</code><ul>
-<li><strong>전역적인 로그 설정</strong>을 위해 사용한다.</li>
-<li>appender를 사용해 appender에 정의된 형식과 위치로 로그를 출력</li>
-<li>여러개의 appender를 사용할 수 있다.</li>
-</ul>
-</li>
-<li><code>logger</code><ul>
-<li>root와는 반대로 <strong>class나 Package단위로 Logging 정책</strong>을 설정할 수 있다.</li>
-<li>로그 메시지를 작성하기 위해 사용하는 클래스를 명시하고 appender를 사용해 appender에 정의된 형식과 위치로 로그를 출력한다.</li>
-<li>여러개의 appender를 사용할 수 있다.</li>
-</ul>
-</li>
-</ul>
-<p><img src="/images/springboot/sample-board/logback/basicSyntax.png"></p>
-<h2 id="appender-클래스의-종류"><a href="#appender-클래스의-종류" class="headerlink" title="appender 클래스의 종류"></a>appender 클래스의 종류</h2><ul>
-<li><code>ch.qos.logback.core.ConsoleAppender</code><ul>
-<li>콘솔에 로그를 찍음</li>
-</ul>
-</li>
-<li><code>ch.qos.logback.core.FileAppender</code><ul>
-<li>파일에 로그를 찍음</li>
-</ul>
-</li>
-<li><code>ch.qos.logback.core.rolling.RollingFileAppender</code><ul>
-<li>여러개의 파일을 순회하면서 로그를 찍음</li>
-</ul>
-</li>
-<li><code>ch.qos.logback.classic.net.SMTPAppender</code><ul>
-<li>로그를 메일에 찍어 보냄</li>
-</ul>
-</li>
-<li><code>ch.qos.logback.classic.db.DBAppender</code><ul>
-<li>데이터베이스에 로그를 찍음</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="의존성-추가하기"><a href="#의존성-추가하기" class="headerlink" title="의존성 추가하기"></a>의존성 추가하기</h2><p>쿼리 로그를 저장하기 위해서는 <strong>log4jdbc</strong> 의존성을 추가해줄 필요가 있다.</p>
-<p><em>build.gradle</em></p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">implementation <span class="keyword">group</span>: <span class="string">&#x27;com.integralblue&#x27;</span>, name: <span class="string">&#x27;log4jdbc-spring-boot-starter&#x27;</span>, version: <span class="string">&#x27;2.0.0&#x27;</span></span><br></pre></td></tr></table></figure>
-<h2 id="설정-추가하기"><a href="#설정-추가하기" class="headerlink" title="설정 추가하기"></a>설정 추가하기</h2><ul>
-<li><code>jdbc.sqlonly</code><ul>
-<li>SQL문만을 로그로 남긴다.</li>
-</ul>
-</li>
-<li><code>jdbc.sqltiming</code><ul>
-<li>SQL문과 해당 SQL을 수행한 시간을 로그로 남긴다.</li>
-</ul>
-</li>
-<li><code>jdbc.audit</code><ul>
-<li>ResultSet을 제외한 모든 JDBC 호출 정보를 로그로 남긴다.</li>
-<li>많은 양의 로그를 생성하므로 JDBC 문제를 추적해야 할 필요를 죄외하고는 사용하지 않는다.</li>
-</ul>
-</li>
-<li><code>jdbc.resultset</code><ul>
-<li>ResultSet을 포함한 모든 JDBC 호출 정보를 로그로 남긴다.</li>
-<li>많은 양의 로그를 생성하므로 JDBC 문제를 추적해야 할 필요를 죄외하고는 사용하지 않는다.</li>
-</ul>
-</li>
-<li><code>jdbc.resultsettable</code><ul>
-<li>SQL문을 수행한 후 조회된 table을 로그로 남긴다.</li>
-</ul>
-</li>
-</ul>
-<p><em>logback-spring.xml</em></p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;LOGS_PATH&quot;</span> <span class="attr">value</span>=<span class="string">&quot;./logs&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">&quot;STDOUT&quot;</span> <span class="attr">class</span>=<span class="string">&quot;ch.qos.logback.core.ConsoleAppender&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">encoder</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">pattern</span>&gt;</span>%d&#123;HH:mm:ss.SSS&#125; [%thread] %-5level %logger&#123;36&#125; - %msg%n<span class="tag">&lt;/<span class="name">pattern</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">encoder</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">&quot;jdbc.sqlonly&quot;</span> <span class="attr">level</span>=<span class="string">&quot;INFO&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">root</span> <span class="attr">level</span>=<span class="string">&quot;off&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">&quot;STDOUT&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">appender-ref</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">root</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="DataBase-접속-설정-추가하기"><a href="#DataBase-접속-설정-추가하기" class="headerlink" title="DataBase 접속 설정 추가하기"></a>DataBase 접속 설정 추가하기</h2><p>DataBase 접속 URL과 Driver를 변경해줄 필요가 있다. URL에서는 jdbc하고 접속하고 싶은 DB사이에 <strong>log4jdbc</strong>를 추가해주면 된다. Driver는 log4jdbc에서 제공해주는 Driver를 사용하면 된다.</p>
-<ul>
-<li><code>url</code>: jdbc:log4jdbc:h2:mem:testdb</li>
-<li><code>driver-class-name</code>: net.sf.log4jdbc.sql.jdbcapi.DriverSpy</li>
-</ul>
-<p><em>appplication.yml</em></p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">datasource:</span></span><br><span class="line">  <span class="comment">#    url: jdbc:h2:mem:testdb</span></span><br><span class="line">  <span class="attr">url:</span> <span class="string">jdbc:log4jdbc:h2:mem:testdb</span></span><br><span class="line">  <span class="attr">driver-class-name:</span> <span class="string">net.sf.log4jdbc.sql.jdbcapi.DriverSpy</span></span><br><span class="line">  <span class="attr">username:</span> <span class="string">sa</span></span><br><span class="line">  <span class="attr">password:</span></span><br></pre></td></tr></table></figure>
-<p>Console에 SQL문이 찍히는 것을 확인할 수 있다. 이상하게 <strong>Memory DB</strong>를 사용하는 경우 SQL문이 중복으로 찍힌다.</p>
-<p><img src="/images/springboot/sample-board/logback/console-log.png"></p>
-<h3 id="MySQL-접속-설정-변경하기"><a href="#MySQL-접속-설정-변경하기" class="headerlink" title="MySQL 접속 설정 변경하기"></a>MySQL 접속 설정 변경하기</h3><p>H2 DataBase했던 것과 마찬가지로 Driver와 URL을 변경해준다.</p>
-<p><em>application-mysql.yml</em></p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">datasource:</span></span><br><span class="line">    <span class="attr">driver-class-name:</span> <span class="string">net.sf.log4jdbc.sql.jdbcapi.DriverSpy</span></span><br><span class="line"><span class="comment">#    driver-class-name: com.mysql.cj.jdbc.Driver</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">jdbc:log4jdbc:mysql://localhost:3306/test?serverTimezone=UTC&amp;characterEncoding=UTF-8</span></span><br><span class="line"><span class="comment">#    url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC&amp;characterEncoding=UTF-8</span></span><br><span class="line">    <span class="attr">username:</span> [<span class="string">DataBase</span> <span class="string">ID</span>]</span><br><span class="line">    <span class="attr">password:</span> [<span class="string">DataBase</span> <span class="string">Password</span>]</span><br></pre></td></tr></table></figure>
-<p>Create시 <strong>engine=InnoDB</strong>가 나타난 것을 보아 MySQL을 이용한 SQL문이 제대로 생성됨을 알 수 있다.</p>
-<p><img src="/images/springboot/sample-board/logback/console-log-mysql.png"></p>
-<h2 id="파일에-Log-출력하기"><a href="#파일에-Log-출력하기" class="headerlink" title="파일에 Log 출력하기"></a>파일에 Log 출력하기</h2><p>파일에 로그를 남기기 위해 appender 클래스로 <strong>ch.qos.logback.core.FileAppender</strong>를 사용할 것이다.</p>
-<h4 id="로그파일을-관리하는-정책-세우기"><a href="#로그파일을-관리하는-정책-세우기" class="headerlink" title="로그파일을 관리하는 정책 세우기"></a>로그파일을 관리하는 정책 세우기</h4><p><strong>rollingPolicy</strong> 태그를 이용해 로그파일을 관리하는 정책을 세울 수 있다.</p>
-<ul>
-<li><code>rollingPolicy</code> <ul>
-<li><code>ch.qos.logback.core.rolling.RollingFileAppender</code> <ul>
-<li><strong>일자별</strong>로 로그파일을 관리한다.</li>
-<li>일자가 바뀌면 <strong>fileNamePattern</strong>에 따라 별도의 로그파일이 생성된다.</li>
-</ul>
-</li>
-<li><code>timeBasedFileNamingAndTriggeringPolicy</code><ul>
-<li>일자 외에도 <strong>파일의 용량</strong>에 따라 별도의 로그파일이 생성된다.</li>
-<li><strong>maxFileSize</strong>보다 로그 파일의 크기가 커지면 별도의 로그파일이 생성된다.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><em>logback-spring.xml</em></p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;LOGS_PATH&quot;</span> <span class="attr">value</span>=<span class="string">&quot;./logs&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">&quot;STDOUT&quot;</span> <span class="attr">class</span>=<span class="string">&quot;ch.qos.logback.core.ConsoleAppender&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">encoder</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">pattern</span>&gt;</span>%d&#123;HH:mm:ss.SSS&#125; [%thread] %-5level %logger&#123;36&#125; - %msg%n<span class="tag">&lt;/<span class="name">pattern</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">encoder</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">&quot;FILE&quot;</span> <span class="attr">class</span>=<span class="string">&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">file</span>&gt;</span>$&#123;LOGS_PATH&#125;/logback.log<span class="tag">&lt;/<span class="name">file</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">encoder</span> <span class="attr">class</span>=<span class="string">&quot;ch.qos.logback.classic.encoder.PatternLayoutEncoder&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">Pattern</span>&gt;</span>%d&#123;yyyy-MM-dd HH:mm:ss&#125;- %-5level - %msg%n<span class="tag">&lt;/<span class="name">Pattern</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">encoder</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">rollingPolicy</span> <span class="attr">class</span>=<span class="string">&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">fileNamePattern</span>&gt;</span>$&#123;LOGS_PATH&#125;/$&#123;LOG_PREFIX&#125;.%d&#123;yyyy-MM-dd&#125;.%i.log<span class="tag">&lt;/<span class="name">fileNamePattern</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">timeBasedFileNamingAndTriggeringPolicy</span> <span class="attr">class</span>=<span class="string">&quot;ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">maxFileSize</span>&gt;</span>10MB<span class="tag">&lt;/<span class="name">maxFileSize</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">timeBasedFileNamingAndTriggeringPolicy</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">rollingPolicy</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--    &lt;logger name=&quot;jdbc.sqlonly&quot; level=&quot;INFO&quot;/&gt;--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">&quot;jdbc.sqlonly&quot;</span> <span class="attr">level</span>=<span class="string">&quot;INFO&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">root</span> <span class="attr">level</span>=<span class="string">&quot;off&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">&quot;FILE&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">appender-ref</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">root</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>logs라는 폴더가 생성되고 여기에 <strong>logback.log</strong>라는 파일이 생성되 로그가 찍히는 것을 확인할 수 있다.</p>
-<p><em>logback.log</em></p>
-<p><img src="/images/springboot/sample-board/logback/file-log.png"></p>
-<p><a target="_blank" rel="external nofollow noopener noreferrer" href="http://logback.qos.ch/manual/index.html">http://logback.qos.ch/manual/index.html</a></p>
-
+            <p><img src="/images/springboot/sample-board/paging/board-paging.png"></p>
+<h1 id="18-외부로부터-설정-받기-yml"><a href="#18-외부로부터-설정-받기-yml" class="headerlink" title="18. 외부로부터 설정 받기(yml)"></a>18. 외부로부터 설정 받기(yml)</h1><p><em>YamlPropertySourceFactory.java</em></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">YamlPropertySourceFactory</span> <span class="keyword">implements</span> <span class="title">PropertySourceFactory</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> PropertySource&lt;?&gt; createPropertySource(String name, EncodedResource resource) <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        Properties propertiesFromYaml = loadYamlIntoProperties(resource);</span><br><span class="line">        String sourceName = name != <span class="keyword">null</span> ? name : resource.getResource().getFilename();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> PropertiesPropertySource(sourceName, propertiesFromYaml);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> Properties <span class="title">loadYamlIntoProperties</span><span class="params">(EncodedResource resource)</span> <span class="keyword">throws</span> FileNotFoundException </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            YamlPropertiesFactoryBean factory = <span class="keyword">new</span> YamlPropertiesFactoryBean();</span><br><span class="line">            factory.setResources(resource.getResource());</span><br><span class="line">            factory.afterPropertiesSet();</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> factory.getObject();</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (IllegalStateException e) &#123;</span><br><span class="line">            <span class="comment">// for ignoreResourceNotFound</span></span><br><span class="line">            Throwable cause = e.getCause();</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (cause <span class="keyword">instanceof</span> FileNotFoundException) &#123;</span><br><span class="line">                <span class="keyword">throw</span> (FileNotFoundException) e.getCause();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">throw</span> e;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><em>DBConfigByYml.java</em></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@PropertySource(value = &quot;classpath:application-mysql.yml&quot;, factory = YamlPropertySourceFactory.class)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DBConfigByYml</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;spring.datasource.driver-class-name&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String driverClassName;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;spring.datasource.url&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String url;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;spring.datasource.username&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String username;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value(&quot;$&#123;spring.datasource.password&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> DataSource <span class="title">dataSource</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> DataSourceBuilder.create()</span><br><span class="line">                .driverClassName(driverClassName)</span><br><span class="line">                .url(url)</span><br><span class="line">                .username(username)</span><br><span class="line">                .password(password)</span><br><span class="line">                .build();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://ckck803.github.io/2021/03/06/springboot/sample-board/board-22-logging/" data-id="ckmj1ntjy00328p8d59se62pb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ckck803.github.io/2021/02/24/springboot/sample-board/board-18-yml/" data-id="ckmjcdfxk002kbr8d1dqh83qq" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -418,21 +308,18 @@ ga('send', 'pageview');
             "@type": "Person",
             "name": "ckck803"
         },
-        "headline": "스프링부트를 이용한 게시판 만들기 22 - Log4jdbc를 이용해 Query 로그 기록하기",
-        "image": "https://ckck803.github.io/images/springboot/sample-board/logback/logback.jpg",
-        "keywords": "Spring Boot CRUD Logging",
+        "headline": "Spring Boot 게시판 만들기 18 - 외부로부터 설정 받기(yml)",
+        "image": "https://ckck803.github.io/images/springboot/sample-board/paging/board-paging.png",
+        "keywords": "Spring Boot CRUD properties",
         "genre": "Spring Boot 게시판 만들기",
-        "datePublished": "2021-03-06",
-        "dateCreated": "2021-03-06",
-        "dateModified": "2021-03-13",
-        "url": "https://ckck803.github.io/2021/03/06/springboot/sample-board/board-22-logging/",
+        "datePublished": "2021-02-24",
+        "dateCreated": "2021-02-24",
+        "dateModified": "2021-03-22",
+        "url": "https://ckck803.github.io/2021/02/24/springboot/sample-board/board-18-yml/",
         "description": "
-22. Log4jdbc를 이용해 Query 로그 기록하기로그 레벨
-TRACE &gt; DEBUG &gt; INFO &gt; WARN &gt; ERROR
-
-로그 레벨은 TRACE로 갈 수록 표현되는 Log의 양이 많아지고 ERROR로 갈 수록 표현되는 Log의 양이 적어진다.
-Configure 파일 문법Logback Configure파일을 구성하는 3가지 ",
-        "wordCount": 989
+18. 외부로부터 설정 받기(yml)YamlPropertySourceFactory.java
+1234567891011121314151617181920212223242526272829public class YamlPropertySourceFactory implements PropertySourceFactory &#123;    @Override    publ",
+        "wordCount": 575
     }
 </script>
 
@@ -473,20 +360,20 @@ Configure 파일 문법Logback Configure파일을 구성하는 3가지 ",
         
 <nav id="article-nav">
     
-        <a href="/2021/03/07/computer-science/network/cloud/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2021/02/26/springboot/sample-board/board-19-profile/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
-            클라우드 서비스
+            Spring Boot 게시판 만들기 19 - Build시 DB 연결 Bug Fix 및 Profile 설정
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/2021/03/06/springboot/sample-board/board-21-github-action/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2021/02/24/springboot/sample-board/board-17-properties/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">스프링부트를 이용한 게시판 만들기 21 - Github Action 사용하기</p>
+        <p class="article-nav-title">Spring Boot 게시판 만들기 17 - 외부로부터 설정 받기(property)</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -568,26 +455,6 @@ Configure 파일 문법Logback Configure파일을 구성하는 3가지 ",
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2021/03/15/algorithm/baekjoon/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/%EC%8A%A4%ED%83%9D/1918-%ED%9B%84%EC%9C%84%ED%91%9C%EA%B8%B0%EC%8B%9D/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/baekjoon/baekjoon.png)" alt="백준 1406 - 후위표기식" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/Beakjoon/">Beakjoon</a></p>
-                            <p class="item-title"><a href="/2021/03/15/algorithm/baekjoon/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/%EC%8A%A4%ED%83%9D/1918-%ED%9B%84%EC%9C%84%ED%91%9C%EA%B8%B0%EC%8B%9D/" class="title">백준 1406 - 후위표기식</a></p>
-                            <p class="item-date"><time datetime="2021-03-15T11:10:40.000Z" itemprop="datePublished">2021-03-15</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
                             <a href="/2021/03/15/algorithm/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/%EC%8A%A4%ED%83%9D/67257-%EC%88%98%EC%8B%9D%EC%B5%9C%EB%8C%80%ED%99%94/" class="thumbnail">
     
     
@@ -601,6 +468,26 @@ Configure 파일 문법Logback Configure파일을 구성하는 3가지 ",
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/Programmers/">Programmers</a></p>
                             <p class="item-title"><a href="/2021/03/15/algorithm/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/%EC%8A%A4%ED%83%9D/67257-%EC%88%98%EC%8B%9D%EC%B5%9C%EB%8C%80%ED%99%94/" class="title">프로그래머스 - 수식 최대화</a></p>
+                            <p class="item-date"><time datetime="2021-03-15T11:10:40.000Z" itemprop="datePublished">2021-03-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/03/15/algorithm/baekjoon/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/%EC%8A%A4%ED%83%9D/1918-%ED%9B%84%EC%9C%84%ED%91%9C%EA%B8%B0%EC%8B%9D/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/baekjoon/baekjoon.png)" alt="백준 1406 - 후위표기식" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/Beakjoon/">Beakjoon</a></p>
+                            <p class="item-title"><a href="/2021/03/15/algorithm/baekjoon/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/%EC%8A%A4%ED%83%9D/1918-%ED%9B%84%EC%9C%84%ED%91%9C%EA%B8%B0%EC%8B%9D/" class="title">백준 1406 - 후위표기식</a></p>
                             <p class="item-date"><time datetime="2021-03-15T11:10:40.000Z" itemprop="datePublished">2021-03-15</time></p>
                         </div>
                     </li>
@@ -703,7 +590,7 @@ Configure 파일 문법Logback Configure파일을 구성하는 3가지 ",
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://ckck803.github.io/2021/03/06/springboot/sample-board/board-22-logging/';
+    var disqus_url = 'https://ckck803.github.io/2021/02/24/springboot/sample-board/board-18-yml/';
     
     (function() {
     var dsq = document.createElement('script');
